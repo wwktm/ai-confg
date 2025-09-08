@@ -49,10 +49,6 @@
       mask-image: radial-gradient(80% 80% at 50% 50%, black, transparent);
       opacity:.35;
     }
-    header{
-      background: url('bg.png');
-      background-size: cover;
-    }
     /* Glass card */
     .glass { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); }
     .btn-primary { background: linear-gradient(90deg, #ffffff, #e7e7e7); color:#0b0b0d; }
@@ -96,6 +92,11 @@
 
   <!-- HERO -->
   <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Video -->
+    <video autoplay muted poster="bg.png" class="absolute inset-0 w-full h-full object-cover -z-10" id="bgvideo">
+      <source src="http://media.wwktm.com/bg-video.mp4" type="video/mp4">
+      <!-- Fallback: bg.png can be shown via CSS if video doesn't load -->
+    </video>
     <!-- Animated gradient blobs -->
     <!-- <div class="blob red animate-float-1" style="top:-10vmin; left:-10vmin;"></div> -->
     <!-- <div class="blob gold animate-float-2" style="top:-8vmin; right:-12vmin;"></div> -->
@@ -356,5 +357,34 @@
       </div>
     </div>
   </footer>
+  <script>
+    const video = document.getElementById('bgvideo');
+
+    // Function to play forward
+    function playForward() {
+      video.currentTime = 0;
+      video.play();
+    }
+
+    // Function to play reverse
+    function playReverse() {
+      if (video.currentTime <= 0) {
+        video.currentTime = video.duration;
+      }
+      video.currentTime -= 0.033; // Assuming 30fps, adjust as needed
+      if (video.currentTime > 0) {
+        setTimeout(playReverse, 33); // Recurse
+      } else {
+        // Loop: set to end and play reverse again, but since it's after playForward, maybe loop back
+        video.currentTime = video.duration;
+        playReverse();
+      }
+    }
+
+    // Initially play forward
+    video.addEventListener('ended', () => {
+      playReverse();
+    });
+  </script>
 </body>
 </html>
