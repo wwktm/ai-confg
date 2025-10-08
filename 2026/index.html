@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Conf 2026 - AI in Action • By WWKTM</title>
+  <meta name="description" content="AI in Action — a two-day regional conference in Kathmandu for engineers, designers, and builders creating with and for AI. Jan 10–11, 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['Space Grotesk', 'Inter', 'system-ui']
+          },
+          colors: {
+            base: {
+              900: '#0b0b0d',
+              800: '#0f0f13',
+              700: '#15151b'
+            },
+            glow: '#ffffff',
+          },
+          backgroundImage: {
+            heroGrad: 'radial-gradient(1200px 600px at 10% 10%, rgba(255,84,54,0.65), transparent 60%), radial-gradient(900px 500px at 80% 15%, rgba(255,221,64,0.55), transparent 60%), radial-gradient(900px 500px at 60% 85%, rgba(86,156,214,0.6), transparent 60%)',
+          },
+          dropShadow: {
+            glow: '0 0 25px rgba(255,255,255,0.25)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-size: 20px; }
+    /* Subtle noise overlay */
+    .noise { position: absolute; inset: 0; pointer-events:none; opacity:.12; mix-blend-mode: soft-light; background-image: url('data:image/svg+xml;utf8,\
+      <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 100 100">\
+        <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" stitchTiles="stitch"/></filter>\
+        <rect width="100" height="100" filter="url(%23n)" opacity="0.35"/>\
+      </svg>'); }
+    /* Gentle contour lines reminiscent of your poster */
+    .contours {
+      background-image: repeating-linear-gradient( to bottom, rgba(255,255,255,0.06) 0 1px, transparent 1px 32px );
+      mask-image: radial-gradient(80% 80% at 50% 50%, black, transparent);
+      opacity:.35;
+    }
+    /* Glass card */
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); }
+    .btn-primary { background: linear-gradient(90deg, #ffffff, #e7e7e7); color:#0b0b0d; }
+    .btn-outline { border:1px solid rgba(255,255,255,.6); color:#fff; }
+    .badge { border:1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.04); }
+      /* Animated gradient blobs for hero */
+    .blob { position:absolute; width:60vmin; height:60vmin; border-radius:50%; filter: blur(60px); opacity:.55; }
+    .blob.red { background: radial-gradient(circle at 30% 30%, rgba(255,84,54,.8), transparent 60%); }
+    .blob.gold { background: radial-gradient(circle at 60% 40%, rgba(255,221,64,.75), transparent 60%); }
+    .blob.blue { background: radial-gradient(circle at 40% 60%, rgba(86,156,214,.8), transparent 60%); }
+    .animate-float-1 { animation: float1 5s ease-in-out infinite alternate; }
+    .animate-float-2 { animation: float2 5s ease-in-out infinite alternate; }
+    .animate-float-3 { animation: float3 5s ease-in-out infinite alternate; }
+    @keyframes float1 { from { transform: translate(-30%, -5%) scale(1); } to { transform: translate(50%, 5%) scale(1.08); } }
+    @keyframes float2 { from { transform: translate(5%, -8%) scale(1.05); } to { transform: translate(-5%, 6%) scale(0.97); } }
+    @keyframes float3 { from { transform: translate(-6%, 6%) scale(0.98); } to { transform: translate(6%, -6%) scale(1.06); } }
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float-1, .animate-float-2, .animate-float-3 { animation: none !important; }
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 380px) {
+      h1 { font-size: 2.25rem; line-height: 1.1; }
+      .btn-primary, .btn-outline { width: 100%; }
+    }
+  </style>
+</head>
+<body class="bg-base-900 text-white antialiased selection:bg-white/20">
+  <!-- Fixed Top-Right Navigation -->
+  <div class="fixed top-0 right-0 z-50 p-6">
+    <nav>
+      <ul class="flex gap-6 text-sm text-white/80">
+        <li><a href="https://barcamp.wwktm.com/" class="hover:underline transition">Barcamp</a></li>
+        <li><a href="https://wwktm.com/2019/" class="hover:underline transition">2019</a></li>
+        <li><a href="https://wwktm.com/2018/" class="hover:underline transition">2018</a></li>
+        <!-- <li><a href="https://blog.wwktm.com" class="hover:underline transition">Blog (current)</a></li> -->
+      </ul>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Video -->
+    <video autoplay muted poster="bg.png" class="absolute inset-0 w-full h-full object-cover -z-10" id="bgvideo">
+      <source src="http://media.wwktm.com/bg-video.mp4" type="video/mp4">
+      <!-- Fallback: bg.png can be shown via CSS if video doesn't load -->
+    </video>
+    <!-- Animated gradient blobs -->
+    <!-- <div class="blob red animate-float-1" style="top:-10vmin; left:-10vmin;"></div> -->
+    <!-- <div class="blob gold animate-float-2" style="top:-8vmin; right:-12vmin;"></div> -->
+    <!-- <div class="blob blue animate-float-3" style="bottom:-12vmin; left:20vmin;"></div> -->
+    <div class="noise"></div>
+    <div class="contours absolute inset-x-0 bottom-0 h-1/2"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-3 badge rounded-full px-3 py-1 text-sm mb-6">
+        <span>By wwktm</span>
+        <span class="w-1 h-1 rounded-full bg-white/50"></span>
+        <span>Jan 10–11, 2026 </span>
+        <span class="w-1 h-1 rounded-full bg-white/50"></span>
+        <span>Kathmandu</span>
+      </div>
+      <h1 class="font-display tracking-tight drop-shadow-glow text-5xl md:text-7xl font-semibold">AI Conf 2026</h1>
+      <p class="mt-4 text-xl md:text-2xl text-white/85">AI in Action</p>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto">
+        <!-- <a href="#tickets" class="btn-primary rounded-xl px-6 py-3 font-semibold hover:drop-shadow-glow transition">🎟 Get Tickets</a> -->
+        <a href="#cfs" class="btn-primary rounded-xl px-6 py-3 font-medium hover:bg-white/10 transition">🎤 Apply to Speak</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="relative py-20 md:py-28">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-base-800/40 to-transparent"></div>
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4">About the Conference</h2>
+        <p class="text-white/85 leading-relaxed">From <strong>building the web</strong> to <strong>building with  &amp; for AI</strong>. This is the next chapter of Web Weekend Kathmandu.<br /><br /> <em>AI Conf: AI in Action</em> is a two‑day experience for engineers, designers, product folks, and builders who are creating real products, interfaces, and systems powered by AI.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 md:p-8">
+        <h3 class="font-display text-2xl mb-3">What to Expect</h3>
+        <div class="grid grid-cols-2 gap-4 text-white/90">
+          <div class="rounded-xl p-4 bg-white/5 border border-white/10">
+            <div class="text-3xl">🎤</div>
+            <p class="mt-3 font-medium">8–9 Talks</p>
+            <p class="text-sm text-white/70">20‑min sessions</p>
+          </div>
+          <div class="rounded-xl p-4 bg-white/5 border border-white/10">
+            <div class="text-3xl">🌍</div>
+            <p class="mt-3 font-medium">Regional Voices</p>
+            <p class="text-sm text-white/70">South Asia + Nepal</p>
+          </div>
+          <div class="rounded-xl p-4 bg-white/5 border border-white/10">
+            <div class="text-3xl">🤝</div>
+            <p class="mt-3 font-medium">Mixer</p>
+            <p class="text-sm text-white/70">Connect on Day‑1 evening</p>
+          </div>
+          <div class="rounded-xl p-4 bg-white/5 border border-white/10">
+            <div class="text-3xl">🥾</div>
+            <p class="mt-3 font-medium">Community Hike</p>
+            <!-- <p class="text-sm text-white/70">Location - to be decided</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ORGANIZERS / PAST EVENTS -->
+  <section id="aboutus" class="py-20 md:py-28 bg-base-700">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4">Organized by the team behind wwktm</h2>
+      <p class="text-white/85 max-w-3xl mx-auto leading-relaxed">
+        AI Conf 2026 is organized by the team behind <strong>Web Weekend Kathmandu</strong> - Nepal’s flagship community‑driven tech conference that ran in 2018 and 2019, each bringing together 300+ developers and designers with international speakers.
+      </p>
+      <p class="text-white/85 max-w-3xl mx-auto leading-relaxed mt-4">
+        We also run <strong>Tech Kura Kani</strong>, a free monthly meetup series for the local tech community, and have organized <strong>BarCamp Kathmandu</strong> in 2024 and 2025 with 200+ enthusiastic participants.
+      </p>
+      <p class="text-white/80 max-w-3xl mx-auto leading-relaxed mt-4">
+        Our events are known for being inclusive, community‑first, and highly rated by attendees. With AI Conf 2026, we continue this tradition; Offering a premium yet approachable event where builders can learn, share, and connect.
+      </p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="relative py-20 md:py-24">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-[#ef4444]/30 via-transparent to-[#3b82f6]/30"></div>
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold">Stay in the loop</h2>
+      <p class="mt-3 text-white/85">Get the latest updates on speakers, tickets, and our signature community hike. Straight to your inbox.</p>
+      <form action="https://wwktm.us7.list-manage.com/subscribe/post?u=86f98e6984113b750376bd471&id=5ccc30611a" method="POST" class="mt-6 flex flex-col sm:flex-row gap-3 justify-center" target="_blank">
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_86f98e6984113b750376bd471_5ccc30611a" tabindex="-1" value=""></div>
+        <input aria-label="Email" type="email" placeholder="Enter your email" class="w-full sm:w-96 px-4 py-3 rounded-xl text-base-900 placeholder-base-900/70" required name="EMAIL">
+        <button class="btn-primary rounded-xl px-6 py-3 font-semibold" type="submit">Subscribe</button>
+      </form>
+      <p class="mt-2 text-xs text-white/70">No spam, just community news and highlights.</p>
+    </div>
+  </section>
+
+  <!-- SPEAKERS (placeholder) -->
+  <!-- <section id="speakers" class="py-20 md:py-28 bg-base-800"> -->
+  <!--   <div class="max-w-6xl mx-auto px-6"> -->
+  <!--     <div class="flex items-end justify-between gap-6 mb-8"> -->
+  <!--       <h2 class="font-display text-3xl md:text-4xl font-semibold">Speakers</h2> -->
+  <!--       <a href="#cfs" class="btn-outline rounded-xl px-4 py-2 text-sm">Apply to Speak</a> -->
+  <!--     </div> -->
+  <!--     <p class="text-white/75 mb-10">A mix of international and local builders sharing practical insights from building <em>with</em> and <em>for</em> AI.</p> -->
+  <!--     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"> -->
+
+  <!--       <div class="glass rounded-2xl p-5"> -->
+  <!--         <div class="aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">Photo</div> -->
+  <!--         <h3 class="mt-4 font-semibold">Speaker Name</h3> -->
+  <!--         <p class="text-sm text-white/70">Talk title goes here</p> -->
+  <!--       </div> -->
+  <!--       <div class="glass rounded-2xl p-5"> -->
+  <!--         <div class="aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">Photo</div> -->
+  <!--         <h3 class="mt-4 font-semibold">Speaker Name</h3> -->
+  <!--         <p class="text-sm text-white/70">Talk title goes here</p> -->
+  <!--       </div> -->
+  <!--       <div class="glass rounded-2xl p-5"> -->
+  <!--         <div class="aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">Photo</div> -->
+  <!--         <h3 class="mt-4 font-semibold">Speaker Name</h3> -->
+  <!--         <p class="text-sm text-white/70">Talk title goes here</p> -->
+  <!--       </div> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!-- </section> -->
+  <!---->
+  <section id="cfs" class="relative py-20 md:py-28 bg-base-700">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-base-800/40 to-transparent"></div>
+  <div class="max-w-4xl mx-auto px-6 text-left">
+    <h2 class="font-display text-3xl md:text-4xl font-semibold text-center">📣 Call for Speakers</h2>
+    <p class="mt-4 text-white/85">
+      We’re inviting engineers, designers, founders, and builders who are putting AI into action.  
+      Whether you’re <strong>building with AI</strong> in products and workflows, or <strong>building for AI</strong> by creating tools, systems, 
+      and experiences others can use - we’d love to hear your story at <em>AI Conf: AI in Action 2026</em>.
+    </p>
+
+    <div class="mt-8 space-y-6 text-white/80">
+      <div>
+        <h3 class="font-semibold text-lg">🎤 Full Talks (~20 mins + Q&A)</h3>
+        <p>Case studies, engineering tactics, design/UX, or product lessons.<br>
+        <span class="text-white/60">✨ Accommodation provided for all accepted speakers.</span></p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-lg">⚡ Lightning Talks (5 mins)</h3>
+        <p>Quick demos, experiments, or single lessons learned.<br>
+        <span class="text-white/60">💡 Support available on a review basis.</span></p>
+      </div>
+      <div>
+    <!--     <h3 class="font-semibold text-lg">🛠️ Workshops (6–8 hrs, hands-on)</h3> -->
+    <!--     <p>Practical sessions where participants learn by doing (e.g. build an app,  -->
+    <!--     design workflows, prompt engineering).<br> -->
+    <!--     <span class="text-white/60">✨ Accommodation provided for all accepted facilitators.</span></p> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <div class="text-center">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEZyufAQ3UQETGDeKc7s3dLICctuCqwJHK1qE84PlTqBTrZw/viewform" class="mt-10 inline-block btn-primary rounded-xl px-6 py-3 font-semibold">Submit your proposal</a>
+      <p class="mt-4 text-sm text-white/60">
+        🗓️ Applications close: <span class="font-medium">November 15, 2025</span><br>
+        📢 Selections announced: <span class="font-medium">December 1, 2025</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- AGENDA (placeholder) -->
+  <!-- <section id="agenda" class="py-20 md:py-28 bg-base-800"> -->
+  <!--   <div class="max-w-5xl mx-auto px-6"> -->
+  <!--     <h2 class="font-display text-3xl md:text-4xl font-semibold mb-6">Agenda (Draft)</h2> -->
+  <!--     <ol class="relative border-s border-white/10 pl-6 space-y-8"> -->
+  <!--       <li> -->
+  <!--         <div class="absolute -left-[9px] mt-1 w-4 h-4 rounded-full bg-white"></div> -->
+  <!--         <p class="text-white/80">09:30 — Opening remarks</p> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <div class="absolute -left-[9px] mt-1 w-4 h-4 rounded-full bg-white"></div> -->
+  <!--         <p class="text-white/80">10:00 — Talk block #1 (3x20min)</p> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <div class="absolute -left-[9px] mt-1 w-4 h-4 rounded-full bg-white"></div> -->
+  <!--         <p class="text-white/80">12:00 — Lunch & networking</p> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <div class="absolute -left-[9px] mt-1 w-4 h-4 rounded-full bg-white"></div> -->
+  <!--         <p class="text-white/80">13:30 — Talk block #2 (3x20min)</p> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <div class="absolute -left-[9px] mt-1 w-4 h-4 rounded-full bg-white"></div> -->
+  <!--         <p class="text-white/80">16:00 — Talk block #3 (2–3x20min)</p> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <div class="absolute -left-[9px] mt-1 w-4 h-4 rounded-full bg-white"></div> -->
+  <!--         <p class="text-white/80">17:30 — Closing & thanks</p> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <div class="absolute -left-[9px] mt-1 w-4 h-4 rounded-full bg-white"></div> -->
+  <!--         <p class="text-white/80">18:30 — Evening mixer</p> -->
+  <!--       </li> -->
+  <!--     </ol> -->
+  <!--   </div> -->
+  <!-- </section> -->
+
+  <!-- TICKETS -->
+  <section id="tickets" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold">Tickets</h2>
+      <p class="mt-3 text-white/80">Tickets will be available soon. Make sure to join our <a href="#newsletter">newsletter</a> to stay informed</p>
+    <!--   <div class="mt-10 grid md:grid-cols-3 gap-6"> -->
+    <!--     <div class="glass rounded-2xl p-6"> -->
+    <!--       <div class="text-sm uppercase tracking-wide text-white/60">Believer</div> -->
+    <!--       <div class="mt-2 text-3xl font-semibold">NPR 2,750</div> -->
+    <!--       <p class="mt-2 text-white/70">For the earliest supporters!</p> -->
+    <!--       <button class="mt-6 w-full btn-primary rounded-xl px-5 py-3 font-semibold">Get Believer Ticket</button> -->
+    <!--     </div> -->
+    <!--     <div class="glass rounded-2xl p-6 ring-1 ring-white/20"> -->
+    <!--       <div class="text-sm uppercase tracking-wide text-white/60">Standard</div> -->
+    <!--       <div class="mt-2 text-3xl font-semibold">NPR 3,750</div> -->
+    <!--       <p class="mt-2 text-white/70">Not open yet, stay tuned!</p> -->
+    <!--       <button class="mt-6 w-full btn-primary rounded-xl px-5 py-3 font-semibold" disabled>Available Soon</button> -->
+    <!--     </div> -->
+    <!--     <div class="glass rounded-2xl p-6"> -->
+    <!--       <div class="text-sm uppercase tracking-wide text-white/60">Micro Sponsor</div> -->
+    <!--       <div class="mt-2 text-3xl font-semibold">NPR 5,000</div> -->
+    <!--       <p class="mt-2 text-white/70">Pay it forward</p> -->
+    <!--       <button class="mt-6 w-full btn-outline rounded-xl px-5 py-3 font-semibold">Become a Sponsor</button> -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!--   <p class="mt-4 text-sm text-white/60"> -->
+    <!--    Student support available on a case‑by‑case basis.Please email us if you are looking for financial support. -->
+    <!--   </p> -->
+    <!-- </div> -->
+  </section>
+
+  <!-- SPONSORS -->
+  <section id="sponsors" class="py-20 md:py-28 bg-base-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-end justify-between gap-6 mb-8">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold">Sponsors</h2>
+        <a href="mailto:wwktm.co@gmail.com" class="btn-outline rounded-xl px-4 py-2 text-sm">Become a Sponsor</a>
+      </div>
+      <!-- <p class="text-white/80 mb-6">Tiered partnerships (Gold / Silver / Bronze) + special roles (Coffee ☕, After‑Party 🍻, Hike 🥾). No title sponsor — the content stays independent.</p> -->
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Gold Sponsor</div>
+        <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Silver Sponsor</div>
+        <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Bronze Sponsor</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative">
+    <div class="h-px w-full bg-gradient-to-r from-[#ef4444] via-white to-[#3b82f6]"></div>
+    <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6 items-center">
+      <div>
+        <div class="font-display text-xl">AI Conf 2026</div>
+        <p class="text-sm text-white/70">By Web Weekend Kathmandu</p>
+      </div>
+      <div class="text-white/70 text-sm">&copy; 2026 WWKTM • Kathmandu, Nepal</div>
+      <div class="justify-self-end flex gap-4 text-white/80">
+        <a href="https://x.com/weekend_web" aria-label="Twitter">X</a>
+        <a href="https://instagram.com/wwktm.co" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/company/wwktm" aria-label="LinkedIn">in</a>
+        <a href="#newsletter" class="underline">Newsletter</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const video = document.getElementById('bgvideo');
+
+    // Function to play forward
+    function playForward() {
+      video.currentTime = 0;
+      video.play();
+    }
+
+    // Function to play reverse
+    function playReverse() {
+      if (video.currentTime <= 0) {
+        video.currentTime = video.duration;
+      }
+      video.currentTime -= 0.033; // Assuming 30fps, adjust as needed
+      if (video.currentTime > 0) {
+        setTimeout(playReverse, 33); // Recurse
+      } else {
+        // Loop: set to end and play reverse again, but since it's after playForward, maybe loop back
+        video.currentTime = video.duration;
+        playReverse();
+      }
+    }
+
+    // Initially play forward
+    video.addEventListener('ended', () => {
+      playReverse();
+    });
+  </script>
+</body>
+</html>
