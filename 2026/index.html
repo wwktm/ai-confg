@@ -16,8 +16,6 @@
   <meta property="og:url" content="https://wwktm.com/ai/2026/" />
   <meta property="og:image" content="https://ai.wwktm.com/2026/aiconf.png" />
   <meta property="og:logo" content="https://ai.wwktm.com/2026/logo.jpg" />
-  <meta property="og:image:width" content="1920" />
-  <meta property="og:image:height" content="1080" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:alt" content="A conference for people building the future with AI" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -88,6 +86,8 @@
     .btn-primary { background: linear-gradient(90deg, #ffffff, #e7e7e7); color:#0b0b0d; }
     .btn-outline { border:1px solid rgba(255,255,255,.6); color:#fff; }
     .badge { border:1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.04); }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar { display:none; }
       /* Animated gradient blobs for hero */
     .blob { position:absolute; width:60vmin; height:60vmin; border-radius:50%; filter: blur(60px); opacity:.55; }
     .blob.red { background: radial-gradient(circle at 30% 30%, rgba(255,84,54,.8), transparent 60%); }
@@ -195,15 +195,40 @@
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h2 class="font-display text-3xl md:text-4xl font-semibold mb-4">Organized by the team behind wwktm</h2>
       <p class="text-white/85 max-w-3xl mx-auto leading-relaxed">
-        AI Conf 2026 is organized by the team behind <strong>Web Weekend Kathmandu</strong> - Nepal’s flagship community‑driven tech conference that ran in 2018 and 2019, each bringing together 300+ developers and designers with international speakers.
-      </p>
-      <p class="text-white/85 max-w-3xl mx-auto leading-relaxed mt-4">
-        We also run <strong>Tech Kura Kani</strong>, a free monthly meetup series for the local tech community, and have organized <strong>BarCamp Kathmandu</strong> in 2024 and 2025 with 200+ enthusiastic participants.
-      </p>
-      <p class="text-white/80 max-w-3xl mx-auto leading-relaxed mt-4">
+      AI Conf 2026 is organized by the team behind <strong>Web Weekend Kathmandu</strong>. <br /><br />
         Our events are known for being inclusive, community‑first, and highly rated by attendees. With AI Conf 2026, we continue this tradition; Offering a premium yet approachable event where builders can learn, share, and connect.
       </p>
+      <!-- <p class="text-white/85 max-w-3xl mx-auto leading-relaxed mt-4"> -->
+      <!-- - Nepal’s flagship community‑driven tech conference that ran in 2018 and 2019, each bringing together 300+ developers and designers with international speakers. -->
+      <!--   We also run <strong>Tech Kura Kani</strong>, a free monthly meetup series for the local tech community, and have organized <strong>BarCamp Kathmandu</strong> in 2024 and 2025 with 200+ enthusiastic participants. -->
+      <!-- </p> -->
+      </div>
     </div>
+      <div class="mt-12 text-left">
+        <div class="mt-6 overflow-hidden -mx-6 md:mx-0">
+          <div class="flex gap-5 overflow-x-auto px-6 md:px-0 pb-4 snap-x snap-mandatory no-scrollbar">
+            <figure class="relative flex-none h-[300px] rounded-2xl overflow-hidden snap-start flex items-center justify-center">
+              <img src="https://wwktm.com/img-2018/group.jpeg" alt="WWKTM community group photo" class="h-full w-auto" loading="lazy" />
+              <figcaption class="absolute bottom-3 left-3 text-[0.7rem] tracking-wide uppercase bg-black/50 text-white/90 px-3 py-1 rounded-full backdrop-blur-sm">WWKTM 2018</figcaption>
+            </figure>
+            <figure class="relative flex-none h-[300px] rounded-2xl overflow-hidden snap-start flex items-center justify-center">
+              <img src="https://media.wwktm.com/aakash-talk.jpg" alt="Talk on AI" class="h-full w-auto" loading="lazy" />
+              <figcaption class="absolute bottom-3 left-3 text-[0.7rem] tracking-wide uppercase bg-black/50 text-white/90 px-3 py-1 rounded-full backdrop-blur-sm">Talk on AI</figcaption>
+            </figure>
+            <figure class="relative flex-none h-[300px] rounded-2xl overflow-hidden snap-start flex items-center justify-center">
+              <img src="https://media.wwktm.com/IMG_3694.jpg" alt="Talk on DevTools and CSS" class="h-full w-auto" loading="lazy" />
+              <figcaption class="absolute bottom-3 left-3 text-[0.7rem] tracking-wide uppercase bg-black/50 text-white/90 px-3 py-1 rounded-full backdrop-blur-sm">Talk on DevTools and CSS</figcaption>
+            </figure>
+            <figure class="relative flex-none h-[300px] rounded-2xl overflow-hidden snap-start flex items-center justify-center">
+              <img src="https://media.wwktm.com/tkk.jpeg" alt="Monthly Tech Kura Kani Meetup" class="h-full w-auto" loading="lazy" />
+              <figcaption class="absolute bottom-3 left-3 text-[0.7rem] tracking-wide uppercase bg-black/50 text-white/90 px-3 py-1 rounded-full backdrop-blur-sm">Monthly Tech Kura Kani Meetup</figcaption>
+            </figure>
+            <figure class="relative flex-none h-[300px] rounded-2xl overflow-hidden snap-start flex items-center justify-center">
+              <img src="https://media.wwktm.com/barcamp.jpeg" alt="BarCamp Kathmandu 2024" class="h-full w-auto" loading="lazy" />
+              <figcaption class="absolute bottom-3 left-3 text-[0.7rem] tracking-wide uppercase bg-black/50 text-white/90 px-3 py-1 rounded-full backdrop-blur-sm">BarCamp Kathmandu 2024</figcaption>
+            </figure>
+          </div>
+        </div>
   </section>
 
   <!-- NEWSLETTER -->
@@ -368,10 +393,24 @@
         <a href="mailto:wwktm.co@gmail.com" class="btn-outline rounded-xl px-4 py-2 text-sm">Become a Sponsor</a>
       </div>
       <!-- <p class="text-white/80 mb-6">Tiered partnerships (Gold / Silver / Bronze) + special roles (Coffee ☕, After‑Party 🍻, Hike 🥾). No title sponsor — the content stays independent.</p> -->
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Gold Sponsor</div>
-        <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Silver Sponsor</div>
-        <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Bronze Sponsor</div>
+      <!-- <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"> -->
+      <!--   <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Gold Sponsor</div> -->
+      <!--   <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Silver Sponsor</div> -->
+      <!--   <div class="glass rounded-2xl h-28 flex items-center justify-center text-white/40">Bronze Sponsor</div> -->
+      <!-- </div> -->
+      <div>
+        <div class="text-white/60 text-sm uppercase tracking-wide mb-4">Supporters</div>
+        <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-8 items-center">
+          <div class="flex items-center justify-center">
+            <img src="https://cdn.homerun.co/59328/programiz-logo1630549344logo.png" alt="Programiz" class="w-auto max-h-[2.75rem] sm:max-h-[3.3rem]" loading="lazy" />
+          </div>
+          <div class="flex items-center justify-center">
+            <img src="https://d21ruw2il25hlk.cloudfront.net/images/logo.svg" alt="Supporter logo" class="w-auto max-h-[2.25rem] sm:max-h-[2.5rem]" loading="lazy" />
+          </div>
+          <div class="flex items-center justify-center">
+            <img src="sponsors/designerduo.svg" alt="Designer Duo" class="w-auto max-h-[2.4rem] sm:max-h-[2.9rem]" loading="lazy" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
