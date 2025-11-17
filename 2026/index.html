@@ -154,6 +154,65 @@
     </div>
   </header>
 
+  <!-- SPEAKERS -->
+  <section id="speakers" class="py-20 md:py-28 bg-base-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+        <div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold">Speakers</h2>
+          <p class="text-white/75 mt-2">First confirmed speaker — more to be announced.</p>
+        </div>
+        <a href="#cfs" class="btn-outline rounded-xl px-4 py-2 text-sm w-fit self-start sm:self-end">Apply to Speak</a>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="rounded-2xl p-1 sm:p-2 flex flex-col" data-modal-open="vlad-modal">
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden flex items-center justify-center">
+            <img src="speakers/vlad.png" alt="Vlad Dyanchenko speaking on stage" class="h-full w-full object-contain drop-shadow-glow">
+          </div>
+          <div class="mt-4 flex-1 flex flex-col gap-2">
+            <div>
+              <h3 class="font-semibold">Vlad Dyanchenko</h3>
+              <p class="text-sm text-white/60">Platform Engineer | OSS Contributor</p>
+              <p class="text-white/70">The Perfect Programming Language for the AI Era: How Should It Look?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker detail modal -->
+  <div id="vlad-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div data-modal-overlay class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-3xl w-full glass rounded-2xl border border-white/15 bg-base-800 p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk</p>
+          <h3 class="font-semibold text-xl">The Perfect Programming Language for the AI Era: How Should It Look?</h3>
+          <p class="text-white/70 mt-1">Vlad Dyanchenko — Platform Engineer | OSS Contributor</p>
+        </div>
+        <button type="button" class="text-white/60 hover:text-white transition" data-modal-close aria-label="Close talk details">
+          ✕
+        </button>
+      </div>
+      <div class="mt-5 space-y-6 text-white/85">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <p class="text-xs uppercase tracking-wide text-white/60">Speaker</p>
+          <p class="font-semibold text-lg text-white">Vlad Dyanchenko</p>
+          <p class="text-sm text-white/70">Platform Engineer | OSS Contributor</p>
+          <p class="mt-2">Vlad is a seasoned full-stack developer with over a decade of experience building and maintaining scalable B2B platforms, and a dedicated open-source contributor. At Cybergizer he works in a hybrid SWE/CRE/SRE role focused on production reliability, systems design, and cross-functional engineering using Ruby, Elixir, and Rust.</p>
+          <p class="mt-2">He is a member of the Diesel.rs contributor team and the creator of opencryptolist.xyz, fostering OSS contributions in the blockchain industry. He has open-sourced, maintained, and contributed to several libraries in the Ruby and Rust ecosystems (including finance-rb, solscan-mcp, and visual-cryptography).</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk details</p>
+          <p>Briefly speaking, let's look at the current landscape of programming languages and imagine what a next-generation language designed for both humans and machines would look like.</p>
+          <p>The software development landscape is undergoing a seismic shift. Three years after ChatGPT's debut, AI coding assistants have moved from novelty to necessity. But here's the paradox: while AI can write code in any language, the choice of language dramatically affects the quality, cost, and reliability of AI-generated code. This talk raises a fundamental question: What characteristics define the perfect programming language for the AI era?</p>
+          <p>In this talk, we'll explore the evolution of programming languages in the age of AI: how expressiveness, safety, and performance converge to form a new paradigm of communication between humans and intelligent systems. We'll compare modern statically and dynamically typed languages such as Rust, Python, Go, and Ruby, and draw lessons from their strengths and limitations. We'll discuss the economics of "cheap tokens" versus "expensive correctness," how compilers become feedback systems for agents, and why traits, macros, and extensibility matter more than ever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ABOUT -->
   <section id="about" class="relative py-20 md:py-28">
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-base-800/40 to-transparent"></div>
@@ -282,35 +341,6 @@
     </div>
   </section>
 
-  <!-- SPEAKERS (placeholder) -->
-  <!-- <section id="speakers" class="py-20 md:py-28 bg-base-800"> -->
-  <!--   <div class="max-w-6xl mx-auto px-6"> -->
-  <!--     <div class="flex items-end justify-between gap-6 mb-8"> -->
-  <!--       <h2 class="font-display text-3xl md:text-4xl font-semibold">Speakers</h2> -->
-  <!--       <a href="#cfs" class="btn-outline rounded-xl px-4 py-2 text-sm">Apply to Speak</a> -->
-  <!--     </div> -->
-  <!--     <p class="text-white/75 mb-10">A mix of international and local builders sharing practical insights from building <em>with</em> and <em>for</em> AI.</p> -->
-  <!--     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"> -->
-
-  <!--       <div class="glass rounded-2xl p-5"> -->
-  <!--         <div class="aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">Photo</div> -->
-  <!--         <h3 class="mt-4 font-semibold">Speaker Name</h3> -->
-  <!--         <p class="text-sm text-white/70">Talk title goes here</p> -->
-  <!--       </div> -->
-  <!--       <div class="glass rounded-2xl p-5"> -->
-  <!--         <div class="aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">Photo</div> -->
-  <!--         <h3 class="mt-4 font-semibold">Speaker Name</h3> -->
-  <!--         <p class="text-sm text-white/70">Talk title goes here</p> -->
-  <!--       </div> -->
-  <!--       <div class="glass rounded-2xl p-5"> -->
-  <!--         <div class="aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40">Photo</div> -->
-  <!--         <h3 class="mt-4 font-semibold">Speaker Name</h3> -->
-  <!--         <p class="text-sm text-white/70">Talk title goes here</p> -->
-  <!--       </div> -->
-  <!--     </div> -->
-  <!--   </div> -->
-  <!-- </section> -->
-  <!---->
   <section id="cfs" class="relative py-20 md:py-28 bg-base-700">
   <div class="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-base-800/40 to-transparent"></div>
   <div class="max-w-4xl mx-auto px-6 text-left">
@@ -399,7 +429,7 @@
         <div class="glass rounded-2xl p-6">
           <div class="text-sm uppercase tracking-wide text-white/60">Believer</div>
           <div class="mt-2 text-3xl font-semibold">NPR 3,000</div>
-          <p class="mt-1 text-sm font-medium text-emerald-300">11 remaining</p>
+          <p class="mt-1 text-sm font-medium text-emerald-300">7 remaining</p>
           <p class="mt-2 text-white/70">For the earliest supporters!</p>
           <a class="mt-6 block w-full btn-primary rounded-xl px-5 py-3 font-semibold" href="https://tickets.wwktm.com?ticketType=believer" target="_blank">Get Believer Ticket</a>
         </div>
@@ -439,6 +469,34 @@
       </div>
     </div>
   </footer>
+  <script>
+    const vladModal = document.getElementById('vlad-modal');
+
+    if (vladModal) {
+      const toggleModal = (show) => {
+        vladModal.classList.toggle('hidden', !show);
+        vladModal.classList.toggle('flex', show);
+        document.body.classList.toggle('overflow-hidden', show);
+      };
+
+      document.querySelectorAll('[data-modal-open="vlad-modal"]').forEach((btn) => {
+        btn.addEventListener('click', () => toggleModal(true));
+      });
+
+      vladModal.querySelectorAll('[data-modal-close]').forEach((btn) => {
+        btn.addEventListener('click', () => toggleModal(false));
+      });
+
+      const overlay = vladModal.querySelector('[data-modal-overlay]');
+      if (overlay) overlay.addEventListener('click', () => toggleModal(false));
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !vladModal.classList.contains('hidden')) {
+          toggleModal(false);
+        }
+      });
+    }
+  </script>
   <script>
     const video = document.getElementById('bgvideo');
 
