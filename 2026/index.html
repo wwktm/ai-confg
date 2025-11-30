@@ -245,7 +245,7 @@
       </div>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="amit-modal">
-          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-3xl overflow-hidden flex items-center justify-center bg-white/10 border border-white/15 rotate-[-5deg] hover:rotate-0 transition-all">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
             <img src="speakers/amit.png" alt="Portrait of Amit Timalsina" class="h-full w-full object-cover">
           </div>
           <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
@@ -257,7 +257,7 @@
           </div>
         </div>
         <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="vlad-modal">
-          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-3xl overflow-hidden flex items-center justify-center bg-white/10 border border-white/15 rotate-[5deg] hover:rotate-0 transition-all">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
             <img src="speakers/vlad.jpeg" alt="Vlad Dyanchenko" class="h-full w-full object-cover">
           </div>
           <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
@@ -265,6 +265,18 @@
               <h3 class="font-semibold">Vlad Dyanchenko</h3>
               <p class="text-sm text-white/60">Platform Engineer | OSS Contributor</p>
               <p class="text-white/70">The Perfect Programming Language for the AI Era: How Should It Look?</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="sayantika-modal">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
+            <img src="speakers/sayantika.png" alt="Sayantika Banik" class="h-full w-full object-cover">
+          </div>
+          <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
+            <div>
+              <h3 class="font-semibold">Sayantika Banik</h3>
+              <p class="text-sm text-white/60">Founder, DataJourneyHQ | Open Source Maintainer</p>
+              <p class="text-white/70">The Art &amp; Science of Designing LLM Systems</p>
             </div>
           </div>
         </div>
@@ -299,6 +311,36 @@
           <p>What does it take to build a production-ready AI system that processes 120,000+ complex documents at around $2 per document? This talk shares lessons from building an AI engine that digitizes and structures unstructured clinical trial data at enterprise scale.</p>
           <p>We'll explore how the team preserved layout and document structure, detected and extracted tricky tables (nested, merged cells, domain-specific formatting), and used chain-of-thought reasoning with citation tracking to keep outputs verifiable in a regulated environment.</p>
           <p>You'll also hear the operational realities of running high-throughput inference on AWS Bedrock, balancing RPM/TPM, accuracy vs. speed trade-offs, and choosing between custom and foundation models after spending over half a million dollars on research and infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sayantika-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div data-modal-overlay class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-3xl w-full glass rounded-2xl border border-white/15 bg-base-800 p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk</p>
+          <h3 class="font-semibold text-xl">The Art &amp; Science of Designing LLM Systems</h3>
+          <p class="text-white/70 mt-1">Sayantika Banik — Founder, DataJourneyHQ</p>
+        </div>
+        <button type="button" class="text-white/60 hover:text-white transition" data-modal-close aria-label="Close talk details">
+          ✕
+        </button>
+      </div>
+      <div class="mt-5 space-y-6 text-white/85">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <p class="text-xs uppercase tracking-wide text-white/60">Speaker</p>
+          <p class="font-semibold text-lg text-white">Sayantika Banik</p>
+          <p class="text-sm text-white/70">Founder, DataJourneyHQ • Maintainer, DataJourney toolkit</p>
+          <p class="mt-2">Sayantika builds AI systems that pair creativity with rigor: secure, observable, and intentional. She founded DataJourneyHQ and maintains DataJourney, a design-first open source data management toolkit backed by the GitHub Secure Open Source fund. Her recent work spans SciPy/NumPy contributions, burnout-detection research with actionable recommendations, and shipping “Spin” with Stéfan van der Walt.</p>
+          <p class="mt-2">She teaches, mentors, and advocates for open research—reviewing for JOSS and CAKE, serving with the PSF Diversity &amp; Inclusion WG, and mentoring across R-Ladies, DigitalBoost, and PyCon/PyLadies programs. Past roles include board seats (Django Software Foundation), CFP review for EuroPython/Pyjamas/Tapia, and community leadership with NumFocus, RSE Asia, GDG, and WTM Bangalore.</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk details</p>
+          <p>An LLM call alone is just noise without a system that’s secure, observable, and built with intent. Too many products rely on bare-bone prompting and hope for magic. This talk shows how to blend creativity with engineering discipline so AI earns trust, not just attention.</p>
+          <p>Learn how to design LLM systems that think, feel, and behave responsibly by design—clear guardrails, telemetry that catches drift, and UX that sets expectations. Sayantika shares patterns for aligning model behavior with product intent while keeping humans-in-the-loop and governance intact.</p>
         </div>
       </div>
     </div>
@@ -630,7 +672,7 @@
       });
     };
 
-    ['vlad-modal', 'amit-modal'].forEach(setupModal);
+    ['vlad-modal', 'amit-modal', 'sayantika-modal'].forEach(setupModal);
   </script>
   <script>
     const video = document.getElementById('bgvideo');
