@@ -285,6 +285,42 @@
             </div>
           </div>
         </div>
+        <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="dijup-modal">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
+            <img src="speakers/dijup.jpeg" alt="Dijup Tuladhar" class="h-full w-full object-cover">
+          </div>
+          <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
+            <div>
+              <h3 class="font-semibold">Dijup Tuladhar</h3>
+              <p class="text-sm text-white/60">UI/UX Developer &amp; Design Leader</p>
+              <p class="text-white/70">Beyond UI/UX - How AI Tools Are Transforming Design Leadership, Decision-Making &amp; Strategy</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="manu-modal">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
+            <img src="speakers/manu.jpeg" alt="Manu Chatterjee" class="h-full w-full object-cover">
+          </div>
+          <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
+            <div>
+              <h3 class="font-semibold">Manu Chatterjee</h3>
+              <p class="text-sm text-white/60">VP &amp; Head of AI, Leapfrog Technology</p>
+              <p class="text-white/70">What AI Actually Does: From Unstructured Chaos to Intelligent Systems</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="saugat-modal">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
+            <img src="speakers/saugat.jpeg" alt="Saugat Acharya" class="h-full w-full object-cover">
+          </div>
+          <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
+            <div>
+              <h3 class="font-semibold">Saugat Acharya</h3>
+              <p class="text-sm text-white/60">Principal Engineer, Laudio | OSS &amp; Tech Enthusiast</p>
+              <p class="text-white/70">Evalobility: Why PMs, Designers, and Engineers Now Share the Same Dashboard</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -316,6 +352,37 @@
           <p>What does it take to build a production-ready AI system that processes 120,000+ complex documents at around $2 per document? This talk shares lessons from building an AI engine that digitizes and structures unstructured clinical trial data at enterprise scale.</p>
           <p>We'll explore how the team preserved layout and document structure, detected and extracted tricky tables (nested, merged cells, domain-specific formatting), and used chain-of-thought reasoning with citation tracking to keep outputs verifiable in a regulated environment.</p>
           <p>You'll also hear the operational realities of running high-throughput inference on AWS Bedrock, balancing RPM/TPM, accuracy vs. speed trade-offs, and choosing between custom and foundation models after spending over half a million dollars on research and infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dijup-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div data-modal-overlay class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-3xl w-full glass rounded-2xl border border-white/15 bg-base-800 p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk</p>
+          <h3 class="font-semibold text-xl">Beyond UI/UX - How AI Tools Are Transforming Design Leadership, Decision-Making &amp; Strategy</h3>
+          <p class="text-white/70 mt-1">Dijup Tuladhar — UI/UX Developer &amp; Design Leader</p>
+        </div>
+        <button type="button" class="text-white/60 hover:text-white transition" data-modal-close aria-label="Close talk details">
+          ✕
+        </button>
+      </div>
+      <div class="mt-5 space-y-6 text-white/85">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <p class="text-xs uppercase tracking-wide text-white/60">Speaker</p>
+          <p class="font-semibold text-lg text-white">Dijup Tuladhar</p>
+          <p class="text-sm text-white/70">UI/UX Developer &amp; Design Leader</p>
+          <p class="mt-2">Dijup is an enthusiastic UI/UX developer known for leading teams that ship on tight deadlines. He quickly grasps new ideas, turning them into creative solutions while staying hands-on with design systems and frontend craft.</p>
+          <p class="mt-2">He thrives under pressure, balancing individual initiative with collaborative leadership to keep teams productive and aligned.</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk details</p>
+          <p>This talk explores how AI is reshaping design leadership beyond pixel pushing.</p>
+          <p>You'll see how tools like Figma, Figma Make, and Copilot speed up research synthesis, streamline design ops, and boost creative direction through intelligent automation.</p>
+          <p>Dijup shares workflows for faster decision-making, better cross-team collaboration, and strategic thinking that lets principal designers scale impact while protecting quality and vision.</p>
         </div>
       </div>
     </div>
@@ -384,6 +451,68 @@
           <p>Briefly speaking, let's look at the current landscape of programming languages and imagine what a next-generation language designed for both humans and machines would look like.</p>
           <p>The software development landscape is undergoing a seismic shift. Three years after ChatGPT's debut, AI coding assistants have moved from novelty to necessity. But here's the paradox: while AI can write code in any language, the choice of language dramatically affects the quality, cost, and reliability of AI-generated code. This talk raises a fundamental question: What characteristics define the perfect programming language for the AI era?</p>
           <p>In this talk, we'll explore the evolution of programming languages in the age of AI: how expressiveness, safety, and performance converge to form a new paradigm of communication between humans and intelligent systems. We'll compare modern statically and dynamically typed languages such as Rust, Python, Go, and Ruby, and draw lessons from their strengths and limitations. We'll discuss the economics of "cheap tokens" versus "expensive correctness," how compilers become feedback systems for agents, and why traits, macros, and extensibility matter more than ever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="manu-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div data-modal-overlay class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-3xl w-full glass rounded-2xl border border-white/15 bg-base-800 p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk</p>
+          <h3 class="font-semibold text-xl">What AI Actually Does: From Unstructured Chaos to Intelligent Systems</h3>
+          <p class="text-white/70 mt-1">Manu Chatterjee — VP &amp; Head of AI, Leapfrog Technology, Inc.</p>
+        </div>
+        <button type="button" class="text-white/60 hover:text-white transition" data-modal-close aria-label="Close talk details">
+          ✕
+        </button>
+      </div>
+      <div class="mt-5 space-y-6 text-white/85">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <p class="text-xs uppercase tracking-wide text-white/60">Speaker</p>
+          <p class="font-semibold text-lg text-white">Manu Chatterjee</p>
+          <p class="text-sm text-white/70">VP &amp; Head of AI @ Leapfrog Technology, Inc.</p>
+          <p class="mt-2">Manu is a hands-on engineering leader who prototypes and ships new tech to market. He pairs deep experience in speech recognition, ML, image processing, and cloud software with a passion for people and collaboration.</p>
+          <p class="mt-2">An experienced presenter and writer, he focuses on solving real problems with pragmatic AI systems.</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk details</p>
+          <p>Everyone talks about chatbots, but what capability actually changed the world? This talk contrasts old AI limits with what became possible once LLMs could turn messy input into structured decisions, actions, and content.</p>
+          <p>We'll explore how LLMs reason, plan, and drive workflows, and why hallucination is a consequence of how these models generate ideas—not just a bug.</p>
+          <p>Through practical examples, Manu reveals the real "there there" behind GenAI and how intent-to-output systems reshape how builders design products and architectures.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="saugat-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div data-modal-overlay class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-3xl w-full glass rounded-2xl border border-white/15 bg-base-800 p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk</p>
+          <h3 class="font-semibold text-xl">Evalobility - Why PMs, Designers, and Engineers Now Share the Same Dashboard</h3>
+          <p class="text-white/70 mt-1">Saugat Acharya — Principal Engineer, Laudio</p>
+        </div>
+        <button type="button" class="text-white/60 hover:text-white transition" data-modal-close aria-label="Close talk details">
+          ✕
+        </button>
+      </div>
+      <div class="mt-5 space-y-6 text-white/85">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <p class="text-xs uppercase tracking-wide text-white/60">Speaker</p>
+          <p class="font-semibold text-lg text-white">Saugat Acharya</p>
+          <p class="text-sm text-white/70">Principal Engineer, Laudio</p>
+          <p class="mt-2">Saugat is an open source and tech enthusiast with 10+ years building web platforms and cloud infrastructure. At Laudio he leads engineering for healthcare operations products, lately diving deep into LLMs and AI tooling.</p>
+          <p class="mt-2">He will share lessons from shipping AI features that must be observable, evaluated, and cost-aware while still delivering reliable UX.</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk details</p>
+          <p>"LLM Evaluations + Observability (Evalobility)" explores how modern AI teams align on a single dashboard for evaluations, experiments, and monitoring.</p>
+          <p>The session walks through how designers, PMs, and engineers use shared traces to keep LLM outputs helpful, including Datadog LLM Observability screenshots and trace examples tailored to these workflows.</p>
+          <p>You'll see practical ways to balance performance, cost, and output quality by tracing model behavior, validating UX impact, and keeping human feedback in the loop.</p>
         </div>
       </div>
     </div>
@@ -490,9 +619,9 @@
       <div>
         <div class="text-white/60 text-sm uppercase tracking-wide">Supporters</div>
         <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-8 items-center">
-          <!-- <div class="flex items-center justify-center"> -->
-          <!--   <img src="https://cdn.homerun.co/59328/programiz-logo1630549344logo.png" alt="Programiz" class="w-auto max-h-[2.75rem] sm:max-h-[3.3rem]" loading="lazy" /> -->
-          <!-- </div> -->
+          <div class="flex items-center justify-center">
+            <img src="https://cdn.homerun.co/59328/programiz-logo1630549344logo.png" alt="Programiz" class="w-auto max-h-[2.75rem] sm:max-h-[3.3rem]" loading="lazy" />
+          </div>
           <div class="flex items-center justify-center">
             <img src="https://d21ruw2il25hlk.cloudfront.net/images/logo.svg" alt="Supporter logo" class="w-auto max-h-[2.25rem] sm:max-h-[2.5rem]" loading="lazy" />
           </div>
@@ -668,7 +797,21 @@
       });
     };
 
-    ['vlad-modal', 'amit-modal', 'sayantika-modal'].forEach(setupModal);
+    ['vlad-modal', 'amit-modal', 'sayantika-modal', 'dijup-modal', 'saugat-modal', 'manu-modal'].forEach(setupModal);
+  </script>
+  <script>
+    const shuffleSpeakers = () => {
+      const grid = document.querySelector('#speakers .grid');
+      if (!grid) return;
+      const cards = Array.from(grid.children);
+      for (let i = cards.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+      }
+      cards.forEach((card) => grid.appendChild(card));
+    };
+
+    shuffleSpeakers();
   </script>
   <script>
     const video = document.getElementById('bgvideo');
