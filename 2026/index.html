@@ -321,6 +321,30 @@
             </div>
           </div>
         </div>
+        <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="pranjal-modal">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
+            <img src="speakers/pranjal.jpeg" alt="Portrait of Pranjal Timsina" class="h-full w-full object-cover">
+          </div>
+          <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
+            <div>
+              <h3 class="font-semibold">Pranjal Timsina</h3>
+              <p class="text-sm text-white/60">Synapse Technologies | Visiting Lecturer, ISMT College</p>
+              <p class="text-white/70">AI &amp; Security</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-1 sm:p-2 flex flex-col items-center cursor-pointer" data-modal-open="haihao-modal">
+          <div class="relative w-44 h-44 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center bg-white/10 border border-white/15">
+            <img src="speakers/haihao.jpeg" alt="Portrait of Haihao Liu" class="h-full w-full object-cover">
+          </div>
+          <div class="mt-4 flex-1 flex flex-col gap-2 text-center">
+            <div>
+              <h3 class="font-semibold">Haihao Liu</h3>
+              <p class="text-sm text-white/60">ML Researcher, Algoverse | Founder, Ternity Education</p>
+              <p class="text-white/70">Building humanity-first AI for the 22nd century</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -513,6 +537,73 @@
           <p>"LLM Evaluations + Observability (Evalobility)" explores how modern AI teams align on a single dashboard for evaluations, experiments, and monitoring.</p>
           <p>The session walks through how designers, PMs, and engineers use shared traces to keep LLM outputs helpful, including Datadog LLM Observability screenshots and trace examples tailored to these workflows.</p>
           <p>You'll see practical ways to balance performance, cost, and output quality by tracing model behavior, validating UX impact, and keeping human feedback in the loop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pranjal-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div data-modal-overlay class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-3xl w-full glass rounded-2xl border border-white/15 bg-base-800 p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk</p>
+          <h3 class="font-semibold text-xl">AI &amp; Security</h3>
+          <p class="text-white/70 mt-1">Pranjal Timsina — Synapse Technologies | Visiting Lecturer, ISMT College</p>
+        </div>
+        <button type="button" class="text-white/60 hover:text-white transition" data-modal-close aria-label="Close talk details">
+          ✕
+        </button>
+      </div>
+      <div class="mt-5 space-y-6 text-white/85">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <p class="text-xs uppercase tracking-wide text-white/60">Speaker</p>
+          <p class="font-semibold text-lg text-white">Pranjal Timsina</p>
+          <p class="text-sm text-white/70">Synapse Technologies | Visiting Lecturer, ISMT College</p>
+          <p class="mt-2">I've been working in tech for a couple of years now and am currently building kanoonportal.com - an early stage legal tech platform that's mostly a knowledge repository with a touch of AI.</p>
+          <p class="mt-2">I spend most of my time at Synapse Technologies doing whatever the situation demands me to do and I also am a visiting lecturer of Cloud Computing &amp; Machine Learning at ISMT college.</p>
+          <p class="mt-2">I love sharing ideas and having discussions - that's all.</p>
+          <p class="mt-2">I've spoken at Asia-Pacific Regional Internet Governance Forum about AI and security in the Justice sector alongside Jaco Du Toit, Prof. Dr. Durgambini Patel, and Hon. Justice Nahakul Subedi earlier this year. I also gave a talk during yIGF Nepal 2024.</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk details</p>
+          <p>AI security must be considered from multiple angles - preventing users from exploiting your AI platform, making sure your AI does not produce harmful content, and keeping personal information of end users safe.</p>
+          <p>&quot;Non-deterministic automation&quot; is taking over almost everything and new threat surfaces are emerging faster than we can keep up.</p>
+          <p>The creation of environments to facilitate end users' AI agents taking actions on their behalf is also quite interesting from a security and liabilities perspective.</p>
+          <p>Tool call poisoning, retrieval of &quot;private&quot; info that leaked into the training data, and training data poisoning are also topics I've planned to speak on.</p>
+          <p>My presentation will mostly revolve around these ideas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="haihao-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div data-modal-overlay class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative max-w-3xl w-full glass rounded-2xl border border-white/15 bg-base-800 p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk</p>
+          <h3 class="font-semibold text-xl">Building humanity-first AI for the 22nd century</h3>
+          <p class="text-white/70 mt-1">Haihao Liu — ML Researcher, Algoverse | Founder, Ternity Education</p>
+        </div>
+        <button type="button" class="text-white/60 hover:text-white transition" data-modal-close aria-label="Close talk details">
+          ✕
+        </button>
+      </div>
+      <div class="mt-5 space-y-6 text-white/85">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <p class="text-xs uppercase tracking-wide text-white/60">Speaker</p>
+          <p class="font-semibold text-lg text-white">Haihao Liu</p>
+          <p class="text-sm text-white/70">ML Researcher, Algoverse | Founder, Ternity Education</p>
+          <p class="mt-2">After growing up in equal parts China, US, and Hong Kong, Haihao graduated summa cum laude from Rice University with degrees in materials science and mathematics. He previously worked as an NSF Graduate Research Fellow and PhD candidate at MIT, researching machine learning for making new materials and (L)LMs before they were &quot;large&quot;.</p>
+          <p class="mt-2">Haihao has also worked and volunteered as a teacher with various organizations, and is passionate about education equity and reform. He is pursuing a Master of Education in Learning Design, Innovation, and Technology at Harvard, and previously served as the Education Director for the nonprofit Asian Community Development Center.</p>
+          <p class="mt-2">Since 2023, Haihao has been involved with AI safety and responsible tech, including facilitating for BlueDot's AI alignment course, as well as working with AIS Asia, AIS Global Society, and Cooperative AI Foundation on field-building. He is currently an ML researcher at Algoverse, mentoring advanced high school and college students conducting AI research.</p>
+          <p class="mt-2">Haihao founded the nonprofit startup Ternity Education, which aims to combine the bleeding edge of AI with our modern understanding of neuroscience and learning sciences. He can be found writing and sharing content on LinkedIn, combatting AI hype and asking deeper questions about AI.</p>
+        </div>
+        <div class="space-y-3">
+          <p class="text-xs uppercase tracking-wide text-white/60">Talk details</p>
+          <p>Few would argue against the notion that AI will have a transformative effect on humanity, likely within our lifetimes. Yet we still as of yet have a very poor understanding of how AI works at a fundamental, mathematical level, and thus can't control it nor predict its behavior. Moreover, individuals and institutions alike seem to be rushing to adopt AI in spite of this fact, which for me is a cause for grave concern.</p>
+          <p>My talk will be on AI for humanity, AI safety for everyone (especially children), and encouraging all the AI builders and engineers in attendance to slow down and think more deeply about the human implication of their work. I will also talk about my own research at the intersection of AI, neuroscience, and education.</p>
         </div>
       </div>
     </div>
@@ -806,7 +897,7 @@
       });
     };
 
-    ['vlad-modal', 'amit-modal', 'sayantika-modal', 'dijup-modal', 'saugat-modal', 'manu-modal'].forEach(setupModal);
+    ['vlad-modal', 'amit-modal', 'sayantika-modal', 'dijup-modal', 'saugat-modal', 'manu-modal', 'pranjal-modal', 'haihao-modal'].forEach(setupModal);
   </script>
   <script>
     const shuffleSpeakers = () => {
