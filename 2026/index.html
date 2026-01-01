@@ -938,6 +938,17 @@
     </div>
   </section>
 
+  <!-- ATTENDING COMPANIES -->
+  <section id="attending" class="py-20 md:py-28 bg-base-800">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mb-6">Who's Attending?</h2>
+      <p class="text-white/70 mb-10 max-w-2xl mx-auto">Join engineers, founders, and product leaders from these companies.</p>
+      <div id="company-list" class="flex flex-wrap justify-center gap-3">
+        <!-- Companies injected via JS -->
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="relative">
     <div class="h-px w-full bg-gradient-to-r from-[#ef4444] via-white to-[#3b82f6]"></div>
@@ -999,6 +1010,30 @@
     };
 
     shuffleSpeakers();
+  </script>
+  <script>
+    const companies = [
+      "A & G Tech", "Aarya Technology and Management", "Abacus Insights", "ACCA", "Act3 AI", "Aerial arts llc",
+      "Arbyte Solution", "Asterdio Inc.", "Awesome Motive", "Baato Maps", "Bhaktapur.com",
+      "CareBoarding Technology Platform", "Cartmade Ecommerce Pvt.Ltd.", "CloudFactory", "Cloudlaya",
+      "Code Pixelz Media", "Codewing Solutions", "Codeyard", "DataChain Inc", "Devfinity",
+      "Diagonal Technologies Pvt. Ltd", "Digital Product Labs", "dlsurf", "Dormo Solutions Pvt. Ltd.",
+      "ENPHO", "EON", "Fusemachines", "Everything Creatives Pvt. Ltd.", "Genesis Web Technology Pvt. Ltd.",
+      "Golden Technosoft", "Grepsr", "GritFeat Solutions", "Grow It", "Gurkha Technology", "Hazesoft PL",
+      "Himalogic Software Pvt. Ltd.", "Hitachi Energy", "Houzz", "Husig.ai", "Jankari Tech Pvt. Ltd.",
+      "Kathmandu Codes", "Leapfrog Technology", "Logpoint", "Nerd Platoon", "Programiz", "Pairlab.ai",
+      "PHIL", "PixelUp Studio Pvt. Ltd.", "Plantura GmbH", "Plerion", "PNC Bank", "Proshore", "Rippey.ai",
+      "Roam Research", "ShowSeeker", "Sisyphus Group", "Stone Digital", "Sums Nepal", "Sustainable Solution",
+      "Symbiosis Solutions", "Taatviks Tech Pvt. Ltd.", "Tekkon Technologies", "Tripcart", "United Fray",
+      "Upveda Technology Pvt. Ltd.", "Usome", "Varicon Pty Ltd", "Verisk Nepal", "WyzAuto pty",
+      "Young Innovations", "ZeroTB AI"
+    ];
+
+    const companyContainer = document.getElementById('company-list');
+    if (companyContainer) {
+      const shuffled = [...companies].sort(() => 0.5 - Math.random());
+      companyContainer.innerHTML = shuffled.map(c => `<span class="badge rounded-full px-4 py-2 text-sm text-white/80 hover:text-white transition cursor-default">${c}</span>`).join('');
+    }
   </script>
   <script>
     const video = document.getElementById('bgvideo');
