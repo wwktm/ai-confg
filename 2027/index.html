@@ -183,17 +183,8 @@
     </div>
 
     <div class="relative z-10 max-w-3xl mx-auto px-6 pt-28 pb-20 text-center">
-      <!-- Status badge -->
-      <div class="inline-flex items-center gap-2.5 glass rounded-full px-4 py-1.5 text-sm text-white/80">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber opacity-60"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-amber"></span>
-        </span>
-        Save the date &mdash; 2027
-      </div>
-
       <!-- Logo -->
-      <h1 class="mt-8 font-display tracking-tight">
+      <h1 class="font-display tracking-tight">
         <span class="sr-only">AI Conf 2027</span>
         <img src="logo.svg" alt="AI Conf" width="400" class="mx-auto w-64 sm:w-80 md:w-[400px] h-auto drop-shadow-warm">
       </h1>
@@ -284,7 +275,7 @@
         <a href="https://x.com/wwktm_com" aria-label="X (Twitter)" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="https://instagram.com/wwktm.co" aria-label="Instagram" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
+        <a href="https://www.instagram.com/wwktm_com" aria-label="Instagram" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.25"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
         </a>
         <a href="https://www.linkedin.com/company/wwktm" aria-label="LinkedIn" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
@@ -334,6 +325,44 @@
           document.getElementById('email').focus({ preventScroll: true });
         }, reduceMotion ? 0 : 500);
       });
+
+      // Typewriter placeholder: companies people attended AI Conf 2026 from
+      var emailInput = document.getElementById('email');
+      if (!reduceMotion) {
+        var companies = [
+          'fusemachines.com', 'leapfrog.com', 'logpoint.com', 'programiz.com',
+          'cloudfactory.com', 'proshore.com', 'verisk.com', 'houzz.com',
+          'laudio.com', 'grepsr.com', 'zerotb.ai', 'roamresearch.com'
+        ];
+        var caret = '\u258F';
+        var idx = Math.floor(Math.random() * companies.length);
+        var pos = 0, phase = 'typing', blinks = 0;
+
+        var tick = function () {
+          var text = 'you@' + companies[idx];
+          if (phase === 'typing') {
+            pos++;
+            emailInput.setAttribute('placeholder', text.slice(0, pos) + caret);
+            if (pos === text.length) { phase = 'blink'; blinks = 0; return setTimeout(tick, 350); }
+            return setTimeout(tick, 40 + Math.random() * 60);
+          }
+          if (phase === 'blink') {
+            blinks++;
+            emailInput.setAttribute('placeholder', text + (blinks % 2 ? '' : caret));
+            if (blinks >= 5) { phase = 'deleting'; return setTimeout(tick, 400); }
+            return setTimeout(tick, 400);
+          }
+          pos--;
+          emailInput.setAttribute('placeholder', text.slice(0, pos) + caret);
+          if (pos === 0) {
+            phase = 'typing';
+            idx = (idx + 1) % companies.length;
+            return setTimeout(tick, 500);
+          }
+          setTimeout(tick, 22);
+        };
+        setTimeout(tick, 1200);
+      }
     })();
   </script>
 </body>
