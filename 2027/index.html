@@ -133,6 +133,34 @@
     .card { transition: transform .25s ease, border-color .25s ease; }
     .card:hover { transform: translateY(-4px); border-color: rgba(255,179,71,0.35); }
 
+    /* Footer divider with a traveling glimmer */
+    .footer-line {
+      position: relative;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,106,61,.4), rgba(255,179,71,.25) 40%, transparent);
+    }
+    .footer-line .glimmer {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 260px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(255,179,71,.9) 45%, rgba(255,106,61,.9) 55%, transparent);
+      filter: blur(4px);
+      mix-blend-mode: screen;
+      opacity: .85;
+      animation: glimmer 7s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    @keyframes glimmer {
+      0%   { transform: translate(-180px, -50%); opacity: 0; }
+      8%   { opacity: 1; }
+      55%  { transform: translate(100vw, -50%); opacity: 1; }
+      62%  { opacity: 0; }
+      100% { transform: translate(100vw, -50%); opacity: 0; }
+    }
+
     .text-gradient {
       background: linear-gradient(95deg, #ff6a3d, #ffb347 70%);
       -webkit-background-clip: text;
@@ -142,7 +170,8 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .hero-bg { animation: none; }
+      .hero-bg, .footer-line .glimmer { animation: none; }
+      .footer-line .glimmer { display: none; }
       *, *::before, *::after { transition-duration: 0.01ms !important; }
     }
   </style>
@@ -264,13 +293,13 @@
 
   <!-- FOOTER -->
   <footer class="relative">
-    <div class="h-px w-full bg-gradient-to-r from-ember via-amber to-transparent opacity-60"></div>
+    <div class="footer-line" aria-hidden="true"><span class="glimmer"></span></div>
     <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 items-center justify-between">
       <div class="text-center md:text-left">
         <img src="logo.svg" alt="AI Conf 2027" class="h-7 w-auto mx-auto md:mx-0">
         <p class="mt-2 text-sm text-white/50">By <a href="https://wwktm.com" class="hover:text-white transition underline decoration-white/20 underline-offset-4">Web Weekend Kathmandu</a></p>
       </div>
-      <div class="text-white/50 text-sm order-last md:order-none">&copy; 2027 WWKTM &middot; Kathmandu, Nepal</div>
+      <div class="text-white/50 text-sm order-last md:order-none">&copy; 2027 wwktm &middot; Kathmandu, Nepal</div>
       <div class="flex gap-3">
         <a href="https://x.com/wwktm_com" aria-label="X (Twitter)" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
