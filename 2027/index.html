@@ -95,6 +95,10 @@
   <style>
     html { scroll-behavior: smooth; }
 
+    /* The footer glimmer travels to 100vw and, being 260px wide, overflows the
+       right edge each cycle — clipping here stops the flashing horizontal scrollbar. */
+    html, body { overflow-x: hidden; overflow-x: clip; }
+
     /* Slow cinematic drift on the hero artwork */
     @keyframes drift {
       0%   { transform: scale(1.08) translate3d(0, 0, 0); }
