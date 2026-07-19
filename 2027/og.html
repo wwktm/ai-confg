@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  * { margin: 0; }
+  body { width: 1200px; height: 630px; overflow: hidden; font-family: 'Space Grotesk', sans-serif; }
+  .bg-art {
+    position: absolute; inset: 0;
+    background: url('bg.png') center/cover no-repeat;
+  }
+  .scrim {
+    position: absolute; inset: 0;
+    background: radial-gradient(90% 90% at 50% 55%, rgba(5,5,7,0.55) 0%, rgba(5,5,7,0.25) 55%, rgba(5,5,7,0.45) 100%);
+  }
+</style>
+</head>
+<body class="relative bg-[#0a0a0c] text-white">
+  <div class="bg-art"></div>
+  <div class="scrim"></div>
+
+  <div class="relative z-10 w-full h-full flex flex-col items-center justify-center">
+    <img src="logo.svg" alt="AI Conf" style="width: 430px; filter: drop-shadow(0 0 28px rgba(255,140,60,0.3));">
+    <div style="margin-top: 34px; color: #f0854a; font-size: 30px; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase;">
+      2027 <span style="color: #ffb347; padding: 0 10px;">✦</span> Kathmandu
+    </div>
+    <div style="margin-top: 26px; color: rgba(255,255,255,0.72); font-size: 21px; font-weight: 400; letter-spacing: 0.24em; text-transform: uppercase; text-align: center; line-height: 1.7;">
+      A conference for people<br>building the future with AI
+    </div>
+  </div>
+
+  <img src="wwktm.svg" alt="wwktm" style="position: absolute; right: 52px; bottom: 44px; width: 34px; opacity: 0.85; z-index: 10;">
+</body>
+</html>
