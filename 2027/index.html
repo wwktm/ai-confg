@@ -29,6 +29,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
+  <!-- LCP: the hero logo is tiny but was queued behind the bg video/image; preload it -->
+  <link rel="preload" as="image" href="logo.svg" fetchpriority="high">
 
   <!-- Schema.org Event Structured Data -->
   <script type="application/ld+json">
@@ -217,7 +219,7 @@
     <div class="absolute inset-0 -z-10 overflow-hidden">
       <div class="hero-bg absolute inset-0">
         <img src="bg.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover">
-        <video id="bgvideo" autoplay muted playsinline preload="metadata" poster="bg.png" aria-hidden="true"
+        <video id="bgvideo" muted playsinline preload="none" poster="bg.png" aria-hidden="true"
           class="absolute inset-0 w-full h-full object-cover">
           <source src="https://media.wwktm.com/bg.mp4" type="video/mp4">
         </video>
@@ -230,7 +232,7 @@
       <!-- Logo -->
       <h1 class="font-display tracking-tight">
         <span class="sr-only">AI Conf 2027</span>
-        <img src="logo.svg" alt="AI Conf" width="400" class="mx-auto w-64 sm:w-80 md:w-[400px] h-auto drop-shadow-warm">
+        <img src="logo.svg" alt="AI Conf" width="400" fetchpriority="high" class="mx-auto w-64 sm:w-80 md:w-[400px] h-auto drop-shadow-warm">
       </h1>
 
       <p class="mt-6 text-xl md:text-2xl text-white/85 leading-relaxed text-balance">
@@ -429,6 +431,15 @@
       if (reduceMotion || saveData) {
         video.remove();
       } else {
+        // Defer the 2.6MB video until the page has settled (LCP/INP), then start it
+        var videoStarted = false;
+        var startVideo = function () {
+          videoStarted = true;
+          video.preload = 'auto';
+          video.play().catch(function () {});
+        };
+        if (document.readyState === 'complete') { startVideo(); }
+        else { window.addEventListener('load', startVideo); }
         // Gentle dip-to-black at the loop point instead of a hard cut
         video.addEventListener('timeupdate', function () {
           if (video.duration && video.duration - video.currentTime < 0.8) {
@@ -447,6 +458,7 @@
         // Pause when the hero scrolls out of view
         new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
+            if (!videoStarted) return;
             if (entry.isIntersecting) { video.play().catch(function () {}); }
             else { video.pause(); }
           });
