@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; }
+  body { width: 1080px; height: 1920px; overflow: hidden; font-family: 'Space Grotesk', sans-serif; background: #0a0716; }
+  .bg { position: absolute; inset: 0; background: url('bg-violet.png') center/cover no-repeat; }
+  .scrim { position: absolute; inset: 0; background: radial-gradient(85% 70% at 50% 45%, rgba(5,5,7,0.55) 0%, rgba(5,5,7,0.3) 60%, rgba(5,5,7,0.6) 100%); }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div style="position: relative; z-index: 10; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img src="logo.svg" style="width: 560px; filter: drop-shadow(0 0 34px rgba(130,90,255,0.35));">
+    <div style="margin-top: 56px; color: #a06bff; font-size: 52px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;">
+      2027 <span style="color: #c98bff; padding: 0 14px;">✦</span> Kathmandu
+    </div>
+    <div style="margin-top: 44px; color: rgba(255,255,255,0.75); font-size: 34px; letter-spacing: 0.22em; text-transform: uppercase; text-align: center; line-height: 1.75;">
+      A conference for people<br>building the future with AI
+    </div>
+    <div style="margin-top: 90px; color: #c98bff; font-size: 38px; font-weight: 500; letter-spacing: 0.12em;">ai.wwktm.com</div>
+  </div>
+</body>
+</html>

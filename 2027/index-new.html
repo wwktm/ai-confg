@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Conf 2027 - Asia's AI Conference in the Himalayas | Kathmandu, Nepal</title>
+  <meta name="description" content="AI Conf 2027 brings Asia's AI community together in Kathmandu, in the heart of the Himalayas. Sign up for the newsletter to be the first to hear about dates, speakers, and tickets." />
+  <meta name="keywords" content="AI Conf Asia, AI Conference Asia, AI Conference Kathmandu, Artificial Intelligence Nepal, Tech Conference Asia, Kathmandu Events, wwktm" />
+  <link rel="canonical" href="https://aiconf.asia/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0716" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="AI Conf 2027" />
+  <meta property="og:title" content="AI Conf 2027 - Asia's AI Conference in the Himalayas" />
+  <meta property="og:description" content="AI Conf 2027 brings Asia's AI community together in Kathmandu, in the heart of the Himalayas. Sign up for the newsletter to be the first to hear about dates, speakers, and tickets." />
+  <meta property="og:url" content="https://aiconf.asia/" />
+  <meta property="og:image" content="https://aiconf.asia/aiconf.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@wwktm_com" />
+  <meta name="twitter:creator" content="@wwktm_com" />
+  <meta name="twitter:title" content="AI Conf 2027 - Asia's AI Conference in the Himalayas" />
+  <meta name="twitter:description" content="AI Conf 2027 brings Asia's AI community together in Kathmandu, in the heart of the Himalayas. Sign up for the newsletter to be the first to hear about dates, speakers, and tickets." />
+  <meta name="twitter:image" content="https://aiconf.asia/aiconf.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- LCP: the hero logo is tiny but was queued behind the bg video/image; preload it -->
+  <link rel="preload" as="image" href="logo.svg" fetchpriority="high">
+
+  <!-- Schema.org Event Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "AI Conf 2027",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "startDate": "2027-01-09",
+    "location": {
+      "@type": "Place",
+      "name": "Kathmandu",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kathmandu",
+        "addressCountry": "NP"
+      }
+    },
+    "image": ["https://aiconf.asia/aiconf.jpg"],
+    "description": "AI Conf 2027 - Asia's AI community gathers in the Himalayas. Coming to Kathmandu, Nepal.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Web Weekend Kathmandu",
+      "url": "https://wwktm.com"
+    }
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ7VK266P8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DQ7VK266P8');
+  </script>
+
+  <link rel="stylesheet" href="styles-new.css">
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* The footer glimmer travels to 100vw and, being 260px wide, overflows the
+       right edge each cycle — clipping here stops the flashing horizontal scrollbar. */
+    html, body { overflow-x: hidden; overflow-x: clip; }
+
+    /* Slow cinematic drift on the hero artwork */
+    @keyframes drift {
+      0%   { transform: scale(1.08) translate3d(0, 0, 0); }
+      50%  { transform: scale(1.16) translate3d(-2%, -1.5%, 0); }
+      100% { transform: scale(1.08) translate3d(0, 0, 0); }
+    }
+    .hero-bg { animation: drift 35s ease-in-out infinite; will-change: transform; }
+
+    /* Video fades out briefly at loop point instead of a hard cut */
+    #bgvideo { transition: opacity .8s ease; }
+    #bgvideo.loop-fade { opacity: 0; }
+
+    /* Fine film grain for depth */
+    .grain {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(100deg, #5546ff, #c98bff);
+      color: #0d0722;
+      box-shadow: 0 8px 30px rgba(100,85,255,0.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 40px rgba(100,85,255,0.5);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .card { transition: transform .25s ease, border-color .25s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(201,139,255,0.35); }
+
+    /* Footer divider with a traveling glimmer */
+    .footer-line {
+      position: relative;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(85,70,255,.4), rgba(201,139,255,.25) 40%, transparent);
+    }
+    .footer-line .glimmer {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 260px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(201,139,255,.9) 45%, rgba(85,70,255,.9) 55%, transparent);
+      filter: blur(4px);
+      mix-blend-mode: screen;
+      opacity: .85;
+      animation: glimmer 7s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    @keyframes glimmer {
+      0%   { transform: translate(-180px, -50%); opacity: 0; }
+      8%   { opacity: 1; }
+      55%  { transform: translate(100vw, -50%); opacity: 1; }
+      62%  { opacity: 0; }
+      100% { transform: translate(100vw, -50%); opacity: 0; }
+    }
+
+    /* Glimpse video starts smaller/faded and grows into place on scroll */
+    #glimpse-grow {
+      transform-origin: center 30%;
+      will-change: transform, opacity;
+    }
+
+    .text-gradient {
+      background: linear-gradient(95deg, #5546ff, #c98bff 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-bg, .footer-line .glimmer { animation: none; }
+      .footer-line .glimmer { display: none; }
+      #glimpse-grow { transform: none !important; opacity: 1 !important; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-base-900 text-white antialiased selection:bg-ember/40 selection:text-white">
+
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="https://wwktm.com" class="inline-flex items-center opacity-80 hover:opacity-100 transition" aria-label="Web Weekend Kathmandu">
+        <img src="wwktm.svg" alt="Web Weekend Kathmandu" class="h-7 w-auto">
+      </a>
+      <nav aria-label="Primary">
+        <ul class="flex items-center gap-7 text-sm text-white/70">
+          <li><a href="https://ai.wwktm.com/2026/" class="hover:text-white transition">2026</a></li>
+          <li><a href="https://barcamp.wwktm.com/" class="hover:text-white transition">Barcamp</a></li>
+          <li>
+            <button type="button" id="nav-updates" class="glass rounded-full px-4 py-1.5 text-white/90 hover:text-white hover:border-amber/40 transition cursor-pointer">Get updates</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Artwork backdrop: static image always renders; video enhances on top -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div class="hero-bg absolute inset-0">
+        <!-- Static fallback (gradient-mapped to the 2027 palette) -->
+        <img src="bg-violet.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover">
+        <!-- Original artwork video, graded into the violet ramp -->
+        <video id="bgvideo" muted playsinline preload="none" poster="bg-violet.png" aria-hidden="true"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter: saturate(0) brightness(.9);">
+          <source src="https://media.wwktm.com/bg.mp4" type="video/mp4">
+        </video>
+        <!-- Palette grade: forces the video's hue/saturation into the 2027 violet ramp -->
+        <div class="absolute inset-0" aria-hidden="true"
+          style="background: linear-gradient(115deg, rgba(10,7,22,.85), rgba(85,70,255,.6) 45%, rgba(201,139,255,.5)); mix-blend-mode: color;"></div>
+        <!-- FX overlay: pixel boxes + light pass-through -->
+        <canvas id="heroCanvas" aria-hidden="true" class="absolute inset-0 w-full h-full"></canvas>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-base-900/70 via-base-900/30 to-base-900"></div>
+      <div class="grain absolute inset-0"></div>
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 pt-24 pb-52 text-center">
+      <!-- Logo -->
+      <h1 class="font-display tracking-tight">
+        <span class="sr-only">AI Conf 2027</span>
+        <img src="logo.svg" alt="AI Conf" width="400" fetchpriority="high" class="mx-auto w-64 sm:w-80 md:w-[400px] h-auto drop-shadow-warm">
+      </h1>
+
+      <p class="mt-6 text-xl md:text-2xl text-white/85 leading-relaxed text-balance">
+        Asia&rsquo;s <span class="text-gradient font-semibold">AI</span> community gathers in the Himalayas
+      </p>
+
+      <!-- Meta line (plain text, not buttons) -->
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm uppercase tracking-[0.18em] text-white/55">
+        <span class="inline-flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber/80" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
+          January 9, 2027
+        </span>
+        <span class="w-1 h-1 rounded-full bg-amber/50" aria-hidden="true"></span>
+        <span class="inline-flex items-center gap-2">
+          <svg class="w-4 h-4 text-amber/80" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+          Kathmandu, Nepal
+        </span>
+      </div>
+
+      <!-- Primary CTA -->
+      <div class="mt-10">
+        <a href="#cfs" class="inline-flex items-center gap-2 btn-primary rounded-full px-8 py-3.5 font-semibold">
+          Speak at AI Conf
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- GLIMPSES FROM 2026 -->
+  <section class="relative max-w-6xl mx-auto px-6 -mt-16 md:-mt-48 pb-24">
+   <div id="glimpse-grow">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="text-xs font-medium tracking-widest uppercase text-amber">Relive AI Conf 2026</p>
+      <h2 class="mt-2 font-display text-xl md:text-2xl font-semibold tracking-tight">Glimpses from last year</h2>
+    </div>
+
+    <div class="mt-6 relative">
+      <div class="absolute -inset-3 bg-gradient-to-r from-ember/25 via-amber/10 to-ember/25 blur-2xl -z-10 rounded-3xl" aria-hidden="true"></div>
+      <div class="glass rounded-2xl p-2">
+        <!-- Lite-YouTube facade: only loads the real player on click -->
+        <div id="glimpse-facade" class="relative rounded-xl overflow-hidden aspect-video bg-black">
+          <button type="button" id="glimpse-play" aria-label="Play AI Conf 2026 recap video"
+            class="absolute inset-0 w-full h-full group cursor-pointer">
+            <img src="https://i.ytimg.com/vi/fFNBykBRhTQ/maxresdefault.jpg" alt="AI Conf 2026 recap: attendees in front of the AI Conf LED wall"
+              loading="lazy" class="w-full h-full object-cover">
+            <span class="absolute inset-0 flex items-center justify-center bg-base-900/25 transition group-hover:bg-base-900/10">
+              <span class="glass w-14 h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
+                <svg class="w-6 h-6 text-amber translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v14l11-7-11-7Z"/></svg>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <p class="mt-4 text-center text-xs text-white/50">
+        <a href="https://youtu.be/fFNBykBRhTQ" class="underline decoration-white/20 underline-offset-4 hover:text-white transition">Watch on YouTube</a>
+      </p>
+    </div>
+   </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="relative max-w-6xl mx-auto px-6 pb-24">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="text-sm font-medium tracking-widest uppercase text-amber">What to expect</p>
+      <h2 class="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight">Two days of ideas, craft &amp; community</h2>
+      <p class="mt-4 text-white/60">Building on <a href="https://ai.wwktm.com/2026/" class="underline decoration-white/30 underline-offset-4 hover:text-white hover:decoration-amber transition">AI Conf 2026</a>, we&rsquo;re opening our doors to all of Asia in 2027.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      <div class="card glass rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        </div>
+        <h3 class="mt-5 font-display text-lg font-semibold">Talks &amp; keynotes</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">Speakers from across Asia and beyond sharing how they build, ship, and scale with AI, from research to production.</p>
+      </div>
+
+      <div class="card glass rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><circle cx="17.5" cy="4.5" r="1.75"/><path stroke-linecap="round" stroke-linejoin="round" d="m2.5 19.5 6-11 3.5 6 2.5-4 7 9h-17Z"/></svg>
+        </div>
+        <h3 class="mt-5 font-display text-lg font-semibold">Community hike</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">A conference hike around the Kathmandu valley, with the Himalayas as our backdrop. Fresh air, great views, and even better conversations.</p>
+      </div>
+
+      <div class="card glass rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
+        </div>
+        <h3 class="mt-5 font-display text-lg font-semibold">Community</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">Meet the people shaping AI in Asia: founders, engineers, researchers, designers, and curious minds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL FOR SPEAKERS -->
+  <section id="cfs" class="relative max-w-6xl mx-auto px-6 pb-10">
+    <div class="relative glass rounded-3xl overflow-hidden">
+      <!-- Warm accent glow along the left edge -->
+      <div class="absolute inset-y-0 left-0 w-1/2 -z-10 bg-gradient-to-r from-ember/15 via-amber/5 to-transparent" aria-hidden="true"></div>
+      <div class="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-ember via-amber to-ember/40" aria-hidden="true"></div>
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-14 p-8 md:p-14 items-center">
+        <!-- Copy + CTA -->
+        <div class="text-left">
+          <p class="text-sm font-medium tracking-widest uppercase text-amber">Call for Speakers</p>
+          <h2 class="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight">Share your story on stage</h2>
+          <p class="mt-4 text-white/60 leading-relaxed">
+            We&rsquo;re inviting engineers, designers, founders, and builders who are putting AI into action.
+            Whether you&rsquo;re <strong class="text-white/85 font-medium">building with AI</strong> in products and workflows, or <strong class="text-white/85 font-medium">building for AI</strong> by creating tools, systems,
+            and experiences others can use. We&rsquo;d love to hear your story at <em>AI Conf 2027</em>.
+          </p>
+          <div class="mt-8">
+            <a href="https://forms.gle/65XVQLnZRrDN3pEd8" target="_blank" rel="noopener" class="inline-flex items-center gap-2 btn-primary rounded-full px-8 py-3.5 font-semibold">
+              Submit your proposal
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </a>
+            <p class="mt-4 text-sm text-white/50">
+              Applications are reviewed on a <span class="text-white/80 font-medium">rolling basis</span>. The earlier you apply, the sooner you&rsquo;ll hear back.
+            </p>
+          </div>
+        </div>
+
+        <!-- Format -->
+        <div class="md:border-l md:border-white/10 md:pl-14">
+          <div class="flex gap-5">
+            <div class="shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-semibold">Talks <span class="text-white/50 font-normal text-base">(~20 mins)</span></h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-white/60">Case studies, engineering tactics, design/UX, or product lessons.</p>
+              <p class="mt-3 text-xs text-amber/80">&#10024; Accommodation provided for all accepted speakers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="updates" class="relative mt-4 mb-0 py-16 md:py-20 border-y border-white/10 overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ember/20 via-base-800/40 to-amber/20" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-base-900/60 via-transparent to-base-900/60" aria-hidden="true"></div>
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <p class="text-sm font-medium tracking-widest uppercase text-amber">Stay in the loop</p>
+      <h2 class="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight">Get the latest updates</h2>
+      <p class="mt-4 text-white/60">Be the first to hear about dates, speakers, tickets, and our signature community hike. Straight to your inbox.</p>
+      <form action="https://wwktm.us7.list-manage.com/subscribe/post?u=86f98e6984113b750376bd471&id=5ccc30611a" method="POST" target="_blank" class="mt-8">
+        <div class="glass rounded-2xl sm:rounded-full p-2 flex flex-col sm:flex-row gap-2 max-w-lg mx-auto transition focus-within:border-amber/50">
+          <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_86f98e6984113b750376bd471_5ccc30611a" tabindex="-1" value=""></div>
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" type="email" name="EMAIL" required placeholder="you@example.com"
+            class="flex-1 bg-transparent px-4 py-3 text-base text-white placeholder-white/40 outline-none">
+          <button type="submit" class="btn-primary rounded-xl sm:rounded-full px-6 py-3 font-semibold inline-flex items-center justify-center gap-2">
+            Notify me
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </button>
+        </div>
+        <p class="mt-4 text-xs text-white/50">No spam, ever.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative">
+    <div class="footer-line" aria-hidden="true"><span class="glimmer"></span></div>
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 items-center justify-between">
+      <div class="text-center md:text-left">
+        <img src="logo.svg" alt="AI Conf 2027" class="h-7 w-auto mx-auto md:mx-0">
+        <p class="mt-2 text-sm text-white/50">By <a href="https://wwktm.com" class="hover:text-white transition underline decoration-white/20 underline-offset-4">Web Weekend Kathmandu</a></p>
+      </div>
+      <div class="text-white/50 text-sm order-last md:order-none">&copy; 2027 wwktm &middot; Kathmandu, Nepal</div>
+      <div class="flex gap-3">
+        <a href="https://x.com/wwktm_com" aria-label="X (Twitter)" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/wwktm_com" aria-label="Instagram" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.25"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/wwktm" aria-label="LinkedIn" class="glass w-10 h-10 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:border-amber/40 transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var saveData = navigator.connection && navigator.connection.saveData;
+
+      // Hero artwork: original bg.mp4, color-graded into the 2027 palette (CSS filter + blend layer)
+      var video = document.getElementById('bgvideo');
+      if (reduceMotion || saveData) {
+        if (video) video.remove();
+      } else if (video) {
+        // Defer the video until the page has settled (LCP/INP), then start it
+        var videoStarted = false;
+        var startVideo = function () {
+          videoStarted = true;
+          video.preload = 'auto';
+          video.play().catch(function () {});
+        };
+        if (document.readyState === 'complete') { startVideo(); }
+        else { window.addEventListener('load', startVideo); }
+        // Gentle dip-to-black at the loop point instead of a hard cut
+        video.addEventListener('timeupdate', function () {
+          if (video.duration && video.duration - video.currentTime < 0.8) {
+            video.classList.add('loop-fade');
+          }
+        });
+        video.addEventListener('ended', function () {
+          video.currentTime = 0;
+          video.play();
+        });
+        video.addEventListener('playing', function () {
+          video.classList.remove('loop-fade');
+        });
+        video.addEventListener('error', function () { video.remove(); }, true);
+
+        // Pause when the hero scrolls out of view
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!videoStarted) return;
+            if (entry.isIntersecting) { video.play().catch(function () {}); }
+            else { video.pause(); }
+          });
+        }).observe(video);
+      }
+
+      // ── FX layer: pixel boxes + light pass-through, on a transparent canvas over the video ──
+      (function () {
+        var canvas = document.getElementById('heroCanvas');
+        if (!canvas) return;
+        var gl = canvas.getContext('webgl', { antialias: false, alpha: true, premultipliedAlpha: true, powerPreference: 'low-power' });
+        if (!gl) { canvas.remove(); return; }
+
+        var VERT = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var FRAG = [
+          'precision highp float;',
+          'uniform vec2 uRes;uniform float uTime;uniform vec2 uMouse;',
+          'float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}',
+          'void main(){',
+          ' vec2 uv=(gl_FragCoord.xy-.5*uRes)/min(uRes.x,uRes.y);',
+          // light pass-through: a soft diagonal beam sweeping across every ~9s
+          ' vec2 bd=normalize(vec2(.85,.55));',
+          ' float proj=dot(uv,bd);',
+          ' float bp=-1.4+2.8*fract(uTime/9.+uMouse.x*0.03);',
+          ' float beam=exp(-pow((proj-bp)*5.,2.));',
+          ' vec3 fx=vec3(.45,.4,1.)*beam*.10;',
+          // pixel boxes: large sparse cells ignite as the beam passes, plus a slow random twinkle
+          ' float G=22.;',
+          ' vec2 cell=floor(uv*G);',
+          ' vec2 cuv=fract(uv*G);',
+          ' float box=step(.12,cuv.x)*step(cuv.x,.88)*step(.12,cuv.y)*step(cuv.y,.88);',
+          ' float rnd=hash(cell);',
+          ' float cproj=dot((cell+.5)/G,bd);',
+          ' float cbeam=exp(-pow((cproj-bp)*5.,2.));',
+          ' float twk=step(.996,hash(cell+vec2(floor(uTime*1.5)*7.3,0.)));',
+          ' float lit=box*(step(.955,rnd)*cbeam*(.4+.6*rnd)+twk*.4);',
+          ' fx+=vec3(.79,.62,1.)*lit*.85;',
+          // premultiplied output so the canvas composites cleanly over the video
+          ' float a=clamp(max(fx.r,max(fx.g,fx.b)),0.,1.);',
+          ' gl_FragColor=vec4(fx,a);}'
+        ].join('\n');
+
+        function shader(type, src) {
+          var s = gl.createShader(type);
+          gl.shaderSource(s, src);
+          gl.compileShader(s);
+          if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+            console.warn(gl.getShaderInfoLog(s));
+            return null;
+          }
+          return s;
+        }
+        var vs = shader(gl.VERTEX_SHADER, VERT);
+        var fs = shader(gl.FRAGMENT_SHADER, FRAG);
+        if (!vs || !fs) { canvas.remove(); return; }
+        var prog = gl.createProgram();
+        gl.attachShader(prog, vs);
+        gl.attachShader(prog, fs);
+        gl.linkProgram(prog);
+        gl.useProgram(prog);
+
+        var buf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+        var loc = gl.getAttribLocation(prog, 'p');
+        gl.enableVertexAttribArray(loc);
+        gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+        var uRes = gl.getUniformLocation(prog, 'uRes');
+        var uTime = gl.getUniformLocation(prog, 'uTime');
+        var uMouse = gl.getUniformLocation(prog, 'uMouse');
+        gl.clearColor(0, 0, 0, 0);
+
+        function resize() {
+          var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+          var w = Math.round(canvas.clientWidth * dpr);
+          var h = Math.round(canvas.clientHeight * dpr);
+          if (canvas.width !== w || canvas.height !== h) {
+            canvas.width = w; canvas.height = h;
+            gl.viewport(0, 0, w, h);
+          }
+        }
+        window.addEventListener('resize', resize);
+
+        var mx = 0, my = 0, tx = 0, ty = 0;
+        window.addEventListener('pointermove', function (e) {
+          tx = (e.clientX / window.innerWidth) * 2 - 1;
+          ty = (e.clientY / window.innerHeight) * 2 - 1;
+        }, { passive: true });
+
+        function draw(t) {
+          resize();
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.uniform2f(uRes, canvas.width, canvas.height);
+          gl.uniform1f(uTime, t);
+          gl.uniform2f(uMouse, mx, my);
+          gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }
+
+        // Reduced motion / data saver: paint one static FX frame, no loop
+        if (reduceMotion || saveData) { draw(40.5); return; }
+
+        var start = performance.now();
+        var inView = true, rafId = null;
+        function frame(now) {
+          rafId = null;
+          if (!inView) return;
+          mx += (tx - mx) * 0.045;
+          my += (ty - my) * 0.045;
+          draw((now - start) / 1000);
+          rafId = requestAnimationFrame(frame);
+        }
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            inView = entry.isIntersecting;
+            if (inView && rafId === null) rafId = requestAnimationFrame(frame);
+          });
+        }).observe(canvas);
+        rafId = requestAnimationFrame(frame);
+      })();
+
+      // Glimpse video: starts small just under the fold, grows to full size on scroll
+      var glimpseGrow = document.getElementById('glimpse-grow');
+      if (glimpseGrow && !reduceMotion) {
+        var ticking = false;
+        var updateGrow = function () {
+          ticking = false;
+          var vh = window.innerHeight;
+          // 0 at page load, 1 after scrolling ~55% of the viewport
+          var p = (window.scrollY || window.pageYOffset) / (vh * 0.55);
+          p = Math.min(Math.max(p, 0), 1);
+          // ease-out for a natural settle
+          var e = 1 - Math.pow(1 - p, 3);
+          glimpseGrow.style.transform = 'scale(' + (0.86 + 0.14 * e) + ')';
+          glimpseGrow.style.opacity = (0.45 + 0.55 * e).toFixed(3);
+        };
+        var onScroll = function () {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateGrow);
+          }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        updateGrow();
+      }
+
+      // "Get updates" scrolls to the newsletter section and focuses the email field
+      document.getElementById('nav-updates').addEventListener('click', function () {
+        document.getElementById('updates').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+        setTimeout(function () {
+          document.getElementById('email').focus({ preventScroll: true });
+        }, reduceMotion ? 0 : 500);
+      });
+
+      // Glimpses: lite-YouTube facade swaps in the real embed on click
+      var glimpseFacade = document.getElementById('glimpse-facade');
+      if (glimpseFacade) {
+        glimpseFacade.addEventListener('click', function () {
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube-nocookie.com/embed/fFNBykBRhTQ?autoplay=1&rel=0';
+          iframe.title = 'AI Conf 2026 recap video';
+          iframe.className = 'absolute inset-0 w-full h-full';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+          iframe.allowFullscreen = true;
+          glimpseFacade.replaceChildren(iframe);
+        }, { once: true });
+      }
+
+      // Typewriter placeholder: companies people attended AI Conf 2026 from
+      var emailInput = document.getElementById('email');
+      if (!reduceMotion) {
+        var companies = [
+          'fusemachines.com', 'leapfrog.com', 'logpoint.com', 'programiz.com',
+          'cloudfactory.com', 'proshore.com', 'verisk.com', 'houzz.com',
+          'laudio.com', 'grepsr.com', 'zerotb.ai', 'roamresearch.com'
+        ];
+        var caret = '\u258F';
+        var idx = Math.floor(Math.random() * companies.length);
+        var pos = 0, phase = 'typing', blinks = 0;
+
+        var tick = function () {
+          var text = 'you@' + companies[idx];
+          if (phase === 'typing') {
+            pos++;
+            emailInput.setAttribute('placeholder', text.slice(0, pos) + caret);
+            if (pos === text.length) { phase = 'blink'; blinks = 0; return setTimeout(tick, 350); }
+            return setTimeout(tick, 40 + Math.random() * 60);
+          }
+          if (phase === 'blink') {
+            blinks++;
+            emailInput.setAttribute('placeholder', text + (blinks % 2 ? '' : caret));
+            if (blinks >= 5) { phase = 'deleting'; return setTimeout(tick, 400); }
+            return setTimeout(tick, 400);
+          }
+          pos--;
+          emailInput.setAttribute('placeholder', text.slice(0, pos) + caret);
+          if (pos === 0) {
+            phase = 'typing';
+            idx = (idx + 1) % companies.length;
+            return setTimeout(tick, 500);
+          }
+          setTimeout(tick, 22);
+        };
+        setTimeout(tick, 1200);
+      }
+    })();
+  </script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a0f9cb7d6cb945b79f71587873c68907"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
