@@ -8,7 +8,7 @@
   <meta name="keywords" content="AI Conf Asia, AI Conference Asia, AI Conference Kathmandu, Artificial Intelligence Nepal, Tech Conference Asia, Kathmandu Events, wwktm" />
   <link rel="canonical" href="https://aiconf.asia/" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0a0a0c" />
+  <meta name="theme-color" content="#05070f" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="AI Conf 2027" />
@@ -79,17 +79,13 @@
        right edge each cycle — clipping here stops the flashing horizontal scrollbar. */
     html, body { overflow-x: hidden; overflow-x: clip; }
 
-    /* Slow cinematic drift on the hero artwork */
-    @keyframes drift {
-      0%   { transform: scale(1.08) translate3d(0, 0, 0); }
-      50%  { transform: scale(1.16) translate3d(-2%, -1.5%, 0); }
-      100% { transform: scale(1.08) translate3d(0, 0, 0); }
+    /* Static hero backdrop: black -> royal blue -> ice blue, like the 2027 artwork */
+    .hero-gradient {
+      background:
+        radial-gradient(120% 85% at 88% 42%, rgba(34, 76, 214, 0.85) 0%, rgba(34, 76, 214, 0) 60%),
+        radial-gradient(130% 95% at 8% 112%, rgba(174, 199, 246, 0.9) 0%, rgba(174, 199, 246, 0) 55%),
+        linear-gradient(178deg, #04060a 0%, #060f2e 42%, #10348f 72%, #5b8ae4 100%);
     }
-    .hero-bg { animation: drift 35s ease-in-out infinite; will-change: transform; }
-
-    /* Video fades out briefly at loop point instead of a hard cut */
-    #bgvideo { transition: opacity .8s ease; }
-    #bgvideo.loop-fade { opacity: 0; }
 
     /* Fine film grain for depth */
     .grain {
@@ -97,6 +93,37 @@
       opacity: 0.05;
       mix-blend-mode: overlay;
     }
+
+    /* Star cutout in the hero "A" coin-flips around its vertical axis */
+    /* Hero headline: custom styles (compiled styles.css only ships utilities from the original markup) */
+    .hero-title {
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      display: block;
+      margin-top: 0.05em;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #2ee6a8;
+    }
+    .hero-title > span { display: block; }
+    .hero-title svg { display: inline-block; height: 0.76em; width: auto; vertical-align: baseline; margin: 0 0.08em; }
+
+    .a-hole-star { transform-box: fill-box; transform-origin: center; animation: aiconf-flip 7s cubic-bezier(.45,.05,.35,1) infinite; }
+    @keyframes aiconf-flip {
+      0%   { transform: rotateY(0); }
+      45%  { transform: rotateY(180deg); }
+      55%  { transform: rotateY(180deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    /* Subtle pixelated noise drifting over the hero gradient */
+    #pixel-noise { opacity: .04; mix-blend-mode: screen; image-rendering: pixelated; }
 
     .glass {
       background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
@@ -106,25 +133,37 @@
     }
 
     .btn-primary {
-      background: linear-gradient(100deg, #ff6a3d, #ffb347);
-      color: #14090a;
-      box-shadow: 0 8px 30px rgba(255,120,50,0.35);
+      background: linear-gradient(100deg, #3b6bff, #9db9ff);
+      color: #04070f;
+      box-shadow: 0 8px 30px rgba(70,110,240,0.35);
       transition: transform .2s ease, box-shadow .2s ease;
     }
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 40px rgba(255,120,50,0.5);
+      box-shadow: 0 12px 40px rgba(70,110,240,0.5);
     }
+    /* mint variant: main hero CTA only */
+    .btn-accent {
+      background: linear-gradient(100deg, #4ae3b5, #3fcbe0);
+      color: #04070f;
+      box-shadow: 0 8px 30px rgba(74,227,181,0.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn-accent:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 40px rgba(74,227,181,0.5);
+    }
+    .btn-accent:active { transform: translateY(0); }
     .btn-primary:active { transform: translateY(0); }
 
     .card { transition: transform .25s ease, border-color .25s ease; }
-    .card:hover { transform: translateY(-4px); border-color: rgba(255,179,71,0.35); }
+    .card:hover { transform: translateY(-4px); border-color: rgba(157,185,255,0.35); }
 
     /* Footer divider with a traveling glimmer */
     .footer-line {
       position: relative;
       height: 1px;
-      background: linear-gradient(90deg, rgba(255,106,61,.4), rgba(255,179,71,.25) 40%, transparent);
+      background: linear-gradient(90deg, rgba(59,107,255,.4), rgba(157,185,255,.25) 40%, transparent);
     }
     .footer-line .glimmer {
       position: absolute;
@@ -133,7 +172,7 @@
       width: 260px;
       height: 3px;
       border-radius: 999px;
-      background: linear-gradient(90deg, transparent, rgba(255,179,71,.9) 45%, rgba(255,106,61,.9) 55%, transparent);
+      background: linear-gradient(90deg, transparent, rgba(157,185,255,.9) 45%, rgba(59,107,255,.9) 55%, transparent);
       filter: blur(4px);
       mix-blend-mode: screen;
       opacity: .85;
@@ -155,7 +194,7 @@
     }
 
     .text-gradient {
-      background: linear-gradient(95deg, #ff6a3d, #ffb347 70%);
+      background: linear-gradient(95deg, #3b6bff, #9db9ff 70%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -163,7 +202,8 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .hero-bg, .footer-line .glimmer { animation: none; }
+      .footer-line .glimmer { animation: none; }
+      .a-hole-star { animation: none; }
       .footer-line .glimmer { display: none; }
       #glimpse-grow { transform: none !important; opacity: 1 !important; }
       *, *::before, *::after { transition-duration: 0.01ms !important; }
@@ -173,10 +213,10 @@
 <body class="bg-base-900 text-white antialiased selection:bg-ember/40 selection:text-white">
 
   <!-- NAV -->
-  <header class="fixed inset-x-0 top-0 z-50">
+  <header class="fixed inset-x-0 top-0 z-50" style="background: rgba(4,6,10,.35); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.05);">
     <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="https://wwktm.com" class="inline-flex items-center opacity-80 hover:opacity-100 transition" aria-label="Web Weekend Kathmandu">
-        <img src="wwktm.svg" alt="Web Weekend Kathmandu" class="h-7 w-auto">
+      <a href="https://aiconf.asia/" class="inline-flex items-center opacity-90 hover:opacity-100 transition" aria-label="AI Conf Asia">
+        <img src="logo.svg" alt="AI Conf Asia" class="h-6 w-auto">
       </a>
       <nav aria-label="Primary">
         <ul class="flex items-center gap-7 text-sm text-white/70">
@@ -194,44 +234,33 @@
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Artwork backdrop: static image always renders; video enhances on top -->
     <div class="absolute inset-0 -z-10 overflow-hidden">
-      <div class="hero-bg absolute inset-0">
-        <img src="bg.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover">
-        <video id="bgvideo" muted playsinline preload="none" poster="bg.png" aria-hidden="true"
-          class="absolute inset-0 w-full h-full object-cover">
-          <source src="https://media.wwktm.com/bg.mp4" type="video/mp4">
-        </video>
-      </div>
+      <div class="hero-gradient absolute inset-0" aria-hidden="true"></div>
+      <canvas id="pixel-noise" aria-hidden="true" class="absolute inset-0 w-full h-full"></canvas>
       <div class="absolute inset-0 bg-gradient-to-b from-base-900/70 via-base-900/30 to-base-900"></div>
       <div class="grain absolute inset-0"></div>
     </div>
 
-    <div class="relative z-10 max-w-3xl mx-auto px-6 pt-24 pb-52 text-center">
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-52 text-center">
       <!-- Logo -->
-      <h1 class="font-display tracking-tight">
-        <span class="sr-only">AI Conf 2027</span>
-        <img src="logo.svg" alt="AI Conf" width="400" fetchpriority="high" class="mx-auto w-64 sm:w-80 md:w-[400px] h-auto drop-shadow-warm">
+      <h1 class="hero-title font-display">
+        <span class="sr-only">AI Conf Asia — Asia's AI community gathers in the Himalayas</span>
+        <span aria-hidden="true">Asia&rsquo;s <span aria-hidden="true"><svg class="inline-block" viewBox="0 0 190 135" fill="white" aria-hidden="true"><defs><mask id="a-hole-hero" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="140"><rect x="0" y="0" width="200" height="140" fill="white"></rect><path class="a-hole-star" d="M77.4396 53.7373C76.1492 50.1811 71.1205 50.1811 69.8302 53.7373L65.3409 66.1172C64.9382 67.2269 64.0712 68.1061 62.9669 68.5234L50.6075 73.1914C47.1176 74.5097 47.1175 79.4455 50.6075 80.7637L62.9669 85.4307C64.0713 85.8481 64.9383 86.7269 65.3409 87.8369L69.8302 100.215C71.1202 103.772 76.1495 103.772 77.4396 100.215L81.9288 87.8369C82.3314 86.7268 83.1993 85.8481 84.3038 85.4307L96.6622 80.7637C100.152 79.4456 100.152 74.5096 96.6622 73.1914L84.3038 68.5234C83.1994 68.1062 82.3316 67.227 81.9288 66.1172L77.4396 53.7373Z" fill="black"></path></mask></defs><path mask="url(#a-hole-hero)" d="M69.2833 3.69824C71.3608 0.100512 76.5537 0.10034 78.631 3.69824L147.184 126.901C149.261 130.499 146.664 134.996 142.509 134.996H112.185L102.721 118.604H44.7511L35.2872 134.996H5.40539C1.25125 134.996 -1.34592 130.499 0.730589 126.901L69.2833 3.69824ZZ"></path><path d="M183.382 35C186.362 35.0002 188.778 37.4168 188.778 40.3975V129.206C188.778 132.187 186.362 134.603 183.382 134.604H160.444C157.464 134.604 155.047 132.187 155.047 129.206V40.3975C155.047 37.4167 157.464 35 160.444 35H183.382Z"></path><path d="M183.382 0C186.362 0.000249449 188.778 2.41681 188.778 5.39746V20.8486C188.778 23.8292 186.362 26.2458 183.382 26.2461H160.444C157.464 26.2461 155.047 23.8294 155.047 20.8486V5.39746C155.047 2.41665 157.464 0 160.444 0H183.382Z"></path></svg> <span>Community</span></span>
+        <span aria-hidden="true" class="hero-sub">Gathers in the Himalayas</span>
       </h1>
 
-      <p class="mt-6 text-xl md:text-2xl text-white/85 leading-relaxed text-balance">
-        Asia&rsquo;s <span class="text-gradient font-semibold">AI</span> community gathers in the Himalayas
-      </p>
-
       <!-- Meta line (plain text, not buttons) -->
-      <div class="mt-7 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm uppercase tracking-[0.18em] text-white/55">
-        <span class="inline-flex items-center gap-2">
-          <svg class="w-4 h-4 text-amber/80" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
-          January 8–10, 2027
-        </span>
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs sm:text-sm uppercase tracking-[0.18em] text-white/55">
+        <span>Jan 8–10 2027</span>
         <span class="w-1 h-1 rounded-full bg-amber/50" aria-hidden="true"></span>
-        <span class="inline-flex items-center gap-2">
-          <svg class="w-4 h-4 text-amber/80" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
-          Kathmandu, Nepal
-        </span>
+        <span>Kathmandu, Nepal</span>
+        <span class="w-1 h-1 rounded-full bg-amber/50" aria-hidden="true"></span>
+        <span>3 days, 500 builders</span>
       </div>
+
 
       <!-- Primary CTA -->
       <div class="mt-10">
-        <a href="#cfs" class="inline-flex items-center gap-2 btn-primary rounded-full px-8 py-3.5 font-semibold">
+        <a href="#cfs" class="inline-flex items-center gap-2 btn-accent rounded-full px-8 py-3.5 font-semibold">
           Speak at AI Conf
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
         </a>
@@ -276,7 +305,7 @@
   <section class="relative max-w-6xl mx-auto px-6 pb-24">
     <div class="text-center max-w-2xl mx-auto">
       <p class="text-sm font-medium tracking-widest uppercase text-amber">What to expect</p>
-      <h2 class="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight">Two days of ideas, craft &amp; community</h2>
+      <h2 class="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight">Three days of ideas, craft &amp; community</h2>
       <p class="mt-4 text-white/60">Building on <a href="https://ai.wwktm.com/2026/" class="underline decoration-white/30 underline-offset-4 hover:text-white hover:decoration-amber transition">AI Conf 2026</a>, we&rsquo;re opening our doors to all of Asia in 2027.</p>
     </div>
 
@@ -310,9 +339,6 @@
   <!-- CALL FOR SPEAKERS -->
   <section id="cfs" class="relative max-w-6xl mx-auto px-6 pb-10">
     <div class="relative glass rounded-3xl overflow-hidden">
-      <!-- Warm accent glow along the left edge -->
-      <div class="absolute inset-y-0 left-0 w-1/2 -z-10 bg-gradient-to-r from-ember/15 via-amber/5 to-transparent" aria-hidden="true"></div>
-      <div class="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-ember via-amber to-ember/40" aria-hidden="true"></div>
 
       <div class="grid md:grid-cols-2 gap-10 md:gap-14 p-8 md:p-14 items-center">
         <!-- Copy + CTA -->
@@ -381,7 +407,7 @@
     <div class="footer-line" aria-hidden="true"><span class="glimmer"></span></div>
     <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-6 items-center justify-between">
       <div class="text-center md:text-left">
-        <img src="logo.svg" alt="AI Conf 2027" class="h-7 w-auto mx-auto md:mx-0">
+        <img src="logo-static.svg" alt="AI Conf Asia" class="h-7 w-auto mx-auto md:mx-0">
         <p class="mt-2 text-sm text-white/50">By <a href="https://wwktm.com" class="hover:text-white transition underline decoration-white/20 underline-offset-4">Web Weekend Kathmandu</a></p>
       </div>
       <div class="text-white/50 text-sm order-last md:order-none">&copy; 2027 wwktm &middot; Kathmandu, Nepal</div>
@@ -401,46 +427,27 @@
   <script>
     (function () {
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var saveData = navigator.connection && navigator.connection.saveData;
-      var video = document.getElementById('bgvideo');
-
-      // Static poster image is enough for reduced-motion / data-saver users
-      if (reduceMotion || saveData) {
-        video.remove();
-      } else {
-        // Defer the 2.6MB video until the page has settled (LCP/INP), then start it
-        var videoStarted = false;
-        var startVideo = function () {
-          videoStarted = true;
-          video.preload = 'auto';
-          video.play().catch(function () {});
-        };
-        if (document.readyState === 'complete') { startVideo(); }
-        else { window.addEventListener('load', startVideo); }
-        // Gentle dip-to-black at the loop point instead of a hard cut
-        video.addEventListener('timeupdate', function () {
-          if (video.duration && video.duration - video.currentTime < 0.8) {
-            video.classList.add('loop-fade');
+      // Pixelated noise over the hero: sparse ice-blue cells, slow refresh
+      (function () {
+        var pn = document.getElementById('pixel-noise');
+        if (!pn) return;
+        var ctx = pn.getContext('2d');
+        var CW = 240, CH = 136;
+        pn.width = CW; pn.height = CH;
+        var draw = function () {
+          var img = ctx.createImageData(CW, CH);
+          var d = img.data;
+          for (var i = 0; i < d.length; i += 4) {
+            if (Math.random() < 0.05) {
+              var v = 140 + Math.random() * 115;
+              d[i] = v * 0.55; d[i + 1] = v * 0.7; d[i + 2] = v; d[i + 3] = 255;
+            }
           }
-        });
-        video.addEventListener('ended', function () {
-          video.currentTime = 0;
-          video.play();
-        });
-        video.addEventListener('playing', function () {
-          video.classList.remove('loop-fade');
-        });
-        video.addEventListener('error', function () { video.remove(); }, true);
-
-        // Pause when the hero scrolls out of view
-        new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (!videoStarted) return;
-            if (entry.isIntersecting) { video.play().catch(function () {}); }
-            else { video.pause(); }
-          });
-        }).observe(video);
-      }
+          ctx.putImageData(img, 0, 0);
+        };
+        draw();
+        if (!reduceMotion) setInterval(draw, 220);
+      })();
 
       // Glimpse video: starts small just under the fold, grows to full size on scroll
       var glimpseGrow = document.getElementById('glimpse-grow');

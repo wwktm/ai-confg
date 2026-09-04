@@ -9,15 +9,15 @@ module.exports = {
       },
       colors: {
         base: {
-          900: '#0a0716',
-          800: '#120c26',
-          700: '#1a1233',
+          900: '#05070f',
+          800: '#0a0e1c',
+          700: '#101527',
         },
-        ember: '#5546ff',
-        amber: '#c98bff',
+        ember: '#3b6bff',
+        amber: '#9db9ff',
       },
       dropShadow: {
-        warm: '0 0 30px rgba(130,90,255,0.4)',
+        warm: '0 0 30px rgba(90,138,242,0.4)',
       },
     },
   },
