@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Conf 2027 | AI Conference in Kathmandu, Nepal</title>
-  <meta name="description" content="Join AI Conf 2027 in Kathmandu, Nepal, January 8–10. Three days of AI talks, keynotes, community connections, and a hike. Apply to speak or get updates." />
+  <meta name="description" content="Join AI Conf 2027 in Kathmandu, Nepal, January 8–10. Three days of AI talks, keynotes, community connections, and a hike. Tickets from NPR 4,000." />
   <meta name="keywords" content="AI Conf 2027, AI Conf Asia, AI conference 2027, AI conference Nepal, AI conference Kathmandu, artificial intelligence conference Asia, AI call for speakers, wwktm" />
   <link rel="canonical" href="https://aiconf.asia/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -13,7 +13,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="AI Conf 2027" />
   <meta property="og:title" content="AI Conf 2027 | AI Conference in Kathmandu, Nepal" />
-  <meta property="og:description" content="Join AI Conf 2027 in Kathmandu, Nepal, January 8–10. Three days of AI talks, keynotes, community connections, and a hike. Apply to speak or get updates." />
+  <meta property="og:description" content="Join AI Conf 2027 in Kathmandu, Nepal, January 8–10. Three days of AI talks, keynotes, community connections, and a hike. Tickets from NPR 4,000." />
   <meta property="og:url" content="https://aiconf.asia/" />
   <meta property="og:image" content="https://aiconf.asia/aiconf.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -23,7 +23,7 @@
   <meta name="twitter:site" content="@wwktm_com" />
   <meta name="twitter:creator" content="@wwktm_com" />
   <meta name="twitter:title" content="AI Conf 2027 | AI Conference in Kathmandu, Nepal" />
-  <meta name="twitter:description" content="Join AI Conf 2027 in Kathmandu, Nepal, January 8–10. Three days of AI talks, keynotes, community connections, and a hike. Apply to speak or get updates." />
+  <meta name="twitter:description" content="Join AI Conf 2027 in Kathmandu, Nepal, January 8–10. Three days of AI talks, keynotes, community connections, and a hike. Tickets from NPR 4,000." />
   <meta name="twitter:image" content="https://aiconf.asia/aiconf.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +56,11 @@
     },
     "image": ["https://aiconf.asia/aiconf.jpg"],
     "description": "AI Conf 2027 brings Asia's AI community to Kathmandu, Nepal, January 8–10 for three days of talks, keynotes, community connections, and a hike.",
+    "offers": [
+      { "@type": "Offer", "name": "Believer Ticket", "price": "4000", "priceCurrency": "NPR", "url": "https://tickets.wwktm.com/?ticketType=believer", "availability": "https://schema.org/InStock" },
+      { "@type": "Offer", "name": "Regular Ticket", "price": "6000", "priceCurrency": "NPR", "url": "https://tickets.wwktm.com/?ticketType=regular", "availability": "https://schema.org/PreSale" },
+      { "@type": "Offer", "name": "Micro Sponsor Ticket", "price": "15000", "priceCurrency": "NPR", "url": "https://tickets.wwktm.com/?ticketType=micro-sponsor", "availability": "https://schema.org/InStock" }
+    ],
     "organizer": {
       "@type": "Organization",
       "name": "Web Weekend Kathmandu",
@@ -120,7 +125,7 @@
     .hero-content { width: 100%; padding-top: 150px; padding-bottom: 300px; }
     .hero .hero-title { font-size: clamp(2.5rem, 5.7vw, 5.2rem); letter-spacing: -.045em; line-height: 1.08; }
     .hero .hero-sub { margin-top: .12em; font-size: inherit; letter-spacing: inherit; line-height: inherit; }
-    .hero .hero-meta { margin: 28px auto 0; color: #b0c6f4; font-size: 10px; letter-spacing: .16em; }
+    .hero .hero-meta { margin: 28px auto 0; color: #b0c6f4; font-size: 12px; letter-spacing: .16em; }
     .hero-content { animation: hero-arrive 700ms cubic-bezier(.2,.65,.3,1) both; }
     @keyframes hero-arrive {
       from { transform: translateY(14px); }
@@ -186,6 +191,13 @@
       100% { transform: rotateY(360deg); }
     }
 
+
+    @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+      .nav-logo {
+        transform: scale(var(--logo-scale, 1.4));
+        transform-origin: left center;
+      }
+    }
 
     /* Header on small screens: logo + single CTA only */
     @media (max-width: 640px) {
@@ -286,6 +298,17 @@
       will-change: transform, opacity;
     }
 
+    #tickets { scroll-margin-top: 100px; }
+    .ticket-card { display: flex; flex-direction: column; }
+    .ticket-card ul { margin: 24px 0; padding-left: 20px; list-style: disc; flex: 1; }
+    .ticket-card li { margin-bottom: 12px; }
+    .ticket-card a { justify-content: center; }
+    .ticket-featured { border-color: rgba(157,185,255,.45); }
+    .ticket-badge { color: #4ae3b5; }
+    .ticket-plain { border: 1px solid transparent; }
+    .ticket-card a.ticket-link { justify-content: flex-start; }
+    .nav-cta { display: inline-block; white-space: nowrap; }
+
     .text-gradient {
       background: linear-gradient(95deg, #3b6bff, #9db9ff 70%);
       -webkit-background-clip: text;
@@ -311,15 +334,17 @@
   <header class="fixed inset-x-0 top-0 z-50" style="background: rgba(4,6,10,.35); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.05);">
     <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
       <a href="https://aiconf.asia/" class="inline-flex items-center opacity-90 hover:opacity-100 transition" aria-label="AI Conf Asia">
-        <img src="logo.svg" alt="AI Conf Asia" width="871" height="171" fetchpriority="high" class="h-6 w-auto">
+        <img src="logo.svg" alt="AI Conf Asia" width="871" height="171" fetchpriority="high" class="nav-logo h-6 w-auto">
       </a>
       <nav aria-label="Primary">
         <ul class="flex items-center gap-7 text-sm text-white/70">
+          <li class="nav-secondary"><a href="#cfs" class="hover:text-white transition">Speak</a></li>
           <li class="nav-secondary"><a href="https://ai.wwktm.com/2026/" class="hover:text-white transition">2026</a></li>
           <li class="nav-secondary"><a href="https://wwktm.com" class="hover:text-white transition">wwktm</a></li>
           <li>
-            <button type="button" id="nav-updates" class="glass rounded-full px-4 py-1.5 text-white/90 hover:text-white hover:border-amber/40 transition cursor-pointer">Get updates</button>
+            <button type="button" id="nav-updates" class="hover:text-white transition cursor-pointer">Get updates</button>
           </li>
+          <li><a href="#tickets" class="nav-cta btn-accent rounded-full px-4 py-1.5 font-semibold">Get tickets</a></li>
         </ul>
       </nav>
     </div>
@@ -356,10 +381,11 @@
 
       <!-- Primary CTA -->
       <div class="mt-10">
-        <a href="#cfs" class="inline-flex items-center gap-2 btn-accent rounded-full px-8 py-3.5 font-semibold">
-          Speak at AI Conf
+        <a href="#tickets" class="inline-flex items-center gap-2 btn-accent rounded-full px-8 py-3.5 font-semibold">
+          Get tickets
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
         </a>
+        <p class="mt-4 text-sm text-white/60">Tickets from NPR 4,000 &middot; <a href="#cfs" class="underline decoration-white/30 underline-offset-4 hover:text-white transition">or apply to speak</a></p>
       </div>
     </div>
 
@@ -397,6 +423,57 @@
    </div>
   </section>
 
+  <!-- TICKETS -->
+  <section id="tickets" class="relative max-w-6xl mx-auto px-6 pb-24" aria-labelledby="tickets-title">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="text-sm font-medium tracking-widest uppercase text-amber">Tickets</p>
+      <h2 id="tickets-title" class="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight">Join Asia’s AI builders in Kathmandu</h2>
+      <p class="mt-4 text-white/60">Choose your ticket for the January 9 conference. Support the community a little further with a Micro Sponsor ticket.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      <article class="ticket-card ticket-featured card glass rounded-2xl p-7">
+        <p class="text-xs font-medium tracking-widest uppercase text-amber">For early believers &middot; <span class="ticket-badge">First 30 tickets</span></p>
+        <h3 class="mt-3 font-display text-xl font-semibold">Believer Ticket</h3>
+        <p class="mt-5 font-display text-3xl font-semibold">NPR 4,000</p>
+        <p class="mt-2 text-sm text-white/60">USD 55 for international payments</p>
+        <ul class="text-sm leading-relaxed text-white/70">
+          <li>January 9 conference admission</li>
+          <li>Express interest in the January 10 community hike*</li>
+        </ul>
+        <a href="https://tickets.wwktm.com/?ticketType=believer" class="inline-flex items-center btn-accent rounded-full px-6 py-3 font-semibold">Get Believer ticket</a>
+      </article>
+
+      <article class="ticket-card ticket-plain rounded-2xl p-7" style="opacity:.6" aria-disabled="true">
+        <p class="text-xs font-medium tracking-widest uppercase text-amber">Be part of the conversation</p>
+        <h3 class="mt-3 font-display text-xl font-semibold">Regular Ticket</h3>
+        <p class="mt-5 font-display text-3xl font-semibold">NPR 6,000</p>
+        <p class="mt-2 text-sm text-white/60">USD 75 for international payments</p>
+        <ul class="text-sm leading-relaxed text-white/70">
+          <li>January 9 conference admission</li>
+          <li>Express interest in the January 10 community hike*</li>
+        </ul>
+        <span class="ticket-link inline-flex items-center gap-2 py-3 font-semibold text-white/60" style="cursor:not-allowed">Available after Believer tickets sell out</span>
+      </article>
+
+      <article class="ticket-card card glass rounded-2xl p-7">
+        <p class="text-xs font-medium tracking-widest uppercase text-amber">Back the community</p>
+        <h3 class="mt-3 font-display text-xl font-semibold">Micro Sponsor Ticket</h3>
+        <p class="mt-5 font-display text-3xl font-semibold">NPR 15,000</p>
+        <p class="mt-2 text-sm text-white/60">USD 165 for international payments</p>
+        <ul class="text-sm leading-relaxed text-white/70">
+          <li>January 9 conference admission</li>
+          <li>January 8 exclusive community dinner with speakers, sponsors, and organizers</li>
+          <li>Express interest in the January 10 community hike*</li>
+        </ul>
+        <a href="https://tickets.wwktm.com/?ticketType=micro-sponsor" class="ticket-link inline-flex items-center gap-2 py-3 font-semibold text-white/85 hover:text-white transition">Get Micro Sponsor ticket <span aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+
+    <p class="mt-6 text-sm leading-relaxed text-white/60">*Hike places are limited and confirmed on the event day. A ticket does not guarantee hike participation. The January 8 dinner is included only with Micro Sponsor tickets.</p>
+    <p class="mt-3 text-sm leading-relaxed text-white/60">Pay in NPR via Fonepay. For international USD payments, submit your registration and our team will contact you to arrange payment. Tickets are confirmed after payment verification.</p>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section class="relative pb-24">
     <div class="text-center max-w-2xl mx-auto px-6">
@@ -421,9 +498,19 @@
     <div class="mt-14 grid gap-5 md:grid-cols-3">
       <div class="card glass rounded-2xl p-7">
         <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
+        </div>
+        <p class="mt-5 text-xs font-medium tracking-widest uppercase text-amber">Jan 8</p>
+        <h3 class="mt-1.5 font-display text-lg font-semibold">Community dinner</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">An evening with speakers, sponsors, organizers, and Micro Sponsor ticket holders before the big day.</p>
+      </div>
+
+      <div class="card glass rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
           <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
         </div>
-        <h3 class="mt-5 font-display text-lg font-semibold">Talks &amp; keynotes</h3>
+        <p class="mt-5 text-xs font-medium tracking-widest uppercase text-amber">Jan 9</p>
+        <h3 class="mt-1.5 font-display text-lg font-semibold">Talks &amp; keynotes</h3>
         <p class="mt-2 text-sm leading-relaxed text-white/60">Speakers from across Asia and beyond sharing how they build, ship, and scale with AI, from research to production.</p>
       </div>
 
@@ -431,16 +518,9 @@
         <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
           <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><circle cx="17.5" cy="4.5" r="1.75"/><path stroke-linecap="round" stroke-linejoin="round" d="m2.5 19.5 6-11 3.5 6 2.5-4 7 9h-17Z"/></svg>
         </div>
-        <h3 class="mt-5 font-display text-lg font-semibold">Community hike</h3>
-        <p class="mt-2 text-sm leading-relaxed text-white/60">A conference hike around the Kathmandu valley, with the Himalayas as our backdrop. Fresh air, great views, and even better conversations.</p>
-      </div>
-
-      <div class="card glass rounded-2xl p-7">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-ember/20 to-amber/10 border border-ember/25 flex items-center justify-center">
-          <svg class="w-5 h-5 text-amber" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
-        </div>
-        <h3 class="mt-5 font-display text-lg font-semibold">Community</h3>
-        <p class="mt-2 text-sm leading-relaxed text-white/60">Meet the people shaping AI in Asia: founders, engineers, researchers, designers, and curious minds.</p>
+        <p class="mt-5 text-xs font-medium tracking-widest uppercase text-amber">Jan 10</p>
+        <h3 class="mt-1.5 font-display text-lg font-semibold">Community hike</h3>
+        <p class="mt-2 text-sm leading-relaxed text-white/60">A hike around the Kathmandu valley (limited places), with the Himalayas as our backdrop. Fresh air, great views, and even better conversations.</p>
       </div>
     </div>
   </section>
@@ -494,7 +574,7 @@
     <div class="max-w-2xl mx-auto px-6 text-center">
       <p class="text-sm font-medium tracking-widest uppercase text-amber">Stay in the loop</p>
       <h2 class="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight">Get the latest updates</h2>
-      <p class="mt-4 text-white/60">Be the first to hear about dates, speakers, tickets, and our signature community hike. Straight to your inbox.</p>
+      <p class="mt-4 text-white/60">Be the first to hear about speaker announcements, the schedule, and our signature community hike. Straight to your inbox.</p>
       <form action="https://listmonk.wwktm.com/subscription/form" method="POST" target="_blank" rel="noopener" class="listmonk-form mt-8">
         <input type="hidden" name="nonce" />
         <input type="hidden" name="l" value="3e144c62-fb3e-4f16-9813-da8ec37605ea" />
@@ -508,7 +588,7 @@
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
           </button>
         </div>
-        <p class="mt-4 text-xs text-white/50">No spam, ever.</p>
+        <p class="mt-4 text-xs text-white/50" role="status" aria-live="polite" data-status>No spam, ever.</p>
       </form>
     </div>
   </section>
@@ -538,6 +618,39 @@
   <script>
     (function () {
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Desktop logo shrinks without changing the header layout.
+      (function () {
+        var logo = document.querySelector('.nav-logo');
+        var desktopMotion = window.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)');
+        var frame = 0;
+
+        function update() {
+          frame = 0;
+          var progress = Math.min(Math.max(window.scrollY / 180, 0), 1);
+          logo.style.setProperty('--logo-scale', 1.4 - 0.4 * progress);
+        }
+
+        function onScroll() {
+          if (!frame) frame = requestAnimationFrame(update);
+        }
+
+        function sync() {
+          window.removeEventListener('scroll', onScroll);
+          cancelAnimationFrame(frame);
+          frame = 0;
+
+          if (desktopMotion.matches) {
+            update();
+            window.addEventListener('scroll', onScroll, { passive: true });
+          } else {
+            logo.style.removeProperty('--logo-scale');
+          }
+        }
+
+        desktopMotion.addEventListener('change', sync);
+        sync();
+      })();
 
       // Draw once; CSS crossfades and drifts the two pixel fields.
       document.querySelectorAll('.hero-pixels').forEach(function (canvas, layer) {
@@ -678,6 +791,27 @@
           iframe.allowFullscreen = true;
           glimpseFacade.replaceChildren(iframe);
         }, { once: true });
+      }
+
+      // Newsletter: submit in place. Listmonk sends no CORS headers, so the response is
+      // opaque; the browser's type=email + required check covers invalid input.
+      var newsletter = document.querySelector('.listmonk-form');
+      if (newsletter) {
+        newsletter.addEventListener('submit', function (event) {
+          event.preventDefault();
+          var status = newsletter.querySelector('[data-status]');
+          var button = newsletter.querySelector('button[type="submit"]');
+          button.disabled = true;
+          fetch(newsletter.action, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(newsletter)) })
+            .then(function () {
+              newsletter.reset();
+              status.textContent = 'Thanks! Check your inbox to confirm your subscription.';
+            })
+            .catch(function () {
+              status.textContent = 'Something went wrong. Please try again.';
+            })
+            .finally(function () { button.disabled = false; });
+        });
       }
 
       // Typewriter placeholder: companies people attended AI Conf 2026 from
