@@ -936,6 +936,9 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 @media (min-width: 940px) {
   .speakers-hub__row { grid-template-columns: minmax(0, 250px) minmax(0, 1fr); gap: clamp(2.5rem,5vw,4.5rem); }
 }
+/* unconfirmed speaker: card stays in markup as the template, apply panel spans the row */
+.speaker-teaser[hidden] { display: none; }
+.speaker-teaser[hidden] + .apply-panel { grid-column: 1 / -1; }
 
 .apply-panel {
   position: relative;
@@ -1748,6 +1751,17 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
 }
 .sponsor-cell:hover img { opacity: 1; }
 .sponsor-cell--tall img { max-height: 66px; }
+
+/* open sponsor slot: tier label only, no hover lift */
+.sponsor-slot__label {
+  color: rgba(255,255,255,.42);
+  font-family: var(--pixel);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.sponsor-feature .sponsor-slot__label { color: var(--lime); font-size: .85rem; }
+.sponsor-cell.sponsor-slot:hover { transform: none; background: transparent; }
 
 /* --------------------------------------------------------------------------
    14. FAQ

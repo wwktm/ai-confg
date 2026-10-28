@@ -271,7 +271,7 @@
             <p class="statpill__label">Builders</p>
           </div>
           <div class="statpill">
-            <p class="statpill__value">20+</p>
+            <p class="statpill__value">10+</p>
             <p class="statpill__label">Speakers from all over the globe</p>
           </div>
         </div>
@@ -388,7 +388,8 @@
         </header>
 
         <div class="speakers-hub__row">
-          <article class="speaker-teaser speaker-teaser--announced speaker">
+          <!-- Confirmed 2027 speaker card template: remove `hidden` once announced -->
+          <article class="speaker-teaser speaker-teaser--announced speaker" hidden>
             <button class="speaker__trigger" type="button" data-speaker="amit-2027" data-speaker-edition="2027" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2026/amit.jpeg" alt="Portrait of Amit Timalsina" width="640" height="640" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2027 · First announced</span>
@@ -430,10 +431,10 @@
           <div class="past-speakers__head">
             <div>
               <h3 id="past-speakers-title">Voices across three chapters</h3>
-              <p>36 speakers, hosts, moderators and panelists since 2018.</p>
+              <p>35 speakers, hosts, moderators and panelists since 2018.</p>
             </div>
             <div class="speaker-filters" role="group" aria-label="Filter previous speakers by year">
-              <button type="button" class="speaker-filter is-active" data-speaker-filter="all" aria-pressed="true">All <span>36</span></button>
+              <button type="button" class="speaker-filter is-active" data-speaker-filter="all" aria-pressed="true">All <span>35</span></button>
               <button type="button" class="speaker-filter" data-speaker-filter="2018" aria-pressed="false">2018 <span>10</span></button>
               <button type="button" class="speaker-filter" data-speaker-filter="2019" aria-pressed="false">2019 <span>12</span></button>
               <button type="button" class="speaker-filter" data-speaker-filter="2026" aria-pressed="false">2026 <span>14</span></button>
@@ -483,15 +484,6 @@
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Denis Radin</span>
               <span class="speaker__role">JavaScript Engineer, Evolution Gaming</span>
-              <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
-          </li>
-          <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="gaurav-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
-              <span class="speaker__photo mask-6"><img src="assets/speakers/2018/gaurav-sen.jpeg" alt="Portrait of Gaurav Sen" width="700" height="700" loading="lazy" decoding="async"></span>
-              <span class="speaker__year">2018</span>
-              <span class="speaker__name">Gaurav Sen</span>
-              <span class="speaker__role">Platform Engineer, Directi</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
             </button>
           </li>
@@ -549,10 +541,10 @@
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
             </button>
           </li>
-          <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="gaurav-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+          <li class="speaker speaker--interactive" data-speaker-year="2018 2019">
+            <button class="speaker__trigger" type="button" data-speaker="gaurav" data-speaker-edition="2018 · 2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2019/gaurav-sen.jpeg" alt="Portrait of Gaurav Sen" width="700" height="700" loading="lazy" decoding="async"></span>
-              <span class="speaker__year">2019</span>
+              <span class="speaker__year">2018 · 2019</span>
               <span class="speaker__name">Gaurav Sen</span>
               <span class="speaker__role">Systems Design Educator</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
@@ -917,25 +909,24 @@
       <div class="shell">
         <div class="sponsors__head">
           <div>
-            <h2 class="display">Official Elite<br>Sponsor</h2>
+            <h2 class="display">Our 2027<br>Sponsors</h2>
             <a class="btn btn--violet" href="mailto:hello@wwktm.com?subject=AI%20Conf%20Asia%202027%20sponsorship">
               <span class="btn__text">Become a Sponsor</span>
               <span class="btn__tab" aria-hidden="true"><svg class="px-icon" viewBox="0 0 7 9"><use href="#px-arrow"/></svg></span>
             </a>
           </div>
 
-          <div class="sponsor-feature notch-box">
-            <img src="assets/sponsors/programiz.svg" alt="Programiz" width="220" height="84" loading="lazy" decoding="async">
-          </div>
+          <!-- Open slots: swap a slot's label for the sponsor's logo link once confirmed -->
+          <div class="sponsor-feature sponsor-slot notch-box"><span class="sponsor-slot__label">Title Sponsor</span></div>
         </div>
 
         <div class="sponsor-grid">
-          <a class="sponsor-cell notch-box" href="https://www.lftechnology.com/" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/leapfrog.svg" alt="Leapfrog Technology" loading="lazy" decoding="async"></a>
-          <a class="sponsor-cell notch-box" href="https://www.logpoint.com/" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/logpoint.png" alt="Logpoint" loading="lazy" decoding="async"></a>
-          <a class="sponsor-cell notch-box" href="https://securitypal.ai/" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/securitypal.svg" alt="SecurityPal AI" loading="lazy" decoding="async"></a>
-          <a class="sponsor-cell notch-box" href="https://www.proshore.co/" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/proshore.svg" alt="Proshore" loading="lazy" decoding="async"></a>
-          <a class="sponsor-cell notch-box" href="https://www.gritfeat.com/" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/gritfeat.svg" alt="GritFeat Solutions" loading="lazy" decoding="async"></a>
-          <a class="sponsor-cell notch-box" href="https://fusemachines.com/" target="_blank" rel="noopener noreferrer"><img src="assets/sponsors/fusemachines.svg" alt="Fusemachines" loading="lazy" decoding="async"></a>
+          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Gold Sponsor</span></div>
+          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Gold Sponsor</span></div>
+          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Gold Sponsor</span></div>
+          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
+          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
+          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
         </div>
       </div>
     </section>
@@ -1292,10 +1283,25 @@
         ]
       };
 
+      /* spoke at two editions, so one card covers both */
+      speakerData.gaurav = {
+        name: 'Gaurav Sen',
+        role: 'Systems Design Educator',
+        image: 'assets/speakers/2019/gaurav-sen.jpeg',
+        title: 'Making Decisions Among Tradeoffs in Systems Design',
+        bio: 'Gaurav Sen spoke at both the 2018 and 2019 editions of Web Weekend Kathmandu, first as a platform engineer at Directi and then as a systems design educator.',
+        quote: 'Part of the community that helped establish Web Weekend Kathmandu as a place for ideas, craft, and meaningful connections.',
+        accent: '#c1ff4c',
+        companies: [{ mark: '2018', name: 'WWKTM 2018' }, { mark: '2019', name: 'WWKTM 2019' }],
+        links: [
+          { label: '2018 archive', url: 'https://wwktm.com/2018/' },
+          { label: '2019 archive', url: 'https://wwktm.com/2019/' }
+        ]
+      };
+
       var speakerTalks = {
         'artur-2019': 'How to Change Your Manual Testing Time Into Chiya Drinking Time',
         'devraj-2019': 'RGB of Product / Project Management',
-        'gaurav-2019': 'Making Decisions Among Tradeoffs in Systems Design',
         'george-2019': 'More Than Music with WebMIDI & JavaScript',
         'huijing-2019': 'Using DevTools to Understand Modern CSS Layouts',
         'karen-2019': 'The Gender Gap Between Frontend and Backend Developers',
@@ -1379,7 +1385,7 @@
         shuffledSpeakers.forEach(function (speaker) { previousSpeakerGrid.appendChild(speaker); });
       }
 
-      var speakerOrder = Array.prototype.map.call(document.querySelectorAll('[data-speaker]'), function (card) {
+      var speakerOrder = Array.prototype.map.call(document.querySelectorAll(':not([hidden]) > [data-speaker]'), function (card) {
         return card.getAttribute('data-speaker');
       });
       var speakerDialog = document.getElementById('speaker-dialog');
@@ -1451,7 +1457,7 @@
             button.setAttribute('aria-pressed', active ? 'true' : 'false');
           });
           document.querySelectorAll('[data-speaker-year]').forEach(function (card) {
-            card.classList.toggle('is-filtered-out', year !== 'all' && card.getAttribute('data-speaker-year') !== year);
+            card.classList.toggle('is-filtered-out', year !== 'all' && card.getAttribute('data-speaker-year').split(' ').indexOf(year) < 0);
           });
         });
       });
