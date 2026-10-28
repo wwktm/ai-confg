@@ -192,19 +192,32 @@
 
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="top">
+      <div class="hero__ambient" aria-hidden="true">
+        <span class="hero__sunrise"></span>
+        <svg class="hero__landscape" viewBox="0 0 1440 720" preserveAspectRatio="none">
+          <g class="hero__contours">
+            <path d="M-70 346C92 250 210 286 344 190S586 86 738 186s251 122 390 22 250-82 382 4"/>
+            <path d="M-76 388C91 297 225 326 361 237S594 149 744 238s255 104 397 14 244-70 373 10"/>
+            <path d="M-80 430C92 344 240 367 378 284S603 212 750 289s259 86 403 5 237-58 365 16"/>
+          </g>
+          <path class="hero__ridge hero__ridge--far" d="M-80 720V465C43 434 116 357 215 390c84 28 139-97 224-73 96 27 136-154 245-105 92 41 133 159 230 128 105-34 172-163 278-110 75 37 113 122 198 102 63-15 106-76 170-63v451Z"/>
+          <path class="hero__ridge hero__ridge--mid" d="M-80 720V548c117-64 207-30 297-103 75-61 132-19 203 20 89 49 152-126 247-91 91 34 139 126 238 89 103-39 164-91 260-36 92 52 153-49 246-7 53 24 96 67 149 56v244Z"/>
+          <path class="hero__ridge hero__ridge--near" d="M-80 720V621c111-46 205-11 302-74 100-65 170 61 272 8 91-47 163-99 258-42 95 57 166-6 260-29 94-23 158 81 252 43 89-36 166-5 276 50v143Z"/>
+        </svg>
+      </div>
       <div class="shell hero__top">
         <div>
           <span class="label">Jan 8–10, 2027 · Kathmandu, Nepal</span>
           <h1 class="display hero__title">
-            Nepal&rsquo;s Biggest<br>
-            AI Conference<br>
-            Returns
+            <span>Asia&rsquo;s AI Community</span>
+            <span>Gathers in the Himalayas</span>
           </h1>
         </div>
 
         <div class="hero__aside">
+          <p class="hero__kicker">AI Conf Asia 2027</p>
           <p class="hero__tagline">
-            Bringing Asia&rsquo;s AI Community Together In The Himalayas
+            Three days of ideas, craft and community for the people building what&rsquo;s next with AI.
           </p>
           <a class="btn btn--violet" href="#tickets">
             <span class="btn__text">Register Now</span>
@@ -230,8 +243,8 @@
 
         <div class="glitch hero__glitch" aria-hidden="true">
           <div class="glitch__track">
-            <span>AI CONF ASIA <em>2027</em>&emsp;&#9670;&emsp;KATHMANDU&emsp;&#9670;&emsp;JAN 08&ndash;10&emsp;&#9670;&emsp;BUILD WITH AI&emsp;&#9670;&emsp;BUILD FOR AI&emsp;&#9670;&emsp;SPEAKERS&emsp;&#9670;&emsp;CRAFT&emsp;&#9670;&emsp;COMMUNITY&emsp;&#9670;&emsp;HIMALAYAS&emsp;&#9670;&emsp;500+ BUILDERS&emsp;&#9670;&emsp;CALL FOR SPEAKERS&emsp;&#9670;&emsp;</span>
-            <span>AI CONF ASIA <em>2027</em>&emsp;&#9670;&emsp;KATHMANDU&emsp;&#9670;&emsp;JAN 08&ndash;10&emsp;&#9670;&emsp;BUILD WITH AI&emsp;&#9670;&emsp;BUILD FOR AI&emsp;&#9670;&emsp;SPEAKERS&emsp;&#9670;&emsp;CRAFT&emsp;&#9670;&emsp;COMMUNITY&emsp;&#9670;&emsp;HIMALAYAS&emsp;&#9670;&emsp;500+ BUILDERS&emsp;&#9670;&emsp;CALL FOR SPEAKERS&emsp;&#9670;&emsp;</span>
+            <span class="glitch__set"><span class="glitch__item">AI CONF ASIA <em>2027</em></span><span class="glitch__item">KATHMANDU</span><span class="glitch__item">JAN 08&ndash;10</span><span class="glitch__item">BUILD WITH AI</span><span class="glitch__item">BUILD FOR AI</span><span class="glitch__item">SPEAKERS</span><span class="glitch__item">CRAFT</span><span class="glitch__item">COMMUNITY</span><span class="glitch__item">HIMALAYAS</span><span class="glitch__item">500+ BUILDERS</span><span class="glitch__item">CALL FOR SPEAKERS</span></span>
+            <span class="glitch__set"><span class="glitch__item">AI CONF ASIA <em>2027</em></span><span class="glitch__item">KATHMANDU</span><span class="glitch__item">JAN 08&ndash;10</span><span class="glitch__item">BUILD WITH AI</span><span class="glitch__item">BUILD FOR AI</span><span class="glitch__item">SPEAKERS</span><span class="glitch__item">CRAFT</span><span class="glitch__item">COMMUNITY</span><span class="glitch__item">HIMALAYAS</span><span class="glitch__item">500+ BUILDERS</span><span class="glitch__item">CALL FOR SPEAKERS</span></span>
           </div>
         </div>
       </div>
@@ -430,8 +443,8 @@
         <div class="past-speakers" id="past-speakers">
           <div class="past-speakers__head">
             <div>
-              <h3 id="past-speakers-title">Voices across three chapters</h3>
-              <p>35 speakers, hosts, moderators and panelists since 2018.</p>
+              <h3 id="past-speakers-title">Past speakers</h3>
+              <p>35 speakers, hosts, moderators and panelists across AI Conf Asia since 2018.</p>
             </div>
             <div class="speaker-filters" role="group" aria-label="Filter previous speakers by year">
               <button type="button" class="speaker-filter is-active" data-speaker-filter="all" aria-pressed="true">All <span>35</span></button>
@@ -1014,8 +1027,8 @@
     <section class="section cta">
       <div class="shell">
         <div class="cta__box notch notch-box">
-          <h2 class="display">Architecting the<br>Intelligent Age</h2>
-          <p class="lede">Join industry leaders driving the next wave of technology.</p>
+          <h2 class="display">Asia’s AI Community<br>Gathers in the Himalayas</h2>
+          <p class="lede">Jan 8–10, 2027 · Kathmandu, Nepal · 3 days, 500 builders</p>
           <a class="btn btn--lime" href="#tickets">
             <span class="btn__text">Buy Tickets</span>
             <span class="btn__tab" aria-hidden="true"><svg class="px-icon" viewBox="0 0 7 9"><use href="#px-arrow"/></svg></span>
@@ -1113,9 +1126,6 @@
     <div class="shell">
       <div class="footer__box">
         <div class="footer__cell">
-          <a class="footer__brand" href="#top" aria-label="AI Conf Asia — back to top">
-            <img src="assets/logo-static.svg" alt="AI Conf Asia" width="871" height="171" loading="lazy">
-          </a>
           <p class="footer__place">Asia&rsquo;s AI community meets in<br>Kathmandu · January 8–10, 2027</p>
           <dl class="footer__mail">
             <dt>Questions &amp; support</dt>
@@ -1161,13 +1171,34 @@
         <span>&copy; 2027 AI Conf Asia · Kathmandu, Nepal</span>
         <a href="#top">Back to top ↑</a>
       </div>
+    </div>
 
+    <div class="footer__wordmark" data-footer-wordmark>
+      <div class="footer__wordmark-stage" role="img" aria-label="AI Conf">
+        <canvas class="footer__wordmark-lines" data-src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTczIiBoZWlnaHQ9IjQ3IiB2aWV3Qm94PSIwIDAgMTczIDQ3IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTQxLjE3OCA0NC4zMTI0SDE0Ni4zOTFWNDYuOTE5SDEzOC41NzFWNDQuMzEyNEgxMzUuOTY1VjM5LjA5OTNIMTQxLjE3OFY0NC4zMTI0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE2Mi4wMyAxMC40MjY0SDE2Ny4yNDNWMTMuMDMzSDE1OS40MjNWMjAuODUzSDE1Ni44MTdWMjguNjcyN0gxNTQuMjFWMzYuNDkyN0gxNTEuNjA0VjQxLjcwNTdIMTQ4Ljk5N1Y0NC4zMTI0SDE0Ni4zOTFWMzYuNDkyN0gxNDguOTk3VjI4LjY3MjdIMTUxLjYwNFYyMC44NTNIMTU0LjIxVjEzLjAzM0gxNDguOTk3VjEwLjQyNjRIMTU2LjgxN1Y1LjIxMzMySDE1OS40MjNWMi42MDY2NkgxNjIuMDNWMTAuNDI2NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xOS4xMjA0IDEuMDIwNjJDMTkuNjkzNyAwLjAyNzczODYgMjEuMTI2OCAwLjAyNzY5MTIgMjEuNzAwMSAxLjAyMDYyTDQwLjYxODggMzUuMDIxNUM0MS4xOTIxIDM2LjAxNDQgNDAuNDc1MyAzNy4yNTU0IDM5LjMyODcgMzcuMjU1NEgzMC45NkwyOC4zNDgzIDMyLjczMTdIMTIuMzUwMUw5LjczODM1IDM3LjI1NTRIMS40OTE3NUMwLjM0NTMxMiAzNy4yNTUzIC0wLjM3MTQzOCAzNi4wMTQ0IDAuMjAxNjIzIDM1LjAyMTVMMTkuMTIwNCAxLjAyMDYyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTUwLjYwODYgOS42NTkwOEM1MS40MzExIDkuNjU5MTUgNTIuMDk3OSAxMC4zMjYxIDUyLjA5NzkgMTEuMTQ4NlYzNS42NTc1QzUyLjA5NzkgMzYuNDgwMSA1MS40MzExIDM3LjE0NyA1MC42MDg2IDM3LjE0N0g0NC4yNzg1QzQzLjQ1NTkgMzcuMTQ3IDQyLjc4ODkgMzYuNDgwMSA0Mi43ODg5IDM1LjY1NzVWMTEuMTQ4NkM0Mi43ODg5IDEwLjMyNiA0My40NTU5IDkuNjU5MDggNDQuMjc4NSA5LjY1OTA4SDUwLjYwODZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNjguNTc0NyAxNS42MjgxSDY1Ljk2ODNWMjAuODQxMUg2My4zNjE2VjMxLjI2NzhINjUuOTY4M1YzMy44NzQ0SDczLjc4NzdWMzYuNDgwOEg2My4zNjE2VjMzLjg3NDRINjAuNzU1MlYzMS4yNjc4SDU4LjE0ODZWMjAuODQxMUg2MC43NTUyVjE1LjYyODFINjMuMzYxNlYxMy4wMjE0SDY4LjU3NDdWMTUuNjI4MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik05NS43MzY1IDE1LjYyODFIOTMuMTMwMVYyMC44NDExSDkwLjUyMzVWMzEuMjY3OEg5My4xMzAxVjMzLjg3NDRIMTAwLjk1VjM2LjQ4MDhIOTAuNTIzNVYzMy44NzQ0SDg3LjkxNzFWMzEuMjY3OEg4NS4zMTA0VjIwLjg0MTFIODcuOTE3MVYxNS42MjgxSDkwLjUyMzVWMTMuMDIxNEg5NS43MzY1VjE1LjYyODFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTI1LjUwOSAxOC4yMzQ4SDEyOC4xMTZWMjAuODQxMUgxMjUuNTA5VjIzLjQ0NzhIMTIyLjkwM1YyOC42NjExSDEyMC4yOTZWMzYuNDgwOEgxMTUuMDgzVjI4LjY2MTFIMTE3LjY5VjIwLjg0MTFIMTIwLjI5NlYxMy4wMjE0SDExNy42OVYxMC40MTQ4SDEyNS41MDlWMTguMjM0OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNDEuMTQ4IDEzLjAyMTRIMTQzLjc1NVYyMC44NDExSDE0MS4xNDhWMjguNjYxMUgxMzguNTQyVjMzLjg3NDRIMTQxLjE0OFYzNi40ODA4SDEzMy4zMjlWMjguNjYxMUgxMzUuOTM1VjIwLjg0MTFIMTM4LjU0MlYxNS42MjgxSDEzNS45MzVWMTMuMDIxNEgxMzMuMzI5VjEwLjQxNDhIMTQxLjE0OFYxMy4wMjE0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTc5LjAwMDggMzMuODc0NEg3My43ODc3VjMxLjI2NzhINzkuMDAwOFYzMy44NzQ0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEwNi4xNjMgMTMuMDIxNEgxMDguNzY5VjE1LjYyODFIMTExLjM3NlYyNi4wNTQ1SDEwOC43NjlWMzEuMjY3OEgxMDYuMTYzVjMzLjg3NDRIMTAwLjk1VjMxLjI2NzhIMTAzLjU1NlYyNi4wNTQ1SDEwNi4xNjNWMTUuNjI4MUgxMDMuNTU2VjEzLjAyMTRIOTUuNzM2NVYxMC40MTQ4SDEwNi4xNjNWMTMuMDIxNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNDMuNzU1IDMzLjg3NDRIMTQxLjE0OFYzMS4yNjc4SDE0My43NTVWMzMuODc0NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04MS42MDc0IDMxLjI2NzhINzkuMDAwOFYyOC42NjExSDgxLjYwNzRWMzEuMjY3OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik03OS4wMDA4IDEzLjAyMTRIODEuNjA3NFYyMC44NDExSDc2LjM5NDRWMTMuMDIxNEg2OC41NzQ3VjEwLjQxNDhINzkuMDAwOFYxMy4wMjE0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEzMC43MjIgMTguMjM0OEgxMjguMTE2VjE1LjYyODFIMTMwLjcyMlYxOC4yMzQ4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExNy42OSAxNS42MjgxSDExNS4wODNWMTMuMDIxNEgxMTcuNjlWMTUuNjI4MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMzMuMzI5IDE1LjYyODFIMTMwLjcyMlYxMy4wMjE0SDEzMy4zMjlWMTUuNjI4MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNjkuODQ5IDIuNjA2NjZIMTcyLjQ1NlY3LjgxOTk4SDE2Ny4yNDNWMi42MDY2NkgxNjIuMDNWMEgxNjkuODQ5VjIuNjA2NjZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNTAuNjA4NiAwQzUxLjQzMTEgNi44ODQxM2UtMDUgNTIuMDk3OSAwLjY2Njk3NSA1Mi4wOTc5IDEuNDg5NTZWNS43NTM2OEM1Mi4wOTc5IDYuNTc2MjQgNTEuNDMxMSA3LjI0MzE2IDUwLjYwODYgNy4yNDMyM0g0NC4yNzg1QzQzLjQ1NTkgNy4yNDMyMyA0Mi43ODg5IDYuNTc2MjggNDIuNzg4OSA1Ljc1MzY4VjEuNDg5NTZDNDIuNzg4OSAwLjY2NjkzMyA0My40NTU5IDAgNDQuMjc4NSAwSDUwLjYwODZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" aria-label="AI Conf formed from interactive vertical lines"></canvas>
+      </div>
     </div>
   </footer>
 
   <script>
     (function () {
       'use strict';
+
+      /* ---- randomized CTA banner image ---- */
+      (function setRandomBannerImage() {
+        var banner = document.querySelector('.cta__box');
+        if (!banner) return;
+        var images = [
+          'assets/img/community/barcamp-2024.jpeg',
+          'assets/img/community/wwktm-2018-ai-talk.jpeg',
+          'assets/img/community/wwktm-community.jpeg',
+          'assets/img/community/wwktm-devtools-talk.jpeg',
+          'assets/img/community/wwktm-meetup.jpeg',
+          'assets/img/aiconf-2026.png'
+        ];
+        var index = Math.floor(Math.random() * images.length);
+        banner.style.setProperty('--cta-image', 'url("' + images[index] + '")');
+      }());
 
       /* ---- mobile nav ---- */
       var burger = document.getElementById('nav-burger');
@@ -1613,6 +1644,156 @@
 
         card.addEventListener('pointerleave', function () { moveTo(0, 0); });
         card.addEventListener('blur', function () { moveTo(0, 0); }, true);
+      })();
+
+
+      /* ---- Post AI Nation-style reactive logo, rebuilt with vertical lines ---- */
+      (function initFooterWordmark() {
+        var wordmark = document.querySelector('[data-footer-wordmark]');
+        var canvas = wordmark && wordmark.querySelector('canvas');
+        if (!canvas || !canvas.getContext) return;
+        var context = canvas.getContext('2d');
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var image = new Image();
+        var lines = [];
+        var width = 0;
+        var height = 0;
+        var frame = 0;
+        var hovering = false;
+        var pointer = { x: -9999, y: -9999, targetX: -9999, targetY: -9999 };
+        var layout = null;
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var holeStar = new Path2D('M21.3713 14.8301C21.0152 13.8487 19.6274 13.8487 19.2713 14.8301L18.0324 18.2466C17.9212 18.5529 17.682 18.7955 17.3772 18.9107L13.9664 20.1989C13.0032 20.5627 13.0032 21.9249 13.9664 22.2887L17.3772 23.5766C17.682 23.6918 17.9213 23.9344 18.0324 24.2407L19.2713 27.6567C19.6273 28.6383 21.0153 28.6383 21.3713 27.6567L22.6102 24.2407C22.7213 23.9343 22.9608 23.6918 23.2656 23.5766L26.6762 22.2887C27.6395 21.9249 27.6394 20.5627 26.6762 20.1989L23.2656 18.9107C22.9609 18.7955 22.7214 18.5529 22.6102 18.2466L21.3713 14.8301Z');
+        var holeCenter = { x: 20.8, y: 20.75 };
+
+        function smoothstep(a, b, value) {
+          var t = Math.min(1, Math.max(0, (value - a) / (b - a)));
+          return t * t * (3 - 2 * t);
+        }
+
+        function buildLines() {
+          var bounds = canvas.getBoundingClientRect();
+          width = bounds.width;
+          height = bounds.height;
+          if (!width || !height || !image.naturalWidth) return;
+          canvas.width = Math.round(width * dpr);
+          canvas.height = Math.round(height * dpr);
+          context.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+          var source = document.createElement('canvas');
+          source.width = image.naturalWidth;
+          source.height = image.naturalHeight;
+          var sourceContext = source.getContext('2d', { willReadFrequently: true });
+          sourceContext.drawImage(image, 0, 0);
+          var sourcePixels = sourceContext.getImageData(0, 0, source.width, source.height).data;
+          var minX = source.width, minY = source.height, maxX = 0, maxY = 0;
+          for (var sy = 0; sy < source.height; sy += 1) {
+            for (var sx = 0; sx < source.width; sx += 1) {
+              if (sourcePixels[(sy * source.width + sx) * 4 + 3] > 20) {
+                minX = Math.min(minX, sx); minY = Math.min(minY, sy);
+                maxX = Math.max(maxX, sx); maxY = Math.max(maxY, sy);
+              }
+            }
+          }
+          var sourceWidth = Math.max(1, maxX - minX + 1);
+          var sourceHeight = Math.max(1, maxY - minY + 1);
+          var offscreen = document.createElement('canvas');
+          offscreen.width = Math.round(width);
+          offscreen.height = Math.round(height);
+          var offContext = offscreen.getContext('2d', { willReadFrequently: true });
+          var scale = Math.min(offscreen.width / sourceWidth, offscreen.height / sourceHeight);
+          var drawWidth = sourceWidth * scale;
+          var drawHeight = sourceHeight * scale;
+          var offsetX = (offscreen.width - drawWidth) / 2;
+          offContext.drawImage(source, minX, minY, sourceWidth, sourceHeight, offsetX, 0, drawWidth, drawHeight);
+          layout = { scale: scale, offsetX: offsetX, minX: minX, minY: minY };
+          var alpha = offContext.getImageData(0, 0, offscreen.width, offscreen.height).data;
+          var spacing = Math.max(8, Math.min(14, width / 190));
+          lines = [];
+
+          for (var x = spacing / 2; x < width; x += spacing) {
+            var px = Math.min(offscreen.width - 1, Math.round(x));
+            var runStart = -1;
+            for (var y = 0; y <= height; y += 1) {
+              var inside = y < height && alpha[(Math.round(y) * offscreen.width + px) * 4 + 3] > 45;
+              if (inside && runStart < 0) runStart = y;
+              if (!inside && runStart >= 0) {
+                if (y - runStart > 2) lines.push({ x: x, y1: runStart, y2: y - 1 });
+                runStart = -1;
+              }
+            }
+          }
+        }
+
+        function draw(now) {
+          context.setTransform(dpr, 0, 0, dpr, 0, 0);
+          context.clearRect(0, 0, width, height);
+          if (!hovering) {
+            pointer.targetX = width / 2 + Math.sin(now * .00025) * width * .43;
+            pointer.targetY = height / 2 + Math.sin(now * .00041 + 1.2) * height * .36;
+          }
+          pointer.x += (pointer.targetX - pointer.x) * .09;
+          pointer.y += (pointer.targetY - pointer.y) * .09;
+          var influenceRadius = Math.max(90, height * .62);
+
+          lines.forEach(function (line) {
+            var middleY = (line.y1 + line.y2) / 2;
+            var dx = line.x - pointer.x;
+            var dy = middleY - pointer.y;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+            var proximity = 1 - smoothstep(0, influenceRadius, distance);
+            context.beginPath();
+            context.moveTo(line.x, line.y1);
+            context.lineTo(line.x, line.y2);
+            context.lineWidth = 1.25 + proximity * 1.75;
+            context.strokeStyle = 'rgba(210,220,227,' + (.26 + proximity * .28) + ')';
+            context.stroke();
+          });
+
+          /* flip the A's inner star exactly like the header logo */
+          if (layout) {
+            var period = 7000;
+            var progress = reduceMotion ? 1 : ((now % period) / period);
+            var angle = progress < .45
+              ? Math.PI * (progress / .45)
+              : progress < .55
+                ? Math.PI
+                : Math.PI + Math.PI * ((progress - .55) / .45);
+            var flip = Math.cos(angle);
+            var holeX = layout.offsetX + (holeCenter.x - layout.minX) * layout.scale;
+            var holeY = (holeCenter.y - layout.minY) * layout.scale;
+
+            context.save();
+            context.globalCompositeOperation = 'destination-out';
+            context.translate(holeX, holeY);
+            context.scale(flip * layout.scale, layout.scale);
+            context.translate(-holeCenter.x, -holeCenter.y);
+            context.fill(holeStar);
+            context.restore();
+          }
+
+          frame = window.requestAnimationFrame(draw);
+        }
+
+        function move(event) {
+          var bounds = canvas.getBoundingClientRect();
+          pointer.targetX = event.clientX - bounds.left;
+          pointer.targetY = event.clientY - bounds.top;
+        }
+
+        canvas.addEventListener('pointerenter', function () { hovering = true; });
+        canvas.addEventListener('pointerleave', function () { hovering = false; });
+        window.addEventListener('pointermove', move, { passive: true });
+        window.addEventListener('resize', function () {
+          window.clearTimeout(canvas._resizeTimer);
+          canvas._resizeTimer = window.setTimeout(buildLines, 120);
+        });
+
+        image.onload = function () {
+          buildLines();
+          if (!frame) frame = window.requestAnimationFrame(draw);
+        };
+        image.src = canvas.getAttribute('data-src');
       })();
 
       /* ---- scroll rhythm: reveals, progress and active navigation ---- */
