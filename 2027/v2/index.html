@@ -192,19 +192,32 @@
 
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="top">
+      <div class="hero__ambient" aria-hidden="true">
+        <span class="hero__sunrise"></span>
+        <svg class="hero__landscape" viewBox="0 0 1440 720" preserveAspectRatio="none">
+          <g class="hero__contours">
+            <path d="M-70 346C92 250 210 286 344 190S586 86 738 186s251 122 390 22 250-82 382 4"/>
+            <path d="M-76 388C91 297 225 326 361 237S594 149 744 238s255 104 397 14 244-70 373 10"/>
+            <path d="M-80 430C92 344 240 367 378 284S603 212 750 289s259 86 403 5 237-58 365 16"/>
+          </g>
+          <path class="hero__ridge hero__ridge--far" d="M-80 720V465C43 434 116 357 215 390c84 28 139-97 224-73 96 27 136-154 245-105 92 41 133 159 230 128 105-34 172-163 278-110 75 37 113 122 198 102 63-15 106-76 170-63v451Z"/>
+          <path class="hero__ridge hero__ridge--mid" d="M-80 720V548c117-64 207-30 297-103 75-61 132-19 203 20 89 49 152-126 247-91 91 34 139 126 238 89 103-39 164-91 260-36 92 52 153-49 246-7 53 24 96 67 149 56v244Z"/>
+          <path class="hero__ridge hero__ridge--near" d="M-80 720V621c111-46 205-11 302-74 100-65 170 61 272 8 91-47 163-99 258-42 95 57 166-6 260-29 94-23 158 81 252 43 89-36 166-5 276 50v143Z"/>
+        </svg>
+      </div>
       <div class="shell hero__top">
         <div>
           <span class="label">Jan 8–10, 2027 · Kathmandu, Nepal</span>
           <h1 class="display hero__title">
-            Nepal&rsquo;s Biggest<br>
-            AI Conference<br>
-            Returns
+            <span>Asia&rsquo;s AI Community</span>
+            <span>Gathers in the Himalayas</span>
           </h1>
         </div>
 
         <div class="hero__aside">
+          <p class="hero__kicker">AI Conf Asia 2027</p>
           <p class="hero__tagline">
-            Bringing Asia&rsquo;s AI Community Together In The Himalayas
+            Three days of ideas, craft and community for the people building what&rsquo;s next with AI.
           </p>
           <a class="btn btn--violet" href="#tickets">
             <span class="btn__text">Register Now</span>
@@ -230,8 +243,8 @@
 
         <div class="glitch hero__glitch" aria-hidden="true">
           <div class="glitch__track">
-            <span>AI CONF ASIA <em>2027</em>&emsp;&#9670;&emsp;KATHMANDU&emsp;&#9670;&emsp;JAN 08&ndash;10&emsp;&#9670;&emsp;BUILD WITH AI&emsp;&#9670;&emsp;BUILD FOR AI&emsp;&#9670;&emsp;SPEAKERS&emsp;&#9670;&emsp;CRAFT&emsp;&#9670;&emsp;COMMUNITY&emsp;&#9670;&emsp;HIMALAYAS&emsp;&#9670;&emsp;500+ BUILDERS&emsp;&#9670;&emsp;CALL FOR SPEAKERS&emsp;&#9670;&emsp;</span>
-            <span>AI CONF ASIA <em>2027</em>&emsp;&#9670;&emsp;KATHMANDU&emsp;&#9670;&emsp;JAN 08&ndash;10&emsp;&#9670;&emsp;BUILD WITH AI&emsp;&#9670;&emsp;BUILD FOR AI&emsp;&#9670;&emsp;SPEAKERS&emsp;&#9670;&emsp;CRAFT&emsp;&#9670;&emsp;COMMUNITY&emsp;&#9670;&emsp;HIMALAYAS&emsp;&#9670;&emsp;500+ BUILDERS&emsp;&#9670;&emsp;CALL FOR SPEAKERS&emsp;&#9670;&emsp;</span>
+            <span class="glitch__set"><span class="glitch__item">AI CONF ASIA <em>2027</em></span><span class="glitch__item">KATHMANDU</span><span class="glitch__item">JAN 08&ndash;10</span><span class="glitch__item">BUILD WITH AI</span><span class="glitch__item">BUILD FOR AI</span><span class="glitch__item">SPEAKERS</span><span class="glitch__item">CRAFT</span><span class="glitch__item">COMMUNITY</span><span class="glitch__item">HIMALAYAS</span><span class="glitch__item">500+ BUILDERS</span><span class="glitch__item">CALL FOR SPEAKERS</span></span>
+            <span class="glitch__set"><span class="glitch__item">AI CONF ASIA <em>2027</em></span><span class="glitch__item">KATHMANDU</span><span class="glitch__item">JAN 08&ndash;10</span><span class="glitch__item">BUILD WITH AI</span><span class="glitch__item">BUILD FOR AI</span><span class="glitch__item">SPEAKERS</span><span class="glitch__item">CRAFT</span><span class="glitch__item">COMMUNITY</span><span class="glitch__item">HIMALAYAS</span><span class="glitch__item">500+ BUILDERS</span><span class="glitch__item">CALL FOR SPEAKERS</span></span>
           </div>
         </div>
       </div>
@@ -429,8 +442,8 @@
         <div class="past-speakers" id="past-speakers">
           <div class="past-speakers__head">
             <div>
-              <h3 id="past-speakers-title">Voices across three chapters</h3>
-              <p>36 speakers, hosts, moderators and panelists since 2018.</p>
+              <h3 id="past-speakers-title">Past speakers</h3>
+              <p>36 speakers, hosts, moderators and panelists across AI Conf Asia since 2018.</p>
             </div>
             <div class="speaker-filters" role="group" aria-label="Filter previous speakers by year">
               <button type="button" class="speaker-filter is-active" data-speaker-filter="all" aria-pressed="true">All <span>36</span></button>
@@ -1023,8 +1036,8 @@
     <section class="section cta">
       <div class="shell">
         <div class="cta__box notch notch-box">
-          <h2 class="display">Architecting the<br>Intelligent Age</h2>
-          <p class="lede">Join industry leaders driving the next wave of technology.</p>
+          <h2 class="display">Asia’s AI Community<br>Gathers in the Himalayas</h2>
+          <p class="lede">Jan 8–10, 2027 · Kathmandu, Nepal · 3 days, 500 builders</p>
           <a class="btn btn--lime" href="#tickets">
             <span class="btn__text">Buy Tickets</span>
             <span class="btn__tab" aria-hidden="true"><svg class="px-icon" viewBox="0 0 7 9"><use href="#px-arrow"/></svg></span>
@@ -1122,9 +1135,6 @@
     <div class="shell">
       <div class="footer__box">
         <div class="footer__cell">
-          <a class="footer__brand" href="#top" aria-label="AI Conf Asia — back to top">
-            <img src="assets/logo-static.svg" alt="AI Conf Asia" width="871" height="171" loading="lazy">
-          </a>
           <p class="footer__place">Asia&rsquo;s AI community meets in<br>Kathmandu · January 8–10, 2027</p>
           <dl class="footer__mail">
             <dt>Questions &amp; support</dt>
@@ -1177,6 +1187,22 @@
   <script>
     (function () {
       'use strict';
+
+      /* ---- randomized CTA banner image ---- */
+      (function setRandomBannerImage() {
+        var banner = document.querySelector('.cta__box');
+        if (!banner) return;
+        var images = [
+          'assets/img/community/barcamp-2024.jpeg',
+          'assets/img/community/wwktm-2018-ai-talk.jpeg',
+          'assets/img/community/wwktm-community.jpeg',
+          'assets/img/community/wwktm-devtools-talk.jpeg',
+          'assets/img/community/wwktm-meetup.jpeg',
+          'assets/img/aiconf-2026.png'
+        ];
+        var index = Math.floor(Math.random() * images.length);
+        banner.style.setProperty('--cta-image', 'url("' + images[index] + '")');
+      }());
 
       /* ---- mobile nav ---- */
       var burger = document.getElementById('nav-burger');
