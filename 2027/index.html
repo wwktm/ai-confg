@@ -221,15 +221,14 @@
       </div>
 
       <div class="shell hero__media">
-        <div class="media-frame mask-1 media-frame--video" data-yt="fFNBykBRhTQ">
-          <button class="yt" type="button" aria-label="Play the AI Conf Asia 2026 recap video">
-            <img src="assets/img/recap-2026.webp"
-                 alt="Attendees gathered in front of the AI Conf LED wall at AI Conf Asia 2026"
-                 width="1280" height="720" fetchpriority="high" decoding="async">
-            <span class="yt__play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v14l11-7-11-7Z"/></svg>
-            </span>
-          </button>
+        <div class="media-frame mask-1 media-frame--video is-playing">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/fFNBykBRhTQ?playsinline=1&amp;rel=0"
+            title="AI Conf Asia 2026 recap video"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
         </div>
         <p class="hero__watch">
           <a href="https://youtu.be/fFNBykBRhTQ" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
@@ -247,7 +246,25 @@
     <!-- ============================== EVENT INTRO CTA ============================== -->
     <section class="intro-band" aria-label="Join AI Conf Asia 2027">
       <div class="shell footer__close">
-        <div class="globe" aria-hidden="true"></div>
+        <div class="globe" aria-hidden="true">
+          <svg class="globe__ai" viewBox="0 0 56 48" role="presentation">
+            <defs>
+              <pattern id="ai-line-pattern" width="2.4" height="48" patternUnits="userSpaceOnUse">
+                <rect width=".65" height="48" fill="currentColor"/>
+              </pattern>
+              <mask id="ai-star-cutout" maskUnits="userSpaceOnUse" x="0" y="0" width="42" height="39">
+                <rect width="42" height="39" fill="white"/>
+                <path class="globe__star" transform="scale(.276)" d="M77.44 53.737c-1.291-3.556-6.32-3.556-7.61 0l-4.489 12.38a4.05 4.05 0 0 1-2.374 2.406l-12.36 4.668c-3.49 1.319-3.49 6.254 0 7.573l12.36 4.667a4.05 4.05 0 0 1 2.374 2.406l4.489 12.378c1.29 3.557 6.319 3.557 7.61 0l4.489-12.378a4.05 4.05 0 0 1 2.375-2.406l12.358-4.667c3.49-1.319 3.49-6.254 0-7.573l-12.358-4.668a4.05 4.05 0 0 1-2.375-2.406l-4.489-12.38Z" fill="black"/>
+              </mask>
+            </defs>
+            <path mask="url(#ai-star-cutout)" d="M19.12 1.02c.574-.992 2.007-.992 2.58 0l18.919 34.001c.573.993-.144 2.234-1.29 2.234H30.96l-2.612-4.523H12.35l-2.612 4.523H1.492c-1.147 0-1.863-1.241-1.29-2.234L19.12 1.02Z"/>
+            <g transform="scale(.276)">
+              <path class="globe__star-visible" d="M77.44 53.737c-1.291-3.556-6.32-3.556-7.61 0l-4.489 12.38a4.05 4.05 0 0 1-2.374 2.406l-12.36 4.668c-3.49 1.319-3.49 6.254 0 7.573l12.36 4.667a4.05 4.05 0 0 1 2.374 2.406l4.489 12.378c1.29 3.557 6.319 3.557 7.61 0l4.489-12.378a4.05 4.05 0 0 1 2.375-2.406l12.358-4.667c3.49-1.319 3.49-6.254 0-7.573l-12.358-4.668a4.05 4.05 0 0 1-2.375-2.406l-4.489-12.38Z"/>
+            </g>
+            <path d="M50.609 9.659c.822 0 1.489.667 1.489 1.49v24.508c0 .823-.667 1.49-1.489 1.49h-6.33c-.823 0-1.49-.667-1.49-1.49V11.149c0-.823.667-1.49 1.49-1.49h6.33Z"/>
+            <path d="M50.609 0c.822 0 1.489.667 1.489 1.49v4.264c0 .822-.667 1.489-1.489 1.489h-6.33c-.823 0-1.49-.667-1.49-1.49V1.49c0-.823.667-1.49 1.49-1.49h6.33Z"/>
+          </svg>
+        </div>
         <div>
           <p>
             Join The 3 Day <strong>AI Conf Asia</strong> — explore the future of AI and connect
@@ -343,40 +360,47 @@
     </section>
 
     <!-- ============================== COMMUNITY ============================== -->
-    <section class="section community" aria-label="Glimpses from AI Conf and the wwktm community">
+    <section class="section community" aria-labelledby="community-title">
       <div class="shell">
-        <div class="community-mosaic">
-          <figure class="mosaic mosaic--lead">
+        <header class="community__head">
+          <span class="label label--lime">From the archive</span>
+          <h2 class="display" id="community-title">Built in Kathmandu.</h2>
+          <p>Years of talks, meetups and friendships—this is the community behind AI Conf Asia.</p>
+        </header>
+      </div>
+      <div class="glimpses" data-glimpses>
+        <div class="glimpses__track" data-glimpses-track>
+          <figure class="glimpse">
             <img src="assets/img/recap-2026.webp" alt="AI Conf Asia 2026 attendees in front of the LED wall" width="1280" height="720" loading="lazy" decoding="async">
-            <figcaption>2026</figcaption>
+            <figcaption>AI Conf Asia · 2026</figcaption>
           </figure>
-          <figure class="mosaic mosaic--tall">
-            <img src="assets/img/community/wwktm-2018-ai-talk.webp" alt="A talk on AI at Web Weekend Kathmandu 2018" width="640" height="427" loading="lazy" decoding="async">
-            <figcaption>2018</figcaption>
-          </figure>
-          <figure class="mosaic">
-            <img src="assets/img/aiconf-2026-mark.webp" alt="The AI Conf Asia mark on screen at AI Conf Asia 2026" width="344" height="344" loading="lazy" decoding="async">
-            <figcaption>2026</figcaption>
-          </figure>
-          <figure class="mosaic">
-            <img src="assets/img/community/barcamp-2024.webp" alt="The community at BarCamp Kathmandu 2024" width="640" height="427" loading="lazy" decoding="async">
-            <figcaption>2024</figcaption>
-          </figure>
-          <figure class="mosaic">
-            <img src="assets/img/community/wwktm-meetup.webp" alt="A Tech Kura Kani community meetup" width="640" height="480" loading="lazy" decoding="async">
-            <figcaption>Meetups</figcaption>
-          </figure>
-          <figure class="mosaic mosaic--wide mosaic--flat">
-            <img src="assets/img/aiconf-2026.webp" alt="AI Conf Asia 2026 — Kathmandu" width="850" height="510" loading="lazy" decoding="async">
-            <figcaption>2026</figcaption>
-          </figure>
-          <figure class="mosaic">
+          <figure class="glimpse">
             <img src="assets/img/community/wwktm-community.webp" alt="The Web Weekend Kathmandu community" width="640" height="360" loading="lazy" decoding="async">
-            <figcaption>wwktm</figcaption>
+            <figcaption>wwktm community</figcaption>
           </figure>
-          <figure class="mosaic">
+          <figure class="glimpse">
+            <img src="assets/img/aiconf-2026.webp" alt="AI Conf Asia 2026 — Kathmandu" width="850" height="510" loading="lazy" decoding="async">
+            <figcaption>Kathmandu · 2026</figcaption>
+          </figure>
+          <figure class="glimpse">
+            <img src="assets/img/community/wwktm-2018-ai-talk.webp" alt="A talk on AI at Web Weekend Kathmandu 2018" width="640" height="427" loading="lazy" decoding="async">
+            <figcaption>AI talks · 2018</figcaption>
+          </figure>
+          <figure class="glimpse">
+            <img src="assets/img/aiconf-2026-mark.webp" alt="The AI Conf Asia mark on screen at AI Conf Asia 2026" width="344" height="344" loading="lazy" decoding="async">
+            <figcaption>On stage · 2026</figcaption>
+          </figure>
+          <figure class="glimpse">
+            <img src="assets/img/community/wwktm-meetup.webp" alt="A Tech Kura Kani community meetup" width="640" height="480" loading="lazy" decoding="async">
+            <figcaption>Community meetups</figcaption>
+          </figure>
+          <figure class="glimpse">
             <img src="assets/img/community/wwktm-devtools-talk.webp" alt="A talk on developer tools and CSS" width="640" height="427" loading="lazy" decoding="async">
-            <figcaption>2019</figcaption>
+            <figcaption>Builder stories · 2019</figcaption>
+          </figure>
+          <figure class="glimpse">
+            <img src="assets/img/community/barcamp-2024.webp" alt="The community at BarCamp Kathmandu 2024" width="640" height="427" loading="lazy" decoding="async">
+            <figcaption>BarCamp · 2024</figcaption>
           </figure>
         </div>
       </div>
@@ -925,13 +949,17 @@
           <div class="sponsor-feature sponsor-slot notch-box"><span class="sponsor-slot__label">Title Sponsor</span></div>
         </div>
 
-        <div class="sponsor-grid">
+        <div class="sponsor-grid sponsor-grid--gold">
           <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Gold Sponsor</span></div>
           <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Gold Sponsor</span></div>
           <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Gold Sponsor</span></div>
-          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
-          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
-          <div class="sponsor-cell sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
+        </div>
+        <div class="sponsor-grid sponsor-grid--silver">
+          <div class="sponsor-cell sponsor-cell--silver sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
+          <div class="sponsor-cell sponsor-cell--silver sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
+          <div class="sponsor-cell sponsor-cell--silver sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
+          <div class="sponsor-cell sponsor-cell--silver sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
+          <div class="sponsor-cell sponsor-cell--silver sponsor-slot notch-box"><span class="sponsor-slot__label">Silver Sponsor</span></div>
         </div>
       </div>
     </section>
@@ -1262,39 +1290,6 @@
         });
       }
 
-      /* ---------------------------------------------------------------
-         Header video — lite YouTube facade
-         The recap thumbnail paints immediately; the real player is only
-         injected on click, exactly as on the 2027 page. This keeps the
-         hero free of YouTube chrome and avoids loading the player (and
-         its ~1MB of script) for visitors who never press play.
-         --------------------------------------------------------------- */
-      (function initHeaderVideo() {
-        var host = document.querySelector('[data-yt]');
-        if (!host) return;
-
-        var id = host.getAttribute('data-yt');
-        var loaded = false;
-
-        function play() {
-          if (loaded) return;
-          loaded = true;
-
-          var iframe = document.createElement('iframe');
-          iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&playsinline=1&rel=0';
-          iframe.title = 'AI Conf Asia 2026 recap video';
-          iframe.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
-          iframe.setAttribute('allowfullscreen', '');
-
-          host.replaceChildren(iframe);
-          host.classList.add('is-playing');
-          host.style.cursor = 'default';
-        }
-
-        /* the facade is a <button>, so click covers mouse, touch and keyboard */
-        host.addEventListener('click', play, { once: true });
-      })();
-
       /* ---- reusable previous-speaker dialog ---- */
       var speakerData = {
         manu: {
@@ -1549,6 +1544,89 @@
           if (lastSpeakerTrigger) lastSpeakerTrigger.focus();
         });
       }
+
+      /* ---- seamless community gallery loop: auto-scroll, drag and touch ---- */
+      (function initGlimpses() {
+        var rail = document.querySelector('[data-glimpses]');
+        var track = document.querySelector('[data-glimpses-track]');
+        if (!rail || !track) return;
+
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var originalSlides = Array.prototype.slice.call(track.children);
+        for (var copy = 0; copy < 2; copy += 1) {
+          originalSlides.forEach(function (slide) {
+            var clone = slide.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            var image = clone.querySelector('img');
+            if (image) image.alt = '';
+            track.appendChild(clone);
+          });
+        }
+
+        var loopWidth = 0;
+        var measure = function () {
+          var first = track.children[0];
+          var firstClone = track.children[originalSlides.length];
+          loopWidth = first && firstClone ? firstClone.offsetLeft - first.offsetLeft : track.scrollWidth / 3;
+          if (loopWidth) rail.scrollLeft = loopWidth;
+        };
+        measure();
+        window.addEventListener('load', measure, { once: true });
+        window.addEventListener('resize', measure);
+
+        var wrap = function () {
+          if (!loopWidth) return;
+          if (rail.scrollLeft >= loopWidth * 2) rail.scrollLeft -= loopWidth;
+          if (rail.scrollLeft <= 0) rail.scrollLeft += loopWidth;
+        };
+        rail.addEventListener('scroll', wrap, { passive: true });
+
+        var paused = false;
+        var lastFrame = 0;
+        var speed = .35;
+        var tick = function (time) {
+          if (!lastFrame) lastFrame = time;
+          var delta = Math.min(time - lastFrame, 32);
+          lastFrame = time;
+          if (!paused && !document.hidden) {
+            rail.scrollLeft += speed * (delta / 16);
+            wrap();
+          }
+          window.requestAnimationFrame(tick);
+        };
+
+        rail.addEventListener('mouseenter', function () { paused = true; });
+        rail.addEventListener('mouseleave', function () { paused = false; });
+        rail.addEventListener('focusin', function () { paused = true; });
+        rail.addEventListener('focusout', function () { paused = false; });
+        rail.addEventListener('pointerdown', function () { paused = true; });
+        window.addEventListener('pointerup', function () { paused = false; });
+
+        var dragging = false;
+        var startX = 0;
+        var startScroll = 0;
+        rail.addEventListener('pointerdown', function (event) {
+          if (event.pointerType === 'touch') return;
+          dragging = true;
+          startX = event.clientX;
+          startScroll = rail.scrollLeft;
+          rail.classList.add('is-dragging');
+          rail.setPointerCapture(event.pointerId);
+        });
+        rail.addEventListener('pointermove', function (event) {
+          if (!dragging) return;
+          rail.scrollLeft = startScroll - (event.clientX - startX);
+        });
+        var endDrag = function () {
+          dragging = false;
+          rail.classList.remove('is-dragging');
+        };
+        rail.addEventListener('pointerup', endDrag);
+        rail.addEventListener('pointercancel', endDrag);
+
+        if (!reduceMotion) window.requestAnimationFrame(tick);
+      }());
 
       /* ---- magnetic speaker CTA: softly follows the cursor ---- */
       (function initSpeakerCtaFloat() {
