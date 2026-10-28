@@ -336,11 +336,14 @@ h3.display {
 }
 
 .section { position: relative; padding-block: var(--section-y); }
-.section--tight { padding-block: 64px; }
+.section--tight { padding-block: 96px; }
 main > .section > .shell,
 main > .intro-band > .shell { position: relative; z-index: 1; }
 @media (min-width: 768px) {
   main > .section + .section { padding-top: clamp(96px, 9vw, 132px); }
+  main > .section + .section.cta,
+  main > .section.cta + .section { padding-top: 0; }
+  main > .section + .section.section--tight { padding-top: 128px; }
 }
 
 .section-head { text-align: center; }
@@ -616,7 +619,6 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 }
 .nav__menu a:hover,
 .nav__menu a[aria-current="true"] { color: var(--lime); }
-.nav__menu a[aria-current="true"]::after { content: ''; width: 4px; height: 4px; background: var(--lime); }
 /* small dot separator between items, as in the design */
 .nav__menu li + li::before {
   content: '';
@@ -682,17 +684,6 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
 }
-.hero__sunrise {
-  position: absolute;
-  left: 68%;
-  top: 19%;
-  width: clamp(25rem, 48vw, 50rem);
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(230,239,255,.5) 0%, rgba(146,185,255,.17) 36%, transparent 69%);
-  filter: blur(24px);
-}
 .hero__landscape {
   position: absolute;
   left: -3%;
@@ -700,14 +691,6 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
   width: 106%;
   height: 83%;
   overflow: visible;
-}
-.hero__contours {
-  fill: none;
-  stroke: rgba(224,235,255,.15);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-  opacity: .72;
-  animation: landscape-drift 52s ease-in-out infinite alternate;
 }
 .hero__ridge {
   transform-origin: center bottom;
@@ -725,25 +708,23 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
   fill: #111650;
   animation: ridge-near 68s ease-in-out infinite alternate;
 }
-@keyframes landscape-drift { to { transform: translateX(1.2%); } }
 @keyframes ridge-far { to { transform: translateX(1%) scale(1.006); } }
 @keyframes ridge-mid { to { transform: translateX(-.7%) scale(1.004); } }
 @keyframes ridge-near { to { transform: translateX(.4%); } }
 @media (max-width: 700px) {
   .hero__ambient { bottom: 48%; opacity: .78; }
   .hero__landscape { left: -20%; width: 140%; height: 74%; }
-  .hero__contours { opacity: .46; }
 }
-/* fine grain, matching the textural noise in the artwork */
+/* Fine monochrome grain keeps the plain blue field tactile without a focal glow. */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: .13;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .38;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.8' intercept='-.4'/%3E%3CfeFuncG type='linear' slope='1.8' intercept='-.4'/%3E%3CfeFuncB type='linear' slope='1.8' intercept='-.4'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .hero__top {
@@ -1942,7 +1923,7 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
 /* --------------------------------------------------------------------------
    15. CTA BANNER
    -------------------------------------------------------------------------- */
-.cta { background: var(--bg); }
+.cta { background: var(--bg); padding-block: 0; }
 .cta__box {
   --n: clamp(14px, 5%, 34px);
   --fill: var(--violet-2);
@@ -1963,9 +1944,9 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: .12;
-  mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .32;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.7' intercept='-.35'/%3E%3CfeFuncG type='linear' slope='1.7' intercept='-.35'/%3E%3CfeFuncB type='linear' slope='1.7' intercept='-.35'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .cta__box > * { position: relative; z-index: 1; }
 .cta__box h2 { color: #fff; }
@@ -2045,7 +2026,7 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
   align-items: center;
   justify-content: space-between;
   gap: .8rem;
-  padding-block: 1.4rem;
+  padding-block: 1.4rem 3.75rem;
   font-size: .875rem;
   color: var(--text-subtle);
 }
@@ -2077,7 +2058,7 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
   height: 100%;
   border: 0;
   touch-action: pan-y;
-  opacity: 1;
+  opacity: .62;
   filter: drop-shadow(0 0 10px rgba(57,231,255,.12));
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2203,3 +2184,67 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
 
 /* Inline arrow that trails button labels */
 .btn__arrow { width: 17px; height: 17px; margin-left: .5rem; }
+
+/* --------------------------------------------------------------------------
+   COMMUNITY — editorial mosaic (replaces the old horizontal marquee, which
+   read as a second scroller right under the quote marquee)
+   -------------------------------------------------------------------------- */
+.community-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: clamp(118px, 13.5vw, 196px);
+  gap: clamp(8px, 1vw, 14px);
+}
+.mosaic {
+  position: relative;
+  grid-column: span var(--span, 1);
+  grid-row: span var(--rows, 1);
+  margin: 0;
+  overflow: hidden;
+  background: var(--panel);
+  clip-path: polygon(0 var(--n), var(--n) var(--n), var(--n) 0,
+    calc(100% - var(--n)) 0, calc(100% - var(--n)) var(--n), 100% var(--n),
+    100% calc(100% - var(--n)), calc(100% - var(--n)) calc(100% - var(--n)),
+    calc(100% - var(--n)) 100%, var(--n) 100%, var(--n) calc(100% - var(--n)),
+    0 calc(100% - var(--n)));
+  --n: clamp(10px, 2.2%, 20px);
+}
+.mosaic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.82) contrast(1.06) brightness(.9);
+  transition: filter .5s ease, transform .9s var(--ease);
+}
+.mosaic:hover img { filter: saturate(1.04) contrast(1.04) brightness(1); transform: scale(1.035); }
+.mosaic figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: .32rem .55rem;
+  background: rgba(4, 6, 13, .74);
+  color: var(--lime);
+  font-family: var(--pixel);
+  font-size: .5rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.mosaic--lead { --span: 2; --rows: 2; }
+.mosaic--wide { --span: 2; }
+.mosaic--tall { --rows: 2; }
+.mosaic--lead img { filter: saturate(.9) contrast(1.04); }
+.mosaic--flat figcaption { color: var(--cyan); }
+
+@media (max-width: 860px) {
+  .community-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: clamp(112px, 27vw, 168px);
+  }
+  .mosaic--tall { --rows: 1; }
+}
+@media (max-width: 520px) {
+  .community-mosaic { grid-auto-rows: clamp(96px, 30vw, 140px); }
+  .mosaic--lead { --span: 2; --rows: 2; }
+  .mosaic--wide { --span: 1; }
+}
