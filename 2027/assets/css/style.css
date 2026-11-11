@@ -1717,7 +1717,51 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
 .tickets__grid {
   display: grid;
   gap: 22px;
+  margin-top: 22px;
+}
+
+/* Sold-out Believer tier: a slim strip above the cards */
+.tickets__soldout {
+  --n: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem 1.5rem;
   margin-top: 52px;
+  padding: 1.1rem 1.6rem;
+}
+.tickets__soldout-name {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.tickets__soldout-name span {
+  margin-left: .6rem;
+  font-family: var(--pixel);
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+.tickets__soldout-price {
+  margin-left: auto;
+  font-family: var(--pixel);
+  font-size: 1.5rem;
+  color: var(--text-subtle);
+}
+.tickets__soldout-price s { text-decoration-thickness: 2px; text-decoration-color: var(--lime); }
+.tickets__soldout-stamp {
+  padding: .45rem .8rem;
+  border: 1.5px solid var(--lime);
+  font-family: var(--pixel);
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--lime);
+  transform: rotate(-3deg);
 }
 @media (min-width: 760px) { .tickets__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1120px) { .tickets__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
