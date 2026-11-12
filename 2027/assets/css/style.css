@@ -1752,15 +1752,15 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
   font-size: 1.5rem;
   color: var(--text-subtle);
 }
-.tickets__soldout-price s { text-decoration-thickness: 2px; text-decoration-color: var(--lime); }
+.tickets__soldout-price s { text-decoration-thickness: 2px; text-decoration-color: #ff4d4d; }
 .tickets__soldout-stamp {
   padding: .45rem .8rem;
-  border: 1.5px solid var(--lime);
+  border: 1.5px solid #ff4d4d;
   font-family: var(--pixel);
   font-size: .75rem;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--lime);
+  color: #ff4d4d;
   transform: rotate(-3deg);
 }
 @media (min-width: 760px) { .tickets__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
