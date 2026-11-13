@@ -1774,9 +1774,14 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
   padding: 2.4rem 2.2rem 2rem;
   text-align: center;
   color: #171423;
+  /* Each card's 7 parts (eyebrow, name, price, note, "Includes", list,
+     button) are rows of the shared grid, so they line up across cards. */
+  display: grid;
+  grid-row: span 7;
+  grid-template-rows: subgrid;
+  row-gap: 0;
 }
 .ticket__eyebrow {
-  min-height: 1.25rem;
   font-family: var(--pixel);
   font-size: .7rem;
   letter-spacing: .04em;
@@ -1814,7 +1819,7 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
   line-height: 1;
   color: var(--violet);
 }
-.ticket__international { margin-top: .7rem; min-height: 1.4rem; color: #5d566b; font-size: .82rem; font-weight: 400; }
+.ticket__international { margin-top: .7rem; color: #5d566b; font-size: .82rem; font-weight: 400; }
 .ticket__includes {
   display: flex;
   align-items: center;
@@ -1831,7 +1836,7 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
   height: 1.5px;
   background: #171423;
 }
-.ticket__list { margin-top: 1.4rem; text-align: left; display: grid; gap: .8rem; }
+.ticket__list { margin-top: 1.4rem; text-align: left; display: grid; align-content: start; gap: .8rem; }
 .ticket__list li {
   display: flex;
   align-items: center;
