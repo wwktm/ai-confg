@@ -1117,6 +1117,17 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
   animation: apply-pulse 2s ease-in-out infinite;
 }
 @keyframes apply-pulse { 50% { box-shadow: 0 0 0 7px rgba(193,255,76,.04); } }
+.apply-panel__status--closed { color: #ff4d4d; }
+.apply-panel__status--closed i { background: #ff4d4d; box-shadow: none; animation: none; }
+
+/* closed call: one slim strip instead of the full panel */
+.apply-panel.apply-panel--closed {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem;
+  padding: 1rem 1.4rem;
+  border-color: var(--line);
+  background: rgba(255,255,255,.015);
+}
+.apply-panel--closed p { color: var(--text-muted); font-size: .92rem; line-height: 1.6; }
 .apply-panel h3 { margin-top: .8rem; font-family: var(--display); font-size: clamp(1.5rem,2.6vw,2rem); line-height: 1.05; }
 .apply-panel__body > p { margin-top: .7rem; max-width: 34rem; color: var(--text-muted); font-size: .92rem; line-height: 1.65; }
 
@@ -1563,7 +1574,7 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
 /* --------------------------------------------------------------------------
    11C. SCHEDULE
    -------------------------------------------------------------------------- */
-.itinerary { background: #070910; }
+.itinerary { background: #070910; padding-bottom: clamp(40px, 4vw, 56px); }
 .itinerary__head {
   display: grid;
   gap: 1.5rem;
@@ -1714,6 +1725,7 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
    12. TICKETS
    -------------------------------------------------------------------------- */
 .tickets { background: var(--bg-raise); }
+main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
 .tickets__grid {
   display: grid;
   gap: 22px;
