@@ -1040,8 +1040,12 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
   margin-top: clamp(2.5rem,5vw,4rem);
   align-items: start;
 }
+/* this year's lineup: three speakers to a row on desktop, two on tablets */
+@media (min-width: 620px) {
+  .speakers-hub__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (min-width: 940px) {
-  .speakers-hub__row { grid-template-columns: minmax(0, 250px) minmax(0, 1fr); gap: clamp(2.5rem,5vw,4.5rem); }
+  .speakers-hub__row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2.5rem,5vw,4.5rem); }
 }
 /* unconfirmed speaker: card stays in markup as the template, apply panel spans the row */
 .speaker-teaser[hidden] { display: none; }
