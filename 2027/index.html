@@ -194,7 +194,7 @@
   <main id="main">
 
     <!-- ============================== HERO ============================== -->
-    <section class="hero" id="top">
+    <section class="hero" id="top" tabindex="-1">
       <div class="hero__ambient" aria-hidden="true">
         <svg class="hero__landscape" viewBox="0 0 1440 720" preserveAspectRatio="none">
           <path class="hero__ridge hero__ridge--far" d="M-80 720V465C43 434 116 357 215 390c84 28 139-97 224-73 96 27 136-154 245-105 92 41 133 159 230 128 105-34 172-163 278-110 75 37 113 122 198 102 63-15 106-76 170-63v451Z"/>
@@ -423,13 +423,25 @@
 
         <div class="speakers-hub__row">
           <article class="speaker-teaser speaker-teaser--announced speaker">
-            <button class="speaker__trigger" type="button" data-speaker="laurent-2027" data-speaker-edition="2027" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/laurent-cozic" data-speaker="laurent-2027" data-speaker-edition="2027" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo speaker__photo--cutout" style="--cutout:url('data:image/png;base64,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')"><img src="assets/speakers/2027/laurent.webp" alt="Portrait of Laurent Cozic" width="640" height="640" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2027 · First announced</span>
               <span class="speaker__name">Laurent Cozic</span>
               <span class="speaker__role">Founder &amp; lead developer, Joplin</span>              <span class="speaker__open">View speaker &amp; talk <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </article>
+
+          <div class="speaker-teaser--pending">
+            <div class="speaker-pending__portrait" aria-hidden="true"></div>
+            <span class="speaker__year">Coming soon</span>
+            <div class="speaker-pending__lines" aria-hidden="true"></div>
+          </div>
+
+          <div class="speaker-teaser--pending">
+            <div class="speaker-pending__portrait" aria-hidden="true"></div>
+            <span class="speaker__year">Coming soon</span>
+            <div class="speaker-pending__lines" aria-hidden="true"></div>
+          </div>
 
           <div class="apply-panel apply-panel--closed" id="cfs">
             <span class="apply-panel__status apply-panel__status--closed"><i aria-hidden="true"></i>Call for speakers &middot; Closed</span>
@@ -453,319 +465,319 @@
 
         <ul class="speakers-grid speakers-grid--past">
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="akash-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/akash-adhikari" data-speaker="akash-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2018/aakash-adhikari.webp" alt="Portrait of Akash Adhikari" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Akash Adhikari</span>
               <span class="speaker__role">Programmer</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="aneeta-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/aneeta-sharma" data-speaker="aneeta-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-2"><img src="assets/speakers/2018/aneeta-sharma.webp" alt="Portrait of Aneeta Sharma" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Aneeta Sharma</span>
               <span class="speaker__role">Software Engineer, CloudFactory</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="arun-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/arun-michael-dsouza" data-speaker="arun-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-3"><img src="assets/speakers/2018/arun-michael-dsouza.webp" alt="Portrait of Arun Michael Dsouza" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Arun Michael Dsouza</span>
               <span class="speaker__role">Technology Enthusiast &amp; Speaker</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="chathu-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/chathu-vishwajith" data-speaker="chathu-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-4"><img src="assets/speakers/2018/chatu.webp" alt="Portrait of Chathu Vishwajith" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Chathu Vishwajith</span>
               <span class="speaker__role">Auth0 Ambassador, ColomboJS</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="denis-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/denis-radin" data-speaker="denis-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-5"><img src="assets/speakers/2018/denis-radin.webp" alt="Portrait of Denis Radin" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Denis Radin</span>
               <span class="speaker__role">JavaScript Engineer, Evolution Gaming</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="oliver-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/oliver-szimmetat" data-speaker="oliver-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2018/oliversz.webp" alt="Portrait of Oliver Szimmetat" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Oliver Szimmetat</span>
               <span class="speaker__role">Security Engineering Manager, Uber</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="rob-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/rob-savoye" data-speaker="rob-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-2"><img src="assets/speakers/2018/rob.webp" alt="Portrait of Rob Savoye" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Rob Savoye</span>
               <span class="speaker__role">Internet &amp; Free Software Veteran</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="sonika-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/sonika-manandhar" data-speaker="sonika-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-3"><img src="assets/speakers/2018/sonika.webp" alt="Portrait of Sonika Manandhar" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Sonika Manandhar</span>
               <span class="speaker__role">Computer Engineer &amp; Space Enthusiast</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018">
-            <button class="speaker__trigger" type="button" data-speaker="tanmay-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/tanmay-chaudhry" data-speaker="tanmay-2018" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-4"><img src="assets/speakers/2018/tanmaya.webp" alt="Portrait of Tanmay Chaudhry" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018</span>
               <span class="speaker__name">Tanmay Chaudhry</span>
               <span class="speaker__role">SRE, Adobe</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="artur-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/artur-neumann" data-speaker="artur-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-5"><img src="assets/speakers/2019/artur-neumann.webp" alt="Portrait of Artur Neumann" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Artur Neumann</span>
               <span class="speaker__role">Software Testing Practitioner</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="devraj-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/dev-raj-gautam" data-speaker="devraj-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-6"><img src="assets/speakers/2019/dev-raj-gautam.webp" alt="Portrait of Dev Raj Gautam" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Dev Raj Gautam</span>
               <span class="speaker__role">Product &amp; Project Management</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2018 2019">
-            <button class="speaker__trigger" type="button" data-speaker="gaurav" data-speaker-edition="2018 · 2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/gaurav-sen" data-speaker="gaurav" data-speaker-edition="2018 · 2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2019/gaurav-sen.webp" alt="Portrait of Gaurav Sen" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2018 · 2019</span>
               <span class="speaker__name">Gaurav Sen</span>
               <span class="speaker__role">Systems Design Educator</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="george-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/george-mandis" data-speaker="george-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-2"><img src="assets/speakers/2019/george-mandis.webp" alt="Portrait of George Mandis" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">George Mandis</span>
               <span class="speaker__role">WebMIDI &amp; JavaScript</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="huijing-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/hui-jing-chen" data-speaker="huijing-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-3"><img src="assets/speakers/2019/chen-hui-jing.webp" alt="Portrait of Hui Jing Chen" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Hui Jing Chen</span>
               <span class="speaker__role">CSS &amp; Web Developer</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="karen-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/karen-lowry" data-speaker="karen-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-4"><img src="assets/speakers/2019/karen-lowry.webp" alt="Portrait of Karen Lowry" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Karen Lowry</span>
               <span class="speaker__role">Software Engineering Speaker</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="alexander-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/korotaev-alexander" data-speaker="alexander-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-5"><img src="assets/speakers/2019/alex-korotaev.webp" alt="Portrait of Korotaev Alexander" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Korotaev Alexander</span>
               <span class="speaker__role">WebGL Developer</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="mathieu-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/mathieu-p01-henry" data-speaker="mathieu-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-6"><img src="assets/speakers/2019/p01.webp" alt="Portrait of Mathieu “p01” Henry" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Mathieu “p01” Henry</span>
               <span class="speaker__role">Creative Web Developer</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="milap-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/milap-neupane" data-speaker="milap-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2019/milap-neupane.webp" alt="Portrait of Milap Neupane" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Milap Neupane</span>
               <span class="speaker__role">Database &amp; Software Engineer</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="pratik-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/pratik-karki" data-speaker="pratik-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-2"><img src="assets/speakers/2019/pratik-karki.webp" alt="Portrait of Pratik Karki" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Pratik Karki</span>
               <span class="speaker__role">Git &amp; Developer Tools</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="raju-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/raju-dawadi" data-speaker="raju-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-3"><img src="assets/speakers/2019/raju-dawadi.webp" alt="Portrait of Raju Dawadi" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019</span>
               <span class="speaker__name">Raju Dawadi</span>
               <span class="speaker__role">DevOps Practitioner</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2019">
-            <button class="speaker__trigger" type="button" data-speaker="kushma-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/kushma-thapa" data-speaker="kushma-2019" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-4"><img src="assets/speakers/2019/kushma-thapa.webp" alt="Portrait of Kushma Thapa" width="500" height="500" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2019 · Host</span>
               <span class="speaker__name">Kushma Thapa</span>
               <span class="speaker__role">Conference host</span>
               <span class="speaker__open">View host <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="amit" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/amit-timalsina" data-speaker="amit" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-4"><img src="assets/speakers/2026/amit.webp" alt="Portrait of Amit Timalsina" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Amit Timalsina</span>
               <span class="speaker__role">AI Consultant · Blintic AI &amp; Algentech</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="vlad" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/vlad-dyachenko" data-speaker="vlad" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-5"><img src="assets/speakers/2026/vlad.webp" alt="Portrait of Vlad Dyachenko" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Vlad Dyachenko</span>
               <span class="speaker__role">Platform Engineer · OSS Contributor</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="sayantika" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/sayantika-banik" data-speaker="sayantika" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-6"><img src="assets/speakers/2026/sayantika.webp" alt="Portrait of Sayantika Banik" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Sayantika Banik</span>
               <span class="speaker__role">Founder, DataJourneyHQ</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="dijup" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/dijup-tuladhar" data-speaker="dijup" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2026/dijup.webp" alt="Portrait of Dijup Tuladhar" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Dijup Tuladhar</span>
               <span class="speaker__role">Sr. Principal Product Designer, Infinite</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="manu" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/manu-chatterjee" data-speaker="manu" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-2"><img src="assets/speakers/2026/manu.webp" alt="Portrait of Manu Chatterjee" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Manu Chatterjee</span>
               <span class="speaker__role">VP &amp; Head of AI, Leapfrog</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="saugat" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/saugat-acharya" data-speaker="saugat" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-3"><img src="assets/speakers/2026/saugat.webp" alt="Portrait of Saugat Acharya" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Saugat Acharya</span>
               <span class="speaker__role">Principal Engineer, Laudio</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="pranjal" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/pranjal-timsina" data-speaker="pranjal" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-4"><img src="assets/speakers/2026/pranjal.webp" alt="Portrait of Pranjal Timsina" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Pranjal Timsina</span>
               <span class="speaker__role">Synapse Technologies · Kanoon AI</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="haihao" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/haihao-liu" data-speaker="haihao" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-5"><img src="assets/speakers/2026/haihao.webp" alt="Portrait of Haihao Liu" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Haihao Liu</span>
               <span class="speaker__role">ML Researcher, Algoverse</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="dovan" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/dr-dovan-rai" data-speaker="dovan" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-6"><img src="assets/speakers/2026/dovan.webp" alt="Portrait of Dr. Dovan Rai" width="700" height="700" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026</span>
               <span class="speaker__name">Dr. Dovan Rai</span>
               <span class="speaker__role">Director of R&amp;D, Body &amp; Data</span>
               <span class="speaker__open">View speaker <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="aayush" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/aayush" data-speaker="aayush" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-1"><img src="assets/speakers/2026/aayush.webp" alt="Portrait of Aayush" width="640" height="640" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026 · Host</span>
               <span class="speaker__name">Aayush</span>
               <span class="speaker__role">Developer, comedian &amp; storyteller</span>
               <span class="speaker__open">View host <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="alok" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/alok-khatri" data-speaker="alok" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-2"><img src="assets/speakers/2026/alok.webp" alt="Portrait of Alok Khatri" width="614" height="617" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026 · Moderator</span>
               <span class="speaker__name">Alok Khatri</span>
               <span class="speaker__role">AI adoption &amp; learning</span>
               <span class="speaker__open">View moderator <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="hempal" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/hempal-shrestha" data-speaker="hempal" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-3"><img src="assets/speakers/2026/hempal.webp" alt="Portrait of Hempal Shrestha" width="640" height="640" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026 · Panelist</span>
               <span class="speaker__name">Hempal Shrestha</span>
               <span class="speaker__role">Technologist &amp; social researcher</span>
               <span class="speaker__open">View panelist <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="prajani" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/prajani-kc" data-speaker="prajani" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-4"><img src="assets/speakers/2026/prajani.webp" alt="Portrait of Prajani KC" width="640" height="640" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026 · Panelist</span>
               <span class="speaker__name">Prajani KC</span>
               <span class="speaker__role">IT project management &amp; strategy</span>
               <span class="speaker__open">View panelist <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
           <li class="speaker speaker--interactive" data-speaker-year="2026">
-            <button class="speaker__trigger" type="button" data-speaker="roshan" aria-haspopup="dialog" aria-controls="speaker-dialog">
+            <a class="speaker__trigger" href="#speaker/roshan-pokhrel" data-speaker="roshan" aria-haspopup="dialog" aria-controls="speaker-dialog">
               <span class="speaker__photo mask-5"><img src="assets/speakers/2026/roshan.webp" alt="Portrait of Roshan Pokhrel" width="512" height="512" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2026 · Panelist</span>
               <span class="speaker__name">Roshan Pokhrel</span>
               <span class="speaker__role">Director of Product Security, Logpoint</span>
               <span class="speaker__open">View panelist <span aria-hidden="true">↗</span></span>
-            </button>
+            </a>
           </li>
         </ul>
         </div>
@@ -850,7 +862,7 @@
       <div class="shell">
         <div class="section-head">
           <h2 class="display">Choose Your<br>Way In</h2>
-          <p class="lede">Every ticket includes admission to the January 9 conference and the option to express interest in the limited January 10 community hike.</p>
+          <p class="lede">Every ticket includes admission to the January 9 conference. You can express interest in the January 10 community hike, but spots are limited and confirmed on the day of the event.</p>
         </div>
 
         <div class="tickets__soldout notch-box">
@@ -914,11 +926,8 @@
           </article>
         </div>
 
-        <div class="tickets__note">
-          <p><strong>Hike note:</strong> Places are limited and confirmed on the event day. A ticket does not guarantee hike participation. The January 8 dinner is included only with Micro Sponsor tickets.</p>
-          <p>Pay in NPR via Fonepay. For international USD payments, submit your registration and our team will contact you to arrange payment. Tickets are confirmed after payment verification.</p>
-          <p><strong>Billing:</strong> Regular tickets are billed in the buyer&rsquo;s name. Corporate tickets are billed in the company&rsquo;s name.</p>
-        </div>
+        <!-- Shared payment instructions; tier-specific billing and dinner access stay in the cards. -->
+        <p class="tickets__note"><strong>Payment:</strong> Pay in NPR via Fonepay. For international USD payments, register first and we&rsquo;ll contact you to arrange payment. Your ticket is confirmed once payment is verified.</p>
       </div>
     </section>
 
@@ -1071,6 +1080,7 @@
                  required
                  autocomplete="email"
                  inputmode="email"
+                 enterkeyhint="go"
                  placeholder="you@example.com"
                  class="news__input">
           <button type="submit" class="btn btn--green">
@@ -1181,7 +1191,7 @@
 
       <div class="footer__legal">
         <span>&copy; 2027 AI Conf Asia · Kathmandu, Nepal</span>
-        <a href="#top">Back to top ↑</a>
+        <span class="footer__credit" id="footer-credit">Handcrafted with <span class="footer__credit-heart" role="img" aria-label="love">♥<span class="footer__heart-pop" aria-hidden="true"><span>♥</span><span>♥</span><span>♥</span></span></span> by <a href="https://designerduo.studio/">Designer Duo</a></span>
       </div>
     </div>
 
@@ -1191,6 +1201,12 @@
       </div>
     </div>
   </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Back to top" data-back-to-top>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5m-6 6 6-6 6 6"/>
+    </svg>
+  </a>
 
   <script>
     (function () {
@@ -1453,6 +1469,7 @@
 
       function renderSpeaker(index) {
         activeSpeakerIndex = (index + speakerOrder.length) % speakerOrder.length;
+        speakerDialog.querySelector('.speaker-dialog__grid').scrollTop = 0;
         var speaker = speakerData[speakerOrder[activeSpeakerIndex]];
         var count = String(activeSpeakerIndex + 1).padStart(2, '0') + ' / ' + String(speakerOrder.length).padStart(2, '0');
         speakerDialog.style.setProperty('--speaker-accent', speaker.accent);
@@ -1498,18 +1515,73 @@
         image.parentNode.classList.toggle('speaker-dialog__portrait--cutout', !!speaker.cutout);
       }
 
+      var speakerTriggers = new Map();
+      var speakerSlugs = new Map();
       document.querySelectorAll('[data-speaker]').forEach(function (trigger) {
-        trigger.addEventListener('click', function () {
-          speakerOrder = speakerGroup(trigger);
-          var index = speakerOrder.indexOf(trigger.getAttribute('data-speaker'));
-          if (index < 0 || !speakerDialog) return;
-          speakerDialog.querySelector('.speaker-dialog__nav').hidden = speakerOrder.length < 2;
-          lastSpeakerTrigger = trigger;
-          renderSpeaker(index);
-          speakerDialog.showModal();
-          speakerClose.focus();
+        speakerTriggers.set(trigger.getAttribute('data-speaker'), trigger);
+        speakerSlugs.set(trigger.hash, trigger);
+        trigger.addEventListener('click', function (event) {
+          if (!speakerDialog || !speakerDialog.showModal || event.defaultPrevented ||
+              event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          var base = new URL(window.location.href);
+          base.searchParams.delete('preview');
+          if (base.href !== window.location.href) history.replaceState(history.state, '', base);
+          history.pushState({ speakerDialogEntry: true }, '', speakerURL(trigger));
+          syncSpeakerFromURL();
         });
       });
+
+      function speakerURL(trigger) {
+        var url = new URL(window.location.href);
+        url.searchParams.delete('preview');
+        url.searchParams.delete('speaker');
+        url.hash = trigger.hash;
+        return url;
+      }
+
+      function syncSpeakerFromURL() {
+        if (!speakerDialog || !speakerDialog.showModal) return;
+        var legacyId = new URLSearchParams(window.location.search).get('speaker');
+        var trigger = speakerSlugs.get(window.location.hash) || speakerTriggers.get(legacyId);
+        if (!trigger) {
+          if (speakerDialog.open) speakerDialog.close();
+          return;
+        }
+        var cleanURL = speakerURL(trigger);
+        if (cleanURL.href !== window.location.href) history.replaceState(history.state, '', cleanURL);
+        var id = trigger.getAttribute('data-speaker');
+        if (trigger.closest('.is-filtered-out')) {
+          document.querySelector('[data-speaker-filter="all"]').click();
+        }
+        speakerOrder = speakerGroup(trigger);
+        var index = speakerOrder.indexOf(id);
+        if (index < 0) return;
+        speakerDialog.querySelector('.speaker-dialog__nav').hidden = speakerOrder.length < 2;
+        renderSpeaker(index);
+        if (!speakerDialog.open) {
+          lastSpeakerTrigger = trigger;
+          speakerDialog.showModal();
+          speakerClose.focus();
+        }
+      }
+
+      function navigateSpeaker(step) {
+        renderSpeaker(activeSpeakerIndex + step);
+        var trigger = speakerTriggers.get(speakerOrder[activeSpeakerIndex]);
+        history.replaceState(history.state, '', speakerURL(trigger));
+      }
+
+      function dismissSpeaker() {
+        if (history.state && history.state.speakerDialogEntry) {
+          history.back();
+          return;
+        }
+        var url = new URL(window.location.href);
+        url.hash = 'speakers';
+        history.replaceState(history.state, '', url);
+        speakerDialog.close();
+      }
 
       document.querySelectorAll('[data-speaker-filter]').forEach(function (filterButton) {
         filterButton.addEventListener('click', function () {
@@ -1527,23 +1599,31 @@
 
       document.querySelectorAll('[data-speaker-nav]').forEach(function (button) {
         button.addEventListener('click', function () {
-          renderSpeaker(activeSpeakerIndex + (button.getAttribute('data-speaker-nav') === 'next' ? 1 : -1));
+          navigateSpeaker(button.getAttribute('data-speaker-nav') === 'next' ? 1 : -1);
         });
       });
 
       if (speakerDialog) {
-        speakerClose.addEventListener('click', function () { speakerDialog.close(); });
+        speakerClose.addEventListener('click', dismissSpeaker);
+        speakerDialog.addEventListener('cancel', function (event) {
+          event.preventDefault();
+          dismissSpeaker();
+        });
         speakerDialog.addEventListener('click', function (event) {
-          if (event.target === speakerDialog) speakerDialog.close();
+          if (event.target === speakerDialog) dismissSpeaker();
         });
         speakerDialog.addEventListener('keydown', function (event) {
-          if (speakerOrder.length < 2) return;
-          if (event.key === 'ArrowRight') renderSpeaker(activeSpeakerIndex + 1);
-          if (event.key === 'ArrowLeft') renderSpeaker(activeSpeakerIndex - 1);
+          if (speakerOrder.length < 2 || event.altKey || event.ctrlKey || event.metaKey) return;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+            event.preventDefault();
+            navigateSpeaker(event.key === 'ArrowRight' ? 1 : -1);
+          }
         });
         speakerDialog.addEventListener('close', function () {
           if (lastSpeakerTrigger) lastSpeakerTrigger.focus();
         });
+        window.addEventListener('popstate', syncSpeakerFromURL);
+        syncSpeakerFromURL();
       }
 
       /* ---- seamless community gallery loop: auto-scroll, drag and touch ---- */
@@ -1629,54 +1709,80 @@
         if (!reduceMotion) window.requestAnimationFrame(tick);
       }());
 
-      /* ---- magnetic speaker CTA: softly follows the cursor ---- */
-      (function initSpeakerCtaFloat() {
+      /* ---- mouse-only speaker CTA, outside the card's transform ---- */
+      (function initSpeakerCursorCta() {
         var card = document.querySelector('.speaker-teaser--announced .speaker__trigger');
-        if (!card || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var cta = card && card.querySelector('.speaker__open');
+        if (!cta) return;
 
-        var cta = card.querySelector('.speaker__open');
-        var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-        if (!cta || !finePointer.matches) return;
+        var enabled = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+        var badge = cta.cloneNode(true);
+        badge.classList.add('speaker-cursor-cta');
+        badge.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(badge);
 
-        var currentX = 0;
-        var currentY = 0;
-        var targetX = 0;
-        var targetY = 0;
         var frame = 0;
+        var x = 0;
+        var y = 0;
+        var width = 0;
+        var height = 0;
 
-        function animate() {
-          currentX += (targetX - currentX) * .14;
-          currentY += (targetY - currentY) * .14;
-          cta.style.setProperty('--float-x', currentX.toFixed(2) + 'px');
-          cta.style.setProperty('--float-y', currentY.toFixed(2) + 'px');
+        function place() {
+          frame = 0;
+          var left = Math.max(4, x + width + 8 <= document.documentElement.clientWidth ? x + 4 : x - width - 4);
+          var top = Math.max(4, y + height + 8 <= window.innerHeight ? y + 4 : y - height - 4);
+          badge.style.transform = 'translate3d(' + left + 'px,' + top + 'px,0)';
+          badge.classList.add('is-visible');
+        }
 
-          if (Math.abs(targetX - currentX) > .05 || Math.abs(targetY - currentY) > .05) {
-            frame = window.requestAnimationFrame(animate);
-          } else {
-            frame = 0;
+        function track(event) {
+          if (!enabled.matches || event.pointerType !== 'mouse') return;
+          x = event.clientX;
+          y = event.clientY;
+          if (!badge.classList.contains('is-visible') && !frame) {
+            width = badge.offsetWidth;
+            height = badge.offsetHeight;
           }
+          if (!frame) frame = window.requestAnimationFrame(place);
         }
 
-        function moveTo(x, y) {
-          targetX = x;
-          targetY = y;
-          if (!frame) frame = window.requestAnimationFrame(animate);
+        function hide() {
+          if (frame) window.cancelAnimationFrame(frame);
+          frame = 0;
+          badge.classList.remove('is-visible');
         }
 
-        card.addEventListener('pointermove', function (event) {
-          var bounds = card.getBoundingClientRect();
-          var x = event.clientX - (bounds.left + bounds.width / 2);
-          var y = event.clientY - (bounds.top + bounds.height / 2);
-          moveTo(
-            Math.max(-46, Math.min(46, x * .18)),
-            Math.max(-28, Math.min(28, y * .14))
-          );
-        });
+        function syncMode() {
+          card.classList.toggle('has-cursor-cta', enabled.matches);
+          hide();
+        }
 
-        card.addEventListener('pointerleave', function () { moveTo(0, 0); });
-        card.addEventListener('blur', function () { moveTo(0, 0); }, true);
+        card.addEventListener('pointerenter', track);
+        card.addEventListener('pointermove', track, { passive: true });
+        card.addEventListener('pointerleave', hide);
+        card.addEventListener('pointercancel', hide);
+        card.addEventListener('click', hide);
+        window.addEventListener('blur', hide);
+        enabled.addEventListener('change', syncMode);
+        syncMode();
       })();
 
+
+      (function initBackToTop() {
+        var link = document.querySelector('[data-back-to-top]');
+        if (!link) return;
+        var frame = 0;
+        function update() {
+          frame = 0;
+          link.classList.toggle('is-visible', window.scrollY >= window.innerHeight * .85);
+        }
+        function schedule() {
+          if (!frame) frame = window.requestAnimationFrame(update);
+        }
+        window.addEventListener('scroll', schedule, { passive: true });
+        window.addEventListener('resize', schedule);
+        update();
+      })();
 
       /* ---- Post AI Nation-style reactive logo, rebuilt with vertical lines ---- */
       (function initFooterWordmark() {

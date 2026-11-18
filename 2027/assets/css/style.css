@@ -1034,7 +1034,7 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 .speakers-hub__head .label { margin-bottom: 1rem; }
 .speakers-hub__head p { margin-top: 1.1rem; max-width: 34rem; color: var(--text-muted); line-height: 1.7; }
 
-/* announced speaker + open call */
+/* current lineup and call-for-speakers note */
 .speakers-hub__row {
   display: grid; gap: 2.5rem;
   margin-top: clamp(2.5rem,5vw,4rem);
@@ -1050,6 +1050,43 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 /* unconfirmed speaker: card stays in markup as the template, apply panel spans the row */
 .speaker-teaser[hidden] { display: none; }
 .speaker-teaser[hidden] + .apply-panel { grid-column: 1 / -1; }
+
+/* Fill spare columns only; announcements aren't a loading task. */
+.speaker-teaser--pending { display: none; text-align: center; }
+@media (min-width: 940px) {
+  .speaker-teaser--pending { display: block; }
+}
+.speaker-pending__portrait {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,.045);
+  /* Match the stepped frame behind Laurent's portrait, without the head cutout. */
+  clip-path: polygon(11.25% 5%, 88.75% 5%, 88.75% 15%, 100% 15%, 100% 90%, 88.75% 90%, 88.75% 100%, 11.25% 100%, 11.25% 90%, 0 90%, 0 15%, 11.25% 15%);
+}
+.speaker-pending__portrait::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  color: rgba(255,255,255,.16);
+  box-shadow: -16px 0 currentColor, 16px 0 currentColor;
+}
+.speaker-teaser--pending .speaker__year { color: var(--text-muted); }
+.speaker-pending__lines::before,
+.speaker-pending__lines::after {
+  content: '';
+  display: block;
+  margin: .65rem auto 0;
+  width: 42%;
+  height: .45rem;
+  background: rgba(255,255,255,.08);
+}
+.speaker-pending__lines::after {
+  margin-top: .5rem;
+  width: 29%;
+  background: rgba(255,255,255,.05);
+}
 
 .apply-panel {
   position: relative;
@@ -1177,16 +1214,32 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 .speaker-teaser--announced .speaker__name { font-size: 1.05rem; }
 .speaker-teaser--announced .speaker__role { min-height: 2.6em; font-size: .86rem; }
 .speaker-teaser--announced .speaker__open {
-  --float-x: 0px;
-  --float-y: 0px;
   border-color: rgba(193,255,76,.5);
-  transform: translate3d(var(--float-x), var(--float-y), 0);
-  will-change: transform;
 }
 .speaker-teaser--announced.speaker:hover .speaker__open {
   background: var(--lime);
   color: #101507;
-  transform: translate3d(var(--float-x), var(--float-y), 0);
+  transform: none;
+}
+.speaker__trigger.has-cursor-cta:not(:focus-visible) .speaker__open {
+  opacity: 0;
+}
+.speaker__open.speaker-cursor-cta {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 90;
+  margin: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  border-color: var(--lime);
+  background: var(--lime);
+  color: #101507;
+  opacity: 0;
+  transition: opacity 160ms var(--ease);
+}
+.speaker__open.speaker-cursor-cta.is-visible { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .speaker__open.speaker-cursor-cta { transition: none; }
 }
 .speaker__year { display: inline-block; margin-top: 1.1rem; color: var(--violet-2); font-family: var(--pixel); font-size: .58rem; letter-spacing: .08em; }
 .speaker__year + .speaker__name { margin-top: .45rem; }
@@ -1507,7 +1560,9 @@ body:has(.speaker-dialog[open]) { overflow:hidden; }
 }
 @media (max-width:759px) {
   .speaker-dialog { width:calc(100% - 18px); height:calc(100dvh - 18px); }
-  .speaker-dialog__grid { display:block; overflow-y:auto; }
+  .speaker-dialog__grid { display:block; overflow-y:auto; overscroll-behavior-y:contain; }
+  .speaker-dialog__close { width:44px; height:44px; }
+  .speaker-dialog__nav button { min-height:44px; padding-inline:.65rem; }
   .speaker-dialog__profile { border-right:0; border-bottom:1px solid rgba(255,255,255,.12); overflow:visible; }
   .speaker-dialog__content { padding-top:2rem; overflow:visible; }
   .speaker-dialog__portrait { width:min(230px,75%); }
@@ -1893,15 +1948,14 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
 .ticket__unavailable { display: flex; justify-content: center; background: #ddd9e5; color: #777080; cursor: not-allowed; }
 
 .tickets__note {
-  margin: 30px auto 0;
-  max-width: 58rem;
-  text-align: center;
+  margin: 30px 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
   font-size: .875rem;
   line-height: 1.65;
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
-.tickets__note p + p { margin-top: .65rem; }
-.tickets__note a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+.tickets__note strong { color: var(--text); }
 
 /* --------------------------------------------------------------------------
    13. SPONSORS
@@ -2191,6 +2245,78 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
 .footer__legal { border-top: 1px solid rgba(255,255,255,.08); }
 .footer__legal a { color: var(--text-muted); }
 .footer__legal a:hover { color: #fff; }
+.footer__credit { margin-inline-start: auto; text-align: right; }
+.footer__credit-heart { position: relative; display: inline-block; color: #ff4d4d; }
+.footer__heart-pop { display: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .footer__heart-pop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .footer__heart-pop > span {
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    font-size: .65em;
+    opacity: 0;
+  }
+  .footer__heart-pop > span:nth-child(1) { --drift: -13px; --rise: -19px; }
+  .footer__heart-pop > span:nth-child(2) { --drift: 1px; --rise: -27px; animation-delay: 35ms; }
+  .footer__heart-pop > span:nth-child(3) { --drift: 14px; --rise: -17px; animation-delay: 70ms; }
+  .footer__credit:has(a:hover) .footer__heart-pop > span,
+  .footer__credit-heart:hover .footer__heart-pop > span {
+    animation-name: footer-heart-pop;
+    animation-duration: 500ms;
+    animation-timing-function: var(--ease);
+  }
+  @keyframes footer-heart-pop {
+    0% { opacity: 0; transform: translateY(-2px) scale(.9); }
+    17% { opacity: .9; }
+    48% { opacity: .8; transform: translate(calc(var(--drift) * .65), var(--rise)); animation-timing-function: ease-in; }
+    100% { opacity: 0; transform: translate(var(--drift), 6px) scale(.9); }
+  }
+}
+.footer__credit a {
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: .2em;
+}
+.footer__credit a:hover,
+.footer__credit a:focus-visible { text-decoration-color: currentColor; }
+
+.back-to-top {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(46, 232, 213, .4);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--cyan);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 160ms var(--ease), visibility 0s linear 160ms;
+}
+.back-to-top.is-visible,
+.back-to-top:focus-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .back-to-top:hover { border-color: var(--cyan); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: none; }
+}
 
 .footer__wordmark {
   position: relative;
@@ -2371,6 +2497,10 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
   .news__form .btn { width: 100%; }
   .news__form .btn__text { flex: 1; justify-content: center; }
 }
+@media (pointer: coarse) {
+  .news__input { font-size: 16px; }
+  body:has(.news__input:focus) .back-to-top { visibility: hidden; opacity: 0; pointer-events: none; }
+}
 .news__input::placeholder { color: rgba(255, 255, 255, .36); }
 .news__input:focus { border-color: var(--cyan); }
 
@@ -2475,11 +2605,16 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
   .nav__logo { flex: 0 1 118px; min-width: 0; }
   .nav__logo img { width: 100%; height: auto; }
   .nav__actions { gap: .4rem; }
-  .nav__actions .btn { min-height: 40px; font-size: .72rem; }
+  .nav__actions .btn { min-height: 44px; font-size: .72rem; }
   .nav__actions .btn__text { padding-inline: .7rem; }
   .nav__actions .btn__tab { width: 34px; }
-  .nav__burger { width: 40px; height: 40px; }
-  .nav__drawer { padding-block: .25rem .8rem; }
+  .nav__burger { width: 44px; height: 44px; flex-shrink: 0; }
+  .nav__drawer {
+    padding-block: .25rem .8rem;
+    max-height: calc(100dvh - 68px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
   .nav__drawer a { min-height: 46px; display: flex; align-items: center; }
 
   .hero { padding-top: 42px; }
@@ -2491,7 +2626,7 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
   }
   .hero__landscape { left: -34%; bottom: 0; width: 168%; height: 68%; }
   .hero__top { gap: 20px; }
-  .hero__title { max-width: 10ch; }
+  .hero__title { max-width: none; text-wrap: balance; }
   .hero__aside { max-width: 31rem; }
   .hero__tagline { font-size: 1rem; line-height: 1.5; }
   .hero__actions { display: flex; }
@@ -2553,8 +2688,8 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
     scrollbar-width: none;
   }
   .speaker-filters::-webkit-scrollbar { display: none; }
-  .speaker-filter { flex: 0 0 auto; min-height: 42px; }
-  .speakers-grid--past { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; }
+  .speaker-filter { flex: 0 0 auto; min-height: 44px; }
+  .speakers-grid--past { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
   .speakers-grid--past .speaker__trigger::after { display: none; }
 
   .sessions { margin-top: 34px; gap: 16px; }
@@ -2610,7 +2745,7 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
   .footer__mail,
   .footer__socials { margin-top: 1.7rem; }
   .footer__socials { gap: .4rem; }
-  .footer__socials a { display: grid; place-items: center; width: 42px; height: 42px; }
+  .footer__socials a { display: grid; place-items: center; width: 44px; height: 44px; }
   .footer__cols { gap: 2rem; }
   .footer__legal {
     align-items: flex-start;
