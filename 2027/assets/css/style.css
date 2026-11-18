@@ -1120,14 +1120,16 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 .apply-panel__status--closed { color: #ff4d4d; }
 .apply-panel__status--closed i { background: #ff4d4d; box-shadow: none; animation: none; }
 
-/* closed call: one slim strip instead of the full panel */
+/* closed call: a quiet note on its own line under the lineup */
 .apply-panel.apply-panel--closed {
-  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem;
-  padding: 1rem 1.4rem;
-  border-color: var(--line);
-  background: rgba(255,255,255,.015);
+  grid-column: 1 / -1;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem 1rem;
+  padding: 1rem 0 0;
+  border: 0; border-top: 1px dashed var(--line);
+  background: none;
 }
-.apply-panel--closed p { color: var(--text-muted); font-size: .92rem; line-height: 1.6; }
+.apply-panel--closed .apply-panel__status { color: var(--text-subtle); }
+.apply-panel--closed p { color: var(--text-subtle); font-size: .84rem; line-height: 1.6; }
 .apply-panel h3 { margin-top: .8rem; font-family: var(--display); font-size: clamp(1.5rem,2.6vw,2rem); line-height: 1.05; }
 .apply-panel__body > p { margin-top: .7rem; max-width: 34rem; color: var(--text-muted); font-size: .92rem; line-height: 1.65; }
 
@@ -1277,7 +1279,29 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
   background: linear-gradient(135deg, rgba(112, 86, 255, .2), transparent 42%, rgba(78, 246, 221, .14));
   transition: opacity .45s var(--ease);
 }
+/* portraits that come with their own silhouette (head breaking out of the
+   frame): show the image as-is and zoom the whole photo on hover. Only the
+   scan line is masked, by --cutout (a small data-URI silhouette set inline),
+   so it sweeps over the person and never over the page around them. */
+.speaker__photo--cutout {
+  background: none; overflow: visible;
+  transition: transform .65s var(--ease), filter .45s var(--ease);
+}
+.speaker__photo--cutout::before { content: none; }
+.speaker__photo--cutout::after {
+  background: linear-gradient(to bottom, transparent, rgba(78, 246, 221, .3), transparent) no-repeat 0 -25% / 100% 16%;
+  mix-blend-mode: screen;
+  -webkit-mask: var(--cutout) center / contain no-repeat;
+  mask: var(--cutout) center / contain no-repeat;
+}
+.speaker__photo--cutout img { object-fit: contain; }
+.speaker:hover .speaker__photo--cutout::after {
+  background-position: 0 125%;
+  transition: background-position .9s var(--ease), opacity .18s ease;
+}
 .speaker:hover { transform: translateY(-8px); }
+.speaker:hover .speaker__photo--cutout { transform: scale(1.055); }
+.speaker:hover .speaker__photo.speaker__photo--cutout img { transform: none; }
 .speaker:hover .speaker__photo {
   filter: drop-shadow(0 18px 24px rgba(0, 0, 0, .32));
 }
@@ -1427,6 +1451,9 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 }
 .speaker-dialog__portrait::after { content:''; position:absolute; inset:0; border:3px solid var(--speaker-accent); clip-path:inherit; pointer-events:none; }
 .speaker-dialog__portrait img { width:100%; height:100%; object-fit:cover; }
+.speaker-dialog__portrait--cutout { background:none; clip-path:none; }
+.speaker-dialog__portrait--cutout::after { content:none; }
+.speaker-dialog__portrait--cutout img { object-fit:contain; }
 .speaker-dialog__speaker-label { display:inline-block; margin-top:1rem; padding:.3rem .55rem; background:var(--speaker-accent); color:#080a0f; font-family:var(--pixel); font-size:.55rem; letter-spacing:.07em; text-transform:uppercase; }
 .speaker-dialog__profile h3 { margin-top:.6rem; font-family:var(--display); font-size:clamp(1.4rem,2.5vw,1.9rem); line-height:1.05; }
 .speaker-dialog__role { margin-top:.4rem; color:var(--text-muted); line-height:1.5; }
@@ -1452,6 +1479,7 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 .speaker-dialog__quote p { color:rgba(255,255,255,.86); font-size:.86rem; line-height:1.5; }
 .speaker-dialog__recap { position:relative; z-index:1; align-self:flex-start; margin-top:1rem; font-size:.85rem; padding-bottom:.2rem; border-bottom:1px solid var(--speaker-accent); color:var(--speaker-accent); font-weight:600; }
 .speaker-dialog__nav { position:relative; z-index:4; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; border-top:1px solid rgba(255,255,255,.13); background:#080a10; }
+.speaker-dialog__nav[hidden] { display:none; }
 .speaker-dialog__nav button { padding:1rem 1.35rem; border:0; background:transparent; color:var(--text-muted); cursor:pointer; font-family:var(--pixel); font-size:.58rem; letter-spacing:.06em; text-transform:uppercase; }
 .speaker-dialog__nav button:first-child { text-align:left; border-right:1px solid rgba(255,255,255,.1); }
 .speaker-dialog__nav button:last-child { text-align:right; border-left:1px solid rgba(255,255,255,.1); }

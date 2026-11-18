@@ -422,20 +422,18 @@
         </header>
 
         <div class="speakers-hub__row">
-          <!-- Confirmed 2027 speaker card template: remove `hidden` once announced -->
-          <article class="speaker-teaser speaker-teaser--announced speaker" hidden>
-            <button class="speaker__trigger" type="button" data-speaker="amit-2027" data-speaker-edition="2027" aria-haspopup="dialog" aria-controls="speaker-dialog">
-              <span class="speaker__photo mask-1"><img src="assets/speakers/2026/amit.webp" alt="Portrait of Amit Timalsina" width="640" height="640" loading="lazy" decoding="async"></span>
+          <article class="speaker-teaser speaker-teaser--announced speaker">
+            <button class="speaker__trigger" type="button" data-speaker="laurent-2027" data-speaker-edition="2027" aria-haspopup="dialog" aria-controls="speaker-dialog">
+              <span class="speaker__photo speaker__photo--cutout" style="--cutout:url('data:image/png;base64,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')"><img src="assets/speakers/2027/laurent.webp" alt="Portrait of Laurent Cozic" width="640" height="640" loading="lazy" decoding="async"></span>
               <span class="speaker__year">2027 · First announced</span>
-              <span class="speaker__name">Amit Timalsina</span>
-              <span class="speaker__role">AI Consultant · Founder, Blintic AI &amp; Algentech</span>
-              <span class="speaker__open">View speaker &amp; talk <span aria-hidden="true">↗</span></span>
+              <span class="speaker__name">Laurent Cozic</span>
+              <span class="speaker__role">Founder &amp; lead developer, Joplin</span>              <span class="speaker__open">View speaker &amp; talk <span aria-hidden="true">↗</span></span>
             </button>
           </article>
 
           <div class="apply-panel apply-panel--closed" id="cfs">
             <span class="apply-panel__status apply-panel__status--closed"><i aria-hidden="true"></i>Call for speakers &middot; Closed</span>
-            <p>Thank you to everyone who sent a proposal. We are reviewing applications and will announce the 2027 lineup here.</p>
+            <p>Thank you to everyone who sent a proposal. We are reviewing applications and will announce the rest of the 2027 lineup here.</p>
           </div>
         </div>
 
@@ -1320,23 +1318,21 @@
         }
       };
 
-      speakerData['amit-2027'] = {
-        name: 'Amit Timalsina',
-        role: 'AI Consultant | Founder, Blintic AI & Algentech',
-        image: 'assets/speakers/2026/amit.webp',
-        title: 'Automating Clinical Trial Reviews Using Generative AI',
-        bio: 'Amit builds practical AI systems that solve real-world problems. He specializes in machine learning, generative AI, and backend engineering, and helps teams ship AI-powered MVPs and production systems through Blintic AI and Algentech.',
-        quote: 'What does it take to build a production-ready AI system that processes more than 120,000 complex documents while keeping every output structured, traceable, and verifiable?',
+      speakerData['laurent-2027'] = {
+        name: 'Laurent Cozic',
+        role: 'Founder & lead developer, Joplin',
+        image: 'assets/speakers/2027/laurent.webp',
+        cutout: true,
+        title: 'Your Notes, Your AI: Building AI Without Giving Up Privacy',
+        bio: 'Founder and lead developer of Joplin, with a background in software development and cybersecurity, and a strong interest in privacy, open source and AI.',
+        quote: 'AI assistants become much more useful when they have access to our personal knowledge, but notes can contain some of our most sensitive data. In this talk, I’ll share how we approached this challenge in Joplin, using local and cloud AI models, semantic search and MCP-based agents. I’ll discuss the architectural and privacy decisions involved in making these features useful while keeping users in control of their data.',
         accent: '#c1ff4c',
         companies: [
-          { mark: 'B', name: 'Blintic AI' },
-          { mark: 'A', name: 'Algentech' },
-          { mark: 'LF', name: 'Leapfrog Technology', url: 'https://www.lftechnology.com/' }
+          { mark: 'J', name: 'Joplin', url: 'https://joplinapp.org' }
         ],
         links: [
-          { label: 'LinkedIn', url: 'https://www.linkedin.com/in/amit-timalsina/' },
-          { label: 'X', url: 'https://x.com/amittimalsina' },
-          { label: 'GitHub', url: 'https://github.com/amittimalsina' }
+          { label: 'Website', url: 'https://joplinapp.org' },
+          { label: 'GitHub', url: 'https://github.com/laurent22/' }
         ]
       };
 
@@ -1442,9 +1438,14 @@
         shuffledSpeakers.forEach(function (speaker) { previousSpeakerGrid.appendChild(speaker); });
       }
 
-      var speakerOrder = Array.prototype.map.call(document.querySelectorAll(':not([hidden]) > [data-speaker]'), function (card) {
-        return card.getAttribute('data-speaker');
-      });
+      /* previous/next stay within the clicked card's group: this year's lineup or the archive */
+      var speakerOrder = [];
+      function speakerGroup(trigger) {
+        var group = trigger.closest('.speakers-hub__row, .past-speakers') || document;
+        return Array.prototype.map.call(group.querySelectorAll(':not([hidden]) > [data-speaker]'), function (card) {
+          return card.getAttribute('data-speaker');
+        });
+      }
       var speakerDialog = document.getElementById('speaker-dialog');
       var speakerClose = speakerDialog && speakerDialog.querySelector('.speaker-dialog__close');
       var lastSpeakerTrigger = null;
@@ -1466,6 +1467,8 @@
         var activeYear = activeCard ? activeCard.getAttribute('data-speaker-edition') : '';
         if (!activeYear && activeCard && activeCard.closest('[data-speaker-year]')) activeYear = activeCard.closest('[data-speaker-year]').getAttribute('data-speaker-year');
         document.getElementById('speaker-dialog-event').textContent = activeYear === '2026' || activeYear === '2027' ? 'AI CONF ASIA ' + activeYear : 'WWKTM ' + activeYear;
+        /* the recap link is about past editions, not this year's lineup */
+        speakerDialog.querySelector('.speaker-dialog__recap').hidden = activeYear === '2027';
         var companies = document.getElementById('speaker-dialog-companies');
         companies.replaceChildren();
         speaker.companies.forEach(function (company) {
@@ -1492,12 +1495,15 @@
         var image = document.getElementById('speaker-dialog-image');
         image.src = speaker.image;
         image.alt = 'Portrait of ' + speaker.name;
+        image.parentNode.classList.toggle('speaker-dialog__portrait--cutout', !!speaker.cutout);
       }
 
       document.querySelectorAll('[data-speaker]').forEach(function (trigger) {
         trigger.addEventListener('click', function () {
+          speakerOrder = speakerGroup(trigger);
           var index = speakerOrder.indexOf(trigger.getAttribute('data-speaker'));
           if (index < 0 || !speakerDialog) return;
+          speakerDialog.querySelector('.speaker-dialog__nav').hidden = speakerOrder.length < 2;
           lastSpeakerTrigger = trigger;
           renderSpeaker(index);
           speakerDialog.showModal();
@@ -1531,6 +1537,7 @@
           if (event.target === speakerDialog) speakerDialog.close();
         });
         speakerDialog.addEventListener('keydown', function (event) {
+          if (speakerOrder.length < 2) return;
           if (event.key === 'ArrowRight') renderSpeaker(activeSpeakerIndex + 1);
           if (event.key === 'ArrowLeft') renderSpeaker(activeSpeakerIndex - 1);
         });
