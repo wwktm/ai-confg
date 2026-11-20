@@ -1524,12 +1524,14 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
 .speaker-dialog__links a { padding:.48rem .68rem; border:1px solid rgba(255,255,255,.16); color:var(--text-muted); font-family:var(--pixel); font-size:.53rem; letter-spacing:.04em; text-transform:uppercase; }
 .speaker-dialog__links a:hover { border-color:var(--speaker-accent); color:var(--speaker-accent); transform:translateY(-2px); }
 .speaker-dialog__content {
-  position:relative; display:flex; flex-direction:column; justify-content:center;
-  padding:clamp(1.75rem,4vw,3rem); align-self:stretch; overflow:hidden;
+  position:relative; display:flex; flex-direction:column; justify-content:safe center;
+  padding:clamp(1.75rem,4vw,3rem); align-self:stretch; overflow-x:hidden; overflow-y:auto;
 }
 .speaker-dialog__content::before { content:'AI'; position:absolute; right:1rem; bottom:-2rem; color:rgba(255,255,255,.025); font-family:var(--pixel); font-size:10rem; line-height:1; pointer-events:none; }
 .speaker-dialog__kicker { position:relative; z-index:1; font-family:var(--pixel); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--speaker-accent); }
 .speaker-dialog__content h2 { position:relative; z-index:1; max-width:38rem; margin-top:.75rem; font-family:var(--display); font-size:clamp(1.8rem,3.5vw,3.2rem); line-height:1; letter-spacing:-.04em; }
+/* talk titles past ~60 characters drop a size so they fit the panel */
+.speaker-dialog__content h2.is-long { font-size:clamp(1.6rem,2.6vw,2.4rem); line-height:1.05; }
 .speaker-dialog__bio { position:relative; z-index:1; max-width:38rem; margin-top:1.1rem; color:var(--text-muted); font-size:.88rem; line-height:1.6; }
 .speaker-dialog__quote { position:relative; z-index:1; max-width:38rem; margin-top:1.25rem; padding:1rem 1.1rem 1rem 2.8rem; border:1px solid rgba(255,255,255,.13); background:#0d1019; clip-path:polygon(0 10px,10px 10px,10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) calc(100% - 10px),calc(100% - 10px) 100%,0 100%); }
 .speaker-dialog__quote > span { position:absolute; left:.9rem; top:.45rem; color:var(--speaker-accent); font-family:var(--pixel); font-size:2.4rem; line-height:1; }
