@@ -1919,6 +1919,19 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
   color: var(--violet);
 }
 .ticket__international { margin-top: .7rem; color: #5d566b; font-size: .82rem; font-weight: 400; }
+.ticket__deadline {
+  display: block;
+  width: fit-content;
+  margin: .8rem auto 0;
+  padding: .4rem .75rem;
+  background: #fff1e6;
+  border: 1.5px solid #ff7a1a;
+  font-family: var(--pixel);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #c2410c;
+}
 .ticket__includes {
   display: flex;
   align-items: center;
@@ -1946,6 +1959,7 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
 .ticket__list .spark { color: var(--violet); }
 .ticket .btn { margin-top: 1.9rem; }
 .ticket__unavailable { display: flex; justify-content: center; background: #ddd9e5; color: #777080; cursor: not-allowed; }
+
 
 .tickets__note {
   margin: 30px 0 0;

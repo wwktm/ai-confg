@@ -69,8 +69,8 @@
         "description": "AI Conf Asia 2027 brings Asia's AI community to Kathmandu, Nepal, January 8-10 for three days of talks, keynotes, community connections and a hike.",
         "offers": [
           { "@type": "Offer", "name": "Believer Ticket", "price": "4000", "priceCurrency": "NPR", "url": "https://tickets.wwktm.com/?ticketType=believer", "availability": "https://schema.org/SoldOut" },
-          { "@type": "Offer", "name": "Regular Ticket", "price": "6000", "priceCurrency": "NPR", "url": "https://tickets.wwktm.com/?ticketType=regular", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "name": "Corporate Ticket", "price": "7500", "priceCurrency": "NPR", "url": "https://tickets.wwktm.com/?ticketType=corporate", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Regular Ticket", "price": "6000", "priceCurrency": "NPR", "priceValidUntil": "2026-12-15", "url": "https://tickets.wwktm.com/?ticketType=regular", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Late Bird Ticket", "price": "7500", "priceCurrency": "NPR", "validFrom": "2026-12-16", "url": "https://tickets.wwktm.com/?ticketType=regular", "availability": "https://schema.org/PreOrder" },
           { "@type": "Offer", "name": "Micro Sponsor Ticket", "price": "15000", "priceCurrency": "NPR", "url": "https://tickets.wwktm.com/?ticketType=micro-sponsor", "availability": "https://schema.org/InStock" }
         ],
         "organizer": {
@@ -101,7 +101,7 @@
           {
             "@type": "Question",
             "name": "How much are tickets?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Believer tickets have sold out. Regular tickets are NPR 6,000 and are billed in the buyer's name. Corporate tickets are NPR 7,500 and are billed in the company's name; companies buying 5 or more get a social media shoutout. Micro Sponsor tickets are NPR 15,000. International payment options are available after registration." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Believer tickets have sold out. Regular tickets are NPR 6,000 until December 15, then NPR 7,500, and are billed in the buyer's name. Micro Sponsor tickets are NPR 15,000. International payment options are available after registration." }
           },
           {
             "@type": "Question",
@@ -862,7 +862,7 @@
       <div class="shell">
         <div class="section-head">
           <h2 class="display">Choose Your<br>Way In</h2>
-          <p class="lede">Every ticket includes admission to the January 9 conference. You can express interest in the January 10 community hike, but spots are limited and confirmed on the day of the event.</p>
+          <p class="lede">Every ticket includes admission to the January 9 conference. You can express interest in the January 10 community hike, but spots are limited and confirmed on the day of the event. Regular tickets go up to NPR 7,500 after December 15.</p>
         </div>
 
         <div class="tickets__soldout notch-box">
@@ -873,10 +873,10 @@
 
         <div class="tickets__grid">
           <article class="ticket notch-box ticket--featured">
-            <p class="ticket__eyebrow">Now on sale</p>
+            <p class="ticket__eyebrow">On sale until December 15</p>
             <p class="ticket__name">Regular Ticket</p>
             <p class="ticket__price">NPR 6,000</p>
-            <p class="ticket__international">USD 75 for international payments</p>
+            <p class="ticket__international">USD 75 for international payments<span class="ticket__deadline">Goes up to NPR 7,500 after December 15</span></p>
             <p class="ticket__includes">Includes</p>
             <ul class="ticket__list">
               <li><svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 4.3 3.7 7.4 8 8-4.3.6-7.4 3.7-8 8-.6-4.3-3.7-7.4-8-8 4.3-.6 7.4-3.7 8-8Z"/></svg>January 9 conference admission</li>
@@ -890,22 +890,21 @@
             </a>
           </article>
 
-          <article class="ticket notch-box">
-            <p class="ticket__eyebrow">For companies</p>
-            <p class="ticket__name">Corporate Ticket</p>
+          <article class="ticket notch-box ticket--coming" aria-disabled="true">
+            <p class="ticket__eyebrow">From December 16</p>
+            <p class="ticket__name">Late Bird Ticket</p>
             <p class="ticket__price">NPR 7,500</p>
-            <p class="ticket__international">For teams your company sends</p>
+            <p class="ticket__international">Available after December 15</p>
             <p class="ticket__includes">Includes</p>
             <ul class="ticket__list">
               <li><svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 4.3 3.7 7.4 8 8-4.3.6-7.4 3.7-8 8-.6-4.3-3.7-7.4-8-8 4.3-.6 7.4-3.7 8-8Z"/></svg>January 9 conference admission</li>
               <li><svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 4.3 3.7 7.4 8 8-4.3.6-7.4 3.7-8 8-.6-4.3-3.7-7.4-8-8 4.3-.6 7.4-3.7 8-8Z"/></svg>Express interest in the January 10 hike</li>
-              <li><svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 4.3 3.7 7.4 8 8-4.3.6-7.4 3.7-8 8-.6-4.3-3.7-7.4-8-8 4.3-.6 7.4-3.7 8-8Z"/></svg>Billed in your company&rsquo;s name</li>
-              <li><svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 4.3 3.7 7.4 8 8-4.3.6-7.4 3.7-8 8-.6-4.3-3.7-7.4-8-8 4.3-.6 7.4-3.7 8-8Z"/></svg>Social media shoutout when your company buys 5+ tickets</li>
+              <li><svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 4.3 3.7 7.4 8 8-4.3.6-7.4 3.7-8 8-.6-4.3-3.7-7.4-8-8 4.3-.6 7.4-3.7 8-8Z"/></svg>Full in-person conference experience</li>
+              <li><svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c.6 4.3 3.7 7.4 8 8-4.3.6-7.4 3.7-8 8-.6-4.3-3.7-7.4-8-8 4.3-.6 7.4-3.7 8-8Z"/></svg>Billed in the buyer&rsquo;s name</li>
             </ul>
-            <a class="btn btn--gradient btn--block" href="https://tickets.wwktm.com/?ticketType=corporate" target="_blank" rel="noopener noreferrer">
-              <span class="btn__text">Get Corporate Ticket</span>
-              <span class="btn__tab" aria-hidden="true"><svg class="px-icon" viewBox="0 0 7 9"><use href="#px-arrow"/></svg></span>
-            </a>
+            <span class="btn btn--block ticket__unavailable">
+              <span class="btn__text">Available after December 15</span>
+            </span>
           </article>
 
           <article class="ticket notch-box ticket--sponsor">
@@ -1020,9 +1019,8 @@
               <span class="faq__sign" aria-hidden="true"></span>
             </summary>
             <div class="faq__a">
-              Believer tickets have sold out. Regular tickets are NPR 6,000 and are billed in
-              the buyer&rsquo;s name. Corporate tickets are NPR 7,500 and are billed in the company&rsquo;s
-              name; companies buying 5 or more get a social media shoutout. Micro Sponsor
+              Believer tickets have sold out. Regular tickets are NPR 6,000 until December 15,
+              then NPR 7,500, and are billed in the buyer&rsquo;s name. Micro Sponsor
               tickets are NPR 15,000. International prices are
               USD 75 for Regular and USD 165 for Micro Sponsor.
               <a href="#tickets">See ticket details and availability.</a>
