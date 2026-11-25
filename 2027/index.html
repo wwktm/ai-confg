@@ -438,11 +438,13 @@
             </a>
           </article>
 
-          <div class="speaker-teaser--pending">
-            <div class="speaker-pending__portrait" aria-hidden="true"></div>
-            <span class="speaker__year">Coming soon</span>
-            <div class="speaker-pending__lines" aria-hidden="true"></div>
-          </div>
+          <article class="speaker-teaser speaker-teaser--announced speaker">
+            <a class="speaker__trigger" href="#speaker/michelle-duke" data-speaker="michelle-2027" data-speaker-edition="2027" aria-haspopup="dialog" aria-controls="speaker-dialog">
+              <span class="speaker__photo speaker__photo--cutout" style="--cutout:url('data:image/png;base64,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')"><img src="assets/speakers/2027/michelle.webp" alt="Portrait of Michelle Duke" width="640" height="640" loading="lazy" decoding="async"></span>
+              <span class="speaker__name">Michelle Duke</span>
+              <span class="speaker__role">Developer advocate, community manager &amp; content creator</span>              <span class="speaker__open">View speaker &amp; talk <span aria-hidden="true">↗</span></span>
+            </a>
+          </article>
 
           <div class="apply-panel apply-panel--closed" id="cfs">
             <span class="apply-panel__status apply-panel__status--closed"><i aria-hidden="true"></i>Call for speakers &middot; Closed</span>
@@ -1363,6 +1365,22 @@
         companies: [
           { mark: 'Y', name: 'Yango', url: 'https://yango.com' },
           { mark: 'YG', name: 'Yandex Go' }
+        ],
+        links: []
+      };
+
+      speakerData['michelle-2027'] = {
+        name: 'Michelle Duke',
+        role: 'Developer advocate, community manager & content creator',
+        image: 'assets/speakers/2027/michelle.webp',
+        cutout: true,
+        title: 'Effective Use of AI: Before, During, After',
+        bio: 'Michelle “MishManners” Duke has spent the last decade in developer advocacy, community management, marketing and content creation. She has written over 1,700 articles, given over 400 talks including more than ten keynotes, produced over 200 videos, and won, organised or mentored at over 200 hackathons. A co-founder of several companies, she has helped shape Melbourne’s tech, esports and startup scenes, and champions diversity, inclusion and community building. She is a Microsoft MVP, Xbox Community Champion and Google Women Techmaker.',
+        quote: 'Artificial Intelligence isn’t a replacement for critical thinking, it’s an amplifier of it. Yet too many teams treat AI as an answer engine rather than a thought partner, outsourcing their strategy to a prompt box and expecting magic. The result? Generic outputs, unnoticed hallucinations and wasted potential.',
+        accent: '#c1ff4c',
+        companies: [
+          { mark: 'MVP', name: 'Microsoft MVP' },
+          { mark: 'WT', name: 'Google Women Techmakers' }
         ],
         links: []
       };
