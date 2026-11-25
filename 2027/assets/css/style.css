@@ -1061,8 +1061,8 @@ main > .intro-band > .shell { position: relative; z-index: 1; }
   display: grid;
   place-items: center;
   background: rgba(255,255,255,.045);
-  /* Match the stepped frame behind Laurent's portrait, without the head cutout. */
-  clip-path: polygon(11.25% 5%, 88.75% 5%, 88.75% 15%, 100% 15%, 100% 90%, 88.75% 90%, 88.75% 100%, 11.25% 100%, 11.25% 90%, 0 90%, 0 15%, 11.25% 15%);
+  /* Match the stepped frame in the 2027 cut-out portraits (measured on their 640px squares). */
+  clip-path: polygon(14.7% 12.5%, 85.3% 12.5%, 85.3% 21.9%, 95.6% 21.9%, 95.6% 90.5%, 85.3% 90.5%, 85.3% 100%, 14.7% 100%, 14.7% 90.5%, 4.4% 90.5%, 4.4% 21.9%, 14.7% 21.9%);
 }
 .speaker-pending__portrait::before {
   content: '';
