@@ -2059,6 +2059,16 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
 }
 .sponsor-cell:hover img { opacity: 1; }
 .sponsor-cell--tall img { max-height: 66px; }
+.sponsor-cell--round { gap: 12px; align-content: center; }
+.sponsor-cell--round img { max-height: 96px; }
+/* role under a sponsor's logo, e.g. Travel Partner */
+.sponsor-cell__tag {
+  color: var(--lime);
+  font-family: var(--pixel);
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
 .sponsor-cell--silver {
   min-height: 112px;
   padding: 1.1rem .75rem;
@@ -2068,6 +2078,35 @@ main > .section.tickets { padding-top: clamp(48px, 5vw, 72px); }
   letter-spacing: .07em;
   text-align: center;
 }
+
+.sponsor-cell--silver img { max-height: 36px; }
+
+/* label above a row of logos, e.g. Supporters */
+.sponsor-tier {
+  margin-top: 46px;
+  color: rgba(255,255,255,.55);
+  font-family: var(--pixel);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+/* supporters: bare logos in a row, no boxes */
+.supporters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px 48px;
+  margin-top: 20px;
+}
+.supporter img {
+  display: block;
+  width: auto;
+  height: 34px;
+  opacity: .8;
+  transition: opacity var(--dur) var(--ease);
+}
+.supporter:hover img { opacity: 1; }
+.supporter--lg img { height: 46px; }
 
 /* open sponsor slot: tier label only, no hover lift */
 .sponsor-slot__label {
